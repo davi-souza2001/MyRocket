@@ -1,0 +1,108 @@
+/* Here you will have the register CSS */
+
+/* Remember to use "Mobile First"!!! */
+
+.contentGeral{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.registerContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--white);
+    width: 80vw;
+    height: 100vh;
+}
+
+.formsContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formsContent input[type='text']{
+    width: 100%;
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 0px;
+    background-color: var(--lightgrey);
+    border: none;
+    border-radius: 5px;
+}
+
+.formsContent input[type='text']::placeholder{
+    color: var(--white);
+}
+
+.formsContent select{
+    width: 100%;
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 0px; 
+    background-color: var(--lightgrey);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+}
+
+.formsContent textarea{
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 0px;  
+    background-color: var(--lightgrey);
+    border: none;
+    border-radius: 5px;
+}
+
+.formsContent textarea::placeholder{
+    color: var(--white);
+}
+
+.socialMediaContent{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.ocupationArea{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.description{
+    width: 100%;
+    height: 100px;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.termsAndConditions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.termsAndConditions input[type='checkbox']{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    margin-bottom: 28px;
+}
+
+@media (min-width: 860px){
+
+}
+
+@media (min-width: 980px){
+
+}
+
+@media (min-width: 1200px){
+
+}

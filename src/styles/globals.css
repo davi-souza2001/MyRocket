@@ -1,0 +1,25 @@
+@import 'https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap';
+/* I've created variables for the colors */
+:root{
+  --purple: #3936EB;
+  --white: #fff;
+  --grey: #1E1E1E;
+  --lightgrey: #6B6B6B;
+}
+
+html,
+body {
+  background-color: var(--grey);
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* a {
+  color: inherit;
+  text-decoration: none;
+} */
+
+/* * {
+  box-sizing: border-box;
+} */
