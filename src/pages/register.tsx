@@ -10,7 +10,7 @@ export default function Login() {
         <div className={styles.contentGeral}>
             <div className={styles.registerContent}>
                 <div className={styles.astronaut}>
-                    <Image src={Astronaut} width={220} height={220} alt='astronautHello'/>
+                    <Image src={Astronaut} width={200} height={220} alt='astronautHello'/>
                 </div>
                 
                 <h4>Register</h4>
@@ -335,6 +335,10 @@ export default function Login() {
                     <div className={styles.termsAndConditions}>
                         <input type="checkbox" name="" id="" />
                         <p>Do you agree with the <strong>Terms and Conditions</strong>?</p>
+                    </div>
+
+                    <div className={styles.submitSend}>
+                        <button type='submit'>Submit</button>
                     </div>
                 </form>
             </div>
