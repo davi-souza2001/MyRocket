@@ -1,5 +1,7 @@
 Building...
 
+-- Utilizar teste auto
+
 - Mobile first
 
 - Refazer tela de comunidade
