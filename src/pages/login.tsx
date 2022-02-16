@@ -30,11 +30,11 @@ export default function Login() {
 
                     <p>Login with</p>
                     <div className={styles.btnField}>
-                        <button>
+                        <button onClick={() => console.log("Login com Github")}>
                             <Image src={GitHub} width={40} height={40} alt='githubLogo'/>
                         </button>
                         <p>or</p>
-                        <button>
+                        <button onClick={() => console.log("Login com Google")}>
                             <Image src={Gmail} width={40} height={40} alt='gmailLogo'/>
                         </button>
                     </div>
