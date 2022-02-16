@@ -131,10 +131,14 @@
         align-items: center;
         justify-content: space-around;
         height: 100vh;
+        background-image: url('../../public/backgroundGalaxy.svg');
+        background-repeat: no-repeat;
+        background-size: 120% ;
+        /* background-color: #242535; */
         /* Animated Background */
-        background: linear-gradient(25deg,rgba(7,9,31,1), rgba(21,29,82,1), rgba(155,50,205,1));
-        background-size: 300% 300%;
-        animation: gradient 15s ease infinite;  
+        /* background: linear-gradient(25deg,rgba(7,9,31,1), rgba(21,29,82,1), rgba(155,50,205,1)); */
+        /* background-size: 300% 300%; */
+        /* animation: gradient 15s ease infinite;   */
     }
 
     .msgIntroduction{
@@ -160,5 +164,11 @@
 @media (min-width: 1200px){
     .contentGeral{
         font-size: 120%;
+    }
+}
+
+@media (max-width: 1036px){
+    .contentGeral{
+        background-size: 150%;
     }
 }
