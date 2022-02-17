@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import Principal from './index'
+import Principal from '../pages/index'
 
 test('sum', () => {
     const { getByText } = render(<Principal/>)
