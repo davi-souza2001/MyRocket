@@ -1,8 +1,14 @@
 import { render } from '@testing-library/react'
 import Principal from '../pages/index'
 
-test('sum', () => {
-    const { getByText } = render(<Principal/>)
+describe('Login section', () => {
+    it('handle test', () => {
+        const { getByText } = render(<Principal />)
 
-    expect(getByText('Principal')).toBeTruthy()
+        expect(getByText('Principal')).toBeTruthy()
+    })
+
+    it('alo', () => {
+        expect(1 + 1).toBe(2)
+    })
 })
