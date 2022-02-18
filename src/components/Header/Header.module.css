@@ -25,3 +25,19 @@
     align-items: center;
     justify-content: flex-end;
 }
+
+.contentToggleInicial{
+    display: none;
+}
+
+.contentToggle {
+    position: absolute;
+    width: 80vw;
+    top: 10vh;
+    right: 30px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
