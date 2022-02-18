@@ -1,4 +1,3 @@
-/* import TopBar from '../components/TopBar' */
 import Image from 'next/image'
 
 import Gmail from '../../public/img/social_medias/gmail.svg'

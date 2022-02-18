@@ -1,0 +1,25 @@
+.contentGeral{
+    background-color: #272733;
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contentLogo {
+    width: 120px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.contentOptions{
+    color: #fff;
+    width: 120px;
+    height: 50px;
+    background-color: blue;
+    font-size: 200%;
+}
