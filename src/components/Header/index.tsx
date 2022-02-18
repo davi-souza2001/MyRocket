@@ -12,17 +12,19 @@ export function Header() {
                 <p>MyRocket</p>
             </div>
             <div className={styles.contentOptions}>
-                {open ? (
-                    <AiOutlineClose onClick={() => setOpen(!open)} />
-                ) : (
-                    <HiMenu onClick={() => setOpen(!open)} />
-                )}
-                <div className={open ? styles.contentToggle : styles.contentToggleInicial }>
+                <div className={styles.contentToggleMenu}>
+                    {open ? (
+                        <AiOutlineClose onClick={() => setOpen(!open)} />
+                    ) : (
+                        <HiMenu onClick={() => setOpen(!open)} />
+                    )}
+                </div>
+                <div className={open ? styles.contentToggle : styles.contentToggleInicial}>
                     <p>Inicio</p>
                     <p>Feed</p>
                     <p>Pesquisar</p>
                     <p>Reuniões</p>
-                    <p>Perfil</p>
+                    <p>Foto</p>
                 </div>
             </div>
         </div>
