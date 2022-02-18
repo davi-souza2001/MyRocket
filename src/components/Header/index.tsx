@@ -18,8 +18,11 @@ export function Header() {
                     <HiMenu onClick={() => setOpen(!open)} />
                 )}
                 <div className={open ? styles.contentToggle : styles.contentToggleInicial }>
-                    <p>Opcao 1</p>
-                    <p>Opcao 2</p>
+                    <p>Inicio</p>
+                    <p>Feed</p>
+                    <p>Pesquisar</p>
+                    <p>Reuniões</p>
+                    <p>Perfil</p>
                 </div>
             </div>
         </div>
