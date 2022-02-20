@@ -14,7 +14,9 @@ export function Header() {
             <div className={styles.contentOptions}>
                 <div className={styles.contentToggleMenu}>
                     {open ? (
-                        <AiOutlineClose onClick={() => setOpen(!open)} />
+                        <div className={styles.contentToggleMenuClosed}>
+                            <AiOutlineClose onClick={() => setOpen(!open)} />
+                        </div>
                     ) : (
                         <HiMenu onClick={() => setOpen(!open)} />
                     )}
