@@ -1,6 +1,6 @@
 .contentTitle{
   color: #fff;
-  margin-top: 25px;
+  margin: 25px 0;
   height: 80px;
   width: 100vw;
   display: flex;
@@ -15,4 +15,13 @@
   align-items: center;
   justify-content: center;
   margin-right: -90px;
+}
+
+.contentBoxes{
+  height: 75vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

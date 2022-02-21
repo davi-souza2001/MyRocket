@@ -134,11 +134,6 @@
         background-image: url('../../public/backgroundGalaxy.svg');
         background-repeat: no-repeat;
         background-size: 120% ;
-        /* background-color: #242535; */
-        /* Animated Background */
-        /* background: linear-gradient(25deg,rgba(7,9,31,1), rgba(21,29,82,1), rgba(155,50,205,1)); */
-        /* background-size: 300% 300%; */
-        /* animation: gradient 15s ease infinite;   */
     }
 
     .msgIntroduction{
