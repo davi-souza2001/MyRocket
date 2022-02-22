@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './BoxStacks.module.css'
 
-import Front from '../../../public/areas/FrontIcon.svg'
 import Image from 'next/image'
 
 type BoxStacks = {
     area: String,
     description: String
+    logo: string
 }
 
 export function BoxStacks(props: BoxStacks) {
@@ -17,7 +17,7 @@ export function BoxStacks(props: BoxStacks) {
                 <p>{props.description}</p>
             </div>
             <div className={styles.contentImage}>
-                <Image src={Front} />
+                <Image src={props.logo} alt='Logo area' />
             </div>
         </div>
     )
