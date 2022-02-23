@@ -35,9 +35,16 @@
 @media (min-width: 750px){
   .contentTitle{
       width: 100vw;
+      justify-content: center;
+  }
+
+  .contentTitle h2{
+    margin-left: 100px;
   }
 
   .contentBoxes{
+    height: 65vh;
+    width: 100vw;
     flex-direction: row;
     justify-content: space-around;
   }

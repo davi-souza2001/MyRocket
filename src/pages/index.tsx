@@ -11,7 +11,7 @@ import Mobile from '../../public/areas/MobileIcon.svg'
 
 export default function index(){
   return (
-    <>
+    <div className={styles.homeGeral}>
       <Header/>
       <div className={styles.contentTitle}>
         <div className={styles.contentIcon}>
@@ -24,6 +24,6 @@ export default function index(){
         <BoxStacks logo={Back} area={'Back-End'} description={'Comunidade Back-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: Node, Java'}/>
         <BoxStacks logo={Mobile} area={'Mobile'} description={'Comunidade Mobile, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: React-Native, Kotlin'}/>
       </div>
-    </>
+    </div>
   )
 } 

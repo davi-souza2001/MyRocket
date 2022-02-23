@@ -31,7 +31,37 @@
 
 @media (min-width: 750px){
     .contentGeral{
-        height: 170px;
-        width: 170px;
+        height: 450px;
+        width: 230px;
+        justify-content: center;
+        flex-direction: column;
     }
-  }
+
+    .contentBox{
+        height: 360px;
+        width: 200px;
+    }
+
+    .contentImage{
+        height: 220px;
+        width: 150px;
+    }
+}
+
+@media (min-width: 1050px){
+    .contentGeral{
+        height: 60vh;
+        width: 27vw;
+    }
+
+    .contentBox{
+        height: 50vh;
+        width: 25vw;
+        font-size: 2.4vh;
+    }
+    
+    .contentImage{
+        height: 30vh;
+        width: 12vw;
+    }
+}
