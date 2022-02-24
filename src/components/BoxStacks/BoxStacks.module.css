@@ -18,6 +18,9 @@
    text-overflow: ellipsis;
 }
 
+.contentBox h4{
+    cursor: pointer;
+}
 
 .contentBox p {
     margin-top: -12px;
