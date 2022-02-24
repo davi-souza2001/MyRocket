@@ -1,16 +1,8 @@
 Building...
 
--- Utilizar teste auto
+- Utilizar teste auto
 
-- Mobile first
-
-- Refazer tela de comunidade
-
-- Refazer perfil
-
-- Fazer bot pra o discord (e fazer discord)
-
-- Fazer api
+- Fazer hook para dizer qual comunidade seguir
 
 - Fazer rota para caso a pagina não exista
 
