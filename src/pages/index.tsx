@@ -1,7 +1,6 @@
 import route from "next/router";
 import { HiOutlineGlobe } from "react-icons/hi";
 
-
 import { Header } from "../components/Header";
 import { BoxStacks } from "../components/BoxStacks";
 
