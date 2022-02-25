@@ -8,7 +8,7 @@ interface ComumProps{
 }
 
 export function ComumProvider(props: any) {
-    const [comumUnic, setComumUnic] = useState('Null')
+    const [comumUnic, setComumUnic] = useState('Front')
 
     return (
         <ComumContext.Provider value={{comumUnic, setComumUnic}}>

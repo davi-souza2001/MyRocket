@@ -14,7 +14,6 @@ import useComum from "../service/hook/useComum";
 export default function index(){
   const { comumUnic, setComumUnic } = useComum()
 
-  console.log(comumUnic)
   return (
     <div className={styles.homeGeral}>
       <Header/>
@@ -26,21 +25,21 @@ export default function index(){
       </div>
       <div className={styles.contentBoxes}>
         <BoxStacks onClick={() => {
-          setComumUnic('front') 
+          setComumUnic('Front') 
           route.push('/communities')
           }}
           logo={Front} 
           area={'Front-End'} 
           description={'Comunidade Front-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: React, Angular, Vue'}/>
         <BoxStacks onClick={() => {
-          setComumUnic('back') 
+          setComumUnic('Back') 
           route.push('/communities')
           }} 
         logo={Back} 
         area={'Back-End'} 
         description={'Comunidade Back-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: Node, Java'}/>
         <BoxStacks onClick={() => {
-          setComumUnic('mobile') 
+          setComumUnic('Mobile') 
           route.push('/communities')
           }} 
         logo={Mobile} 
