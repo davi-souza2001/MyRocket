@@ -27,11 +27,26 @@ export default function index(){
       </div>
       <div className={styles.contentBoxes}>
         <BoxStacks onClick={() => {
-          setComumUnic('front')
+          setComumUnic('front') 
           route.push('/communities')
-          }} logo={Front} area={'Front-End'} description={'Comunidade Front-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: React, Angular, Vue'}/>
-        <BoxStacks onClick={() => route.push('/back')} logo={Back} area={'Back-End'} description={'Comunidade Back-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: Node, Java'}/>
-        <BoxStacks onClick={() => route.push('/mobile')} logo={Mobile} area={'Mobile'} description={'Comunidade Mobile, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: React-Native, Kotlin'}/>
+          }}
+          logo={Front} 
+          area={'Front-End'} 
+          description={'Comunidade Front-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: React, Angular, Vue'}/>
+        <BoxStacks onClick={() => {
+          setComumUnic('back') 
+          route.push('/communities')
+          }} 
+        logo={Back} 
+        area={'Back-End'} 
+        description={'Comunidade Back-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: Node, Java'}/>
+        <BoxStacks onClick={() => {
+          setComumUnic('mobile') 
+          route.push('/communities')
+          }} 
+        logo={Mobile} 
+        area={'Mobile'} 
+        description={'Comunidade Mobile, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: React-Native, Kotlin'}/>
       </div>
     </div>
   )
