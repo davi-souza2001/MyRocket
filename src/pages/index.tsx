@@ -13,7 +13,7 @@ import Mobile from '../../public/areas/MobileIcon.svg'
 import useComum from "../service/hook/useComum";
 
 export default function index(){
-  const { comumUnic } = useComum()
+  const { comumUnic, setComumUnic } = useComum()
 
   console.log(comumUnic)
   return (
@@ -26,9 +26,12 @@ export default function index(){
         <h2>Choosing a stack</h2>
       </div>
       <div className={styles.contentBoxes}>
-        <BoxStacks onClick={() => route.push("/front")} logo={Front} area={'Front-End'} description={'Comunidade Front-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: React, Angular, Vue'}/>
-        <BoxStacks onClick={() => route.push("/back")} logo={Back} area={'Back-End'} description={'Comunidade Back-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: Node, Java'}/>
-        <BoxStacks onClick={() => route.push("/mobile")} logo={Mobile} area={'Mobile'} description={'Comunidade Mobile, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: React-Native, Kotlin'}/>
+        <BoxStacks onClick={() => {
+          setComumUnic('front')
+          route.push('/communities')
+          }} logo={Front} area={'Front-End'} description={'Comunidade Front-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: React, Angular, Vue'}/>
+        <BoxStacks onClick={() => route.push('/back')} logo={Back} area={'Back-End'} description={'Comunidade Back-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: Node, Java'}/>
+        <BoxStacks onClick={() => route.push('/mobile')} logo={Mobile} area={'Mobile'} description={'Comunidade Mobile, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: React-Native, Kotlin'}/>
       </div>
     </div>
   )
