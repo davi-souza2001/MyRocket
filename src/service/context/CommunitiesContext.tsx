@@ -1,6 +1,6 @@
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react';
 
-const ComumContext = createContext<ComumProps>({})
+const ComumContext = createContext<ComumProps>({});
 
 interface ComumProps{
     comumUnic?: string
@@ -8,7 +8,7 @@ interface ComumProps{
 }
 
 export function ComumProvider(props: any) {
-    const [comumUnic, setComumUnic] = useState('Front')
+    const [comumUnic, setComumUnic] = useState('Front');
 
     return (
         <ComumContext.Provider value={{comumUnic, setComumUnic}}>
@@ -17,4 +17,4 @@ export function ComumProvider(props: any) {
     )
 }
 
-export default ComumContext
+export default ComumContext;

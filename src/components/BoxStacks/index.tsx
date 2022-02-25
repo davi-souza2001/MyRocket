@@ -1,14 +1,14 @@
-import React from 'react'
-import styles from './BoxStacks.module.css'
+import React from 'react';
+import styles from './BoxStacks.module.css';
 
-import Image from 'next/image'
+import Image from 'next/image';
 
 type BoxStacks = {
     area: String,
     description: String
     logo: string
     onClick: () => void
-}
+};
 
 export function BoxStacks(props: BoxStacks) {
     return (

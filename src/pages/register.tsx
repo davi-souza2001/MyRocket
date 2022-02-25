@@ -1,8 +1,8 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
-import Astronaut from '../../public/img/astronauts/astronaut_register.svg'
+import Astronaut from '../../public/img/astronauts/astronaut_register.svg';
 
-import styles from '../styles/Register.module.css'
+import styles from '../styles/Register.module.css';
 
 export default function Register() {
 
