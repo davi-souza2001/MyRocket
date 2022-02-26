@@ -14,7 +14,7 @@ export default function Comum() {
     if(comumUnic === 'Null'){
       Router.replace('/');
     }
-  },[])
+  },[comumUnic])
 
   return (
     <div className={styles.contentGeral}>

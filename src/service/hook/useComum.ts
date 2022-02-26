@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import ComumContext from "../context/CommunitiesContext";
 
-const useComum = () => useContext(ComumContext)
+const UseComum = () => useContext(ComumContext)
 
-export default useComum;
+export default UseComum;

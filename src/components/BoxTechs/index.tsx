@@ -12,7 +12,7 @@ export default function BoxTechs(props: BoxTechs) {
   return (
     <div className={styles.contentGeral}>
       <div className={styles.contentLogo}>
-          <Image src={Example} height={80} width={80} className={styles.contentLogoImg}/>
+          <Image src={Example} height={80} width={80} className={styles.contentLogoImg} alt='Logo'/>
       </div>
       <div className={styles.contentTitle}>
         <h3>{props.title}</h3>

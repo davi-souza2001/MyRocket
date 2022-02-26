@@ -9,10 +9,10 @@ import styles from '../styles/Home.module.css';
 import Front from '../../public/areas/FrontIcon.svg';
 import Back from '../../public/areas/BackIcon.svg';
 import Mobile from '../../public/areas/MobileIcon.svg';
-import useComum from "../service/hook/useComum";
+import UseComum from "../service/hook/useComum";
 
 export default function index(){
-  const { comumUnic, setComumUnic } = useComum();
+  const { comumUnic, setComumUnic } = UseComum();
 
   return (
     <div className={styles.homeGeral}>
