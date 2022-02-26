@@ -9,9 +9,18 @@
     align-items: center;
     justify-content: center;
     font-size: 3vh;
-    margin-top: 20px;
+    margin: 4vh 0px;
 }
 
 .contentTitle p{
     margin-left: 20px;
+}
+
+.contentBoxesTechs{
+    width: 100vw;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
 }

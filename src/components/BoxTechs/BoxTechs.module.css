@@ -1,0 +1,36 @@
+.contentGeral{
+    height: 300px;
+    width: 250px;
+    background-color: #272733;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+
+.contentLogo{
+    height: 90px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentLogoImg{
+    border-radius: 9999px;
+}
+
+.contentTitle{
+    width: 250px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentDescription{
+    height: 160px;
+    width: 250px;
+}
+
+.contentDescription p{
+    color: #adadad ;
+}
