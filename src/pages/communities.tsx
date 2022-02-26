@@ -24,16 +24,7 @@ export default function Comum() {
         <p>Which {comumUnic} tool do you choose?</p>
       </div>
       <div className={styles.contentBoxesTechs}>
-        <BoxTechs/>
-        <BoxTechs/>
-        <BoxTechs/>
-        <BoxTechs/>
-        <BoxTechs/>
-        <BoxTechs/>
-        <BoxTechs/>
-        <BoxTechs/>
-        <BoxTechs/>
-        <BoxTechs/>
+        <BoxTechs title={'React'}/>
       </div>
     </div>
   )
