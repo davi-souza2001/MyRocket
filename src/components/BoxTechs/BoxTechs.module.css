@@ -1,6 +1,6 @@
 .contentGeral{
-    height: 300px;
-    width: 250px;
+    height: 330px;
+    width: 270px;
     background-color: #272733;
     border-radius: 10px;
     margin: 10px 0px;
@@ -8,7 +8,7 @@
 
 .contentLogo{
     height: 90px;
-    width: 250px;
+    width: 270px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,16 +19,18 @@
 }
 
 .contentTitle{
-    width: 250px;
+    width: 270px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .contentDescription{
     height: 160px;
-    width: 250px;
+    width: 270px;
+    padding: 10px;
 }
 
 .contentDescription p{
