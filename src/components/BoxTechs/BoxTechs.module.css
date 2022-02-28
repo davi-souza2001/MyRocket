@@ -36,3 +36,15 @@
 .contentDescription p{
     color: #adadad ;
 }
+
+@media (min-width: 1090px){
+    .contentGeral{
+        margin-left: 4vw;
+    }
+}
+
+@media (min-width: 1350px){
+    .contentGeral{
+        margin-left: 7vw;
+    }
+}

@@ -24,3 +24,17 @@
     justify-content: space-around;
     flex-direction: column;
 }
+
+@media (min-width: 750px){
+    .contentBoxesTechs{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-content: center;
+    }
+}
+
+@media (min-width: 850px){
+    .contentBoxesTechs{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
