@@ -24,7 +24,32 @@ export default function Comum() {
         <p>Which {comumUnic} tool do you choose?</p>
       </div>
       <div className={styles.contentBoxesTechs}>
-        <BoxTechs title={'React'}/>
+        {comumUnic === 'Front' && (
+          <>
+            <BoxTechs title={'React'}/>
+            <BoxTechs title={'Next'}/>
+            <BoxTechs title={'Angular'}/>
+            <BoxTechs title={'Vue'}/>
+            <BoxTechs title={'Ember'}/>
+          </>
+        )}
+        {comumUnic === 'Back' && (
+          <>
+            <BoxTechs title={'Node'}/>
+            <BoxTechs title={'Java'}/>
+            <BoxTechs title={'Firebase'}/>
+            <BoxTechs title={'Sql'}/>
+            <BoxTechs title={'Mongo'}/>
+          </>
+        )}
+        {comumUnic === 'Mobile' && (
+          <>
+            <BoxTechs title={'Flutter'}/>
+            <BoxTechs title={'React-Native'}/>
+            <BoxTechs title={'Ionic'}/>
+            <BoxTechs title={'Swift'}/>
+          </>
+        )}
       </div>
     </div>
   )
