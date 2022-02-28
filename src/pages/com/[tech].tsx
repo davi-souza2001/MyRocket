@@ -7,7 +7,7 @@ export default function Commun() {
 
   return (
     <>
-      <div>{comumSeach}</div>
+      <div style={{color: '#fff'}}>{comumSeach}</div>
     </>
   )
 }

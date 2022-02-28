@@ -26,28 +26,28 @@ export default function Comum() {
       <div className={styles.contentBoxesTechs}>
         {comumUnic === 'Front' && (
           <>
-            <BoxTechs title={'React'}/>
-            <BoxTechs title={'Next'}/>
-            <BoxTechs title={'Angular'}/>
-            <BoxTechs title={'Vue'}/>
-            <BoxTechs title={'Ember'}/>
+            <BoxTechs title={'React'} onClick={() => Router.push('/com/React')}/>
+            <BoxTechs title={'Next'} onClick={() => Router.push('/com/Next')}/>
+            <BoxTechs title={'Angular'} onClick={() => Router.push('/com/Angular')}/>
+            <BoxTechs title={'Vue'} onClick={() => Router.push('/com/Vue')}/>
+            <BoxTechs title={'Ember'} onClick={() => Router.push('/com/Ember')}/>
           </>
         )}
         {comumUnic === 'Back' && (
           <>
-            <BoxTechs title={'Node'}/>
-            <BoxTechs title={'Java'}/>
-            <BoxTechs title={'Firebase'}/>
-            <BoxTechs title={'Sql'}/>
-            <BoxTechs title={'Mongo'}/>
+            <BoxTechs title={'Node'} onClick={() => Router.push('/com/Node')}/>
+            <BoxTechs title={'Java'} onClick={() => Router.push('/com/Java')}/>
+            <BoxTechs title={'Firebase'} onClick={() => Router.push('/com/Firebase')}/>
+            <BoxTechs title={'Sql'} onClick={() => Router.push('/com/Sql')}/>
+            <BoxTechs title={'Mongo'} onClick={() => Router.push('/com/Mongo')}/>
           </>
         )}
         {comumUnic === 'Mobile' && (
           <>
-            <BoxTechs title={'Flutter'}/>
-            <BoxTechs title={'React-Native'}/>
-            <BoxTechs title={'Ionic'}/>
-            <BoxTechs title={'Swift'}/>
+            <BoxTechs title={'Flutter'} onClick={() => Router.push('/com/Flutter')}/>
+            <BoxTechs title={'React-Native'} onClick={() => Router.push('/com/React-Native')}/>
+            <BoxTechs title={'Ionic'} onClick={() => Router.push('/com/Ionic')}/>
+            <BoxTechs title={'Swift'} onClick={() => Router.push('/com/Swift')}/>
           </>
         )}
       </div>

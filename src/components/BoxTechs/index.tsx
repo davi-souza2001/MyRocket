@@ -6,11 +6,12 @@ import Example from '../../../public/img/social_medias/gmail.svg'
 type BoxTechs = {
   img?: any;
   title: String;
+  onClick: () => void;
 };
 
 export default function BoxTechs(props: BoxTechs) {
   return (
-    <div className={styles.contentGeral}>
+    <div className={styles.contentGeral} onClick={props.onClick}>
       <div className={styles.contentLogo}>
           <Image src={Example} height={80} width={80} className={styles.contentLogoImg} alt='Logo'/>
       </div>
