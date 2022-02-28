@@ -1,7 +1,7 @@
 .contentGeral{
     background-color: #272733;
     height: 50px;
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;

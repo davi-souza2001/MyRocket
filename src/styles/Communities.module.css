@@ -4,7 +4,7 @@
 
 .contentTitle{
     height: 50px;
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +17,7 @@
 }
 
 .contentBoxesTechs{
-    width: 100vw;
+    width: 100%;
     min-height: 70vh;
     display: flex;
     align-items: center;
