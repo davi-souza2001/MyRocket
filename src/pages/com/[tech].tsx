@@ -1,15 +1,31 @@
 import { useRouter } from "next/router";
-import { HiOutlineGlobe } from "react-icons/hi";
+import { useState } from "react";
+import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
 import { Header } from "../../components/Header";
+import {MembersComum} from "../../components/MembersComum";
 import styles from '../../styles/Com.module.css'
 
 export default function Commun() {
   const router = useRouter();
   const comumSearch = router.query.tech;
 
+  const [membersEnable, setMembersEnable] = useState(false)
+
   return (
     <>
-      <Header />
+      <Header>
+        <div className={styles.contentMoreOptions}>
+          <div className={styles.contentIconOne} onClick={() => setMembersEnable(!membersEnable)}>
+            <HiUser/>
+            <div className={membersEnable ? styles.contentMembersMobile : styles.contentIconDisable}>
+              <MembersComum/>
+            </div>
+          </div>
+          <div>
+            <HiFire/>
+          </div>
+        </div>
+      </Header>
       <div className={styles.contentGeral}>
         <div className={styles.title}>
           <h3>Planeta {comumSearch}</h3>
@@ -17,7 +33,7 @@ export default function Commun() {
         </div>
         <div className={styles.contetBoxes}>
           <div className={styles.contentLeft}>
-            Test
+            <MembersComum/>
           </div>
           <div className={styles.contentCenter}>
             Test

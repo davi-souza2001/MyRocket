@@ -3,7 +3,11 @@ import { HiMenu } from 'react-icons/hi';
 import { AiFillRocket, AiOutlineClose } from 'react-icons/ai';
 import styles from './Header.module.css'
 
-export function Header() {
+type Header={
+    children?: any
+}
+
+export function Header(props: Header) {
     const [open, setOpen] = useState(false)
     return (
         <div className={styles.contentGeral}>
@@ -12,6 +16,7 @@ export function Header() {
                 <p>MyRocket</p>
             </div>
             <div className={styles.contentOptions}>
+                {props.children}
                 <div className={styles.contentToggleMenu}>
                     {open ? (
                         <div className={styles.contentToggleMenuClosed}>

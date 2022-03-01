@@ -1,6 +1,40 @@
 /* Head tem 7.5 vh */
 /* 83vh sobrando */
 
+.contentMoreOptions{
+    height: 100%;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 90%;
+    margin-right: 20px;
+}
+
+.contentIconOne{
+    margin-right: 20px;
+}
+
+.contentIconDisable{
+    display: none;
+}
+
+.contentMembersMobile{
+    animation: fade 200ms;
+    position: absolute;
+    width: 80vw;
+    top: 10vh;
+    right: 30px;
+    background-color: #272733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 50%;
+    border-radius: 10px;
+    z-index: 999;
+}
+
 .contentGeral{
     height: 91vh;
     width: 100%;
@@ -26,6 +60,25 @@
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
+.contentLeft{
+    display: none;
+}
+
+.contentRight{
+    display: none;
+}
+
+@keyframes fade{
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
