@@ -21,8 +21,11 @@ export default function Commun() {
               <MembersComum/>
             </div>
           </div>
-          <div>
+          <div onClick={() => setMembersEnable(!membersEnable)}>
             <HiFire/>
+            <div className={membersEnable ? styles.contentMembersMobile : styles.contentIconDisable}>
+              <MembersComum/>
+            </div>
           </div>
         </div>
       </Header>
