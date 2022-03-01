@@ -3,6 +3,7 @@ import { useState } from "react";
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
 import { Header } from "../../components/Header";
 import {MembersComum} from "../../components/MembersComum";
+import PostsMoreLiked from "../../components/PostsMoreLiked";
 import styles from '../../styles/Com.module.css'
 
 export default function Commun() {
@@ -10,6 +11,7 @@ export default function Commun() {
   const comumSearch = router.query.tech;
 
   const [membersEnable, setMembersEnable] = useState(false)
+  const [postsMoreLiked, setPostsMoreLiked] = useState(false)
 
   return (
     <>
@@ -17,14 +19,14 @@ export default function Commun() {
         <div className={styles.contentMoreOptions}>
           <div className={styles.contentIconOne} onClick={() => setMembersEnable(!membersEnable)}>
             <HiUser/>
-            <div className={membersEnable ? styles.contentMembersMobile : styles.contentIconDisable}>
+            <div className={membersEnable ? styles.contentIconEnable : styles.contentIconDisable}>
               <MembersComum/>
             </div>
           </div>
-          <div onClick={() => setMembersEnable(!membersEnable)}>
+          <div onClick={() => setPostsMoreLiked(!postsMoreLiked)}>
             <HiFire/>
-            <div className={membersEnable ? styles.contentMembersMobile : styles.contentIconDisable}>
-              <MembersComum/>
+            <div className={postsMoreLiked ? styles.contentIconEnable : styles.contentIconDisable}>
+              <PostsMoreLiked/>
             </div>
           </div>
         </div>

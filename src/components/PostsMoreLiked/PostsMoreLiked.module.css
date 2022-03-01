@@ -1,0 +1,46 @@
+.contentGeral{
+    background-color: var(--purpleGlobal);
+    height: 50vh;
+    width: 100%;
+}
+
+.contentTitle{
+    height: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.contentPosts{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.boxPost{
+    width: 70%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #3d3d50;
+    border-radius: 10px;
+}
+
+.contentNameandPost{
+    width: 140px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
