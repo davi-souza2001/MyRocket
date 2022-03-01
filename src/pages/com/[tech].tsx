@@ -1,9 +1,12 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
+
 import { Header } from "../../components/Header";
 import {MembersComum} from "../../components/MembersComum";
-import PostsMoreLiked from "../../components/PostsMoreLiked";
+import {PostsMoreLiked} from "../../components/PostsMoreLiked";
+import {SendPost} from "../../components/SendPost";
+
 import styles from '../../styles/Com.module.css'
 
 export default function Commun() {
@@ -41,10 +44,12 @@ export default function Commun() {
             <MembersComum/>
           </div>
           <div className={styles.contentCenter}>
-            Test
+            <div>
+              <SendPost/>
+            </div>
           </div>
           <div className={styles.contentRight}>
-            Test
+            <PostsMoreLiked/>
           </div>
         </div>
       </div>

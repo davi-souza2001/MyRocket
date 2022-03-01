@@ -3,7 +3,7 @@ import styles from './PostsMoreLiked.module.css'
 
 import Teste from '../../../public/img/social_medias/gmail.svg'
 
-export default function PostsMoreLiked() {
+export function PostsMoreLiked() {
   return (
     <div className={styles.contentGeral}>
         <div className={styles.contentTitle}>

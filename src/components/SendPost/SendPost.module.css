@@ -1,0 +1,49 @@
+.contentGeral{
+    background-color: #272733;
+    height: 90px;
+    width: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+.contentImageUser{
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentFormPost{
+    height: 60%;
+    width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentFormPost input{
+    font-family: 'Poppins', sans-serif;
+}
+
+.contentFormPost input[type='text']{
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin-right: 4px;
+    background-color: #565672;
+    color: #fff;
+}
+
+.contentFormPost button{
+    width: 50px;
+    height: 30px;
+    background-color: #565672;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
