@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { HiMenu } from 'react-icons/hi';
 import { AiFillRocket, AiOutlineClose } from 'react-icons/ai';
 import styles from './Header.module.css'
+import Router from 'next/router';
 
 type Header={
     children?: any
@@ -27,11 +28,11 @@ export function Header(props: Header) {
                     )}
                 </div>
                 <div className={open ? styles.contentToggle : styles.contentToggleInicial}>
-                    <p>Inicio</p>
-                    <p>Feed</p>
-                    <p>Pesquisar</p>
-                    <p>Reuniões</p>
-                    <p>Foto</p>
+                    <p onClick={() => Router.push('/')}>Inicio</p>
+                    <p onClick={() => Router.push('/feed')}>Feed</p>
+                    <p onClick={() => Router.push('/search')}>Pesquisar</p>
+                    <p onClick={() => Router.push('/meet')}>Reuniões</p>
+                    <p onClick={() => Router.push('/profile')}>Foto</p>
                 </div>
             </div>
         </div>
