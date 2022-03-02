@@ -62,11 +62,18 @@
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-    background-color: red;
 }
 
 .contentLeft{
     display: none;
+}
+
+.contentCenter{
+    width: 100%;
+    height: 82vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .contentRight{
