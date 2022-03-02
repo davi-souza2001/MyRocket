@@ -1,0 +1,46 @@
+.contentGeral{
+    background-color: #272733;
+    min-height: 70px;
+    max-width: 310px;
+    padding: 7px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.contentPostUser{
+    height: 70%;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.contentInfoUser{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.contentImageUser{
+    border-radius: 9999px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contentImageUser p {
+    margin-left: 10px;
+}
+
+.contentLikePost{
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 130%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}

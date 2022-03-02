@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
+import { BoxPostComum } from "../../components/BoxPostComum";
 
 import { Header } from "../../components/Header";
 import {MembersComum} from "../../components/MembersComum";
@@ -46,6 +47,7 @@ export default function Commun() {
           <div className={styles.contentCenter}>
             <div>
               <SendPost/>
+              <BoxPostComum/>
             </div>
           </div>
           <div className={styles.contentRight}>
