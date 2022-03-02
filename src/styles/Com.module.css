@@ -93,6 +93,14 @@
 }
 
 @media (min-width: 750px){
+
+    .contentGeral{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
     .contentMoreOptions{
         display: none;
     }
@@ -105,10 +113,21 @@
     }
 
     .contentLeft{
-        display: inline;
+        width: 33.3%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .contentCenter{
+        width: 33.3%;
+
     }
 
     .contentRight{
-        display: inline;
+        width: 33.3%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
     }
 }
