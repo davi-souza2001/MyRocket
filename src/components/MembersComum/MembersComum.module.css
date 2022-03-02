@@ -41,6 +41,37 @@
         border-radius: 10px;
         margin-left: 10px;
         height: 50vh;
-        width: 20vw;
+        width: 12vw;
+    }
+
+    .contentTitle{
+        height: 5vh;
+        width: 100%;
+    }
+
+    .contentCommander{
+        height: 5vh;
+        width: 100%;
+    }
+
+    .contentMembers{
+        width: 100%;
+        min-height: 30vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    .contentMembers::-webkit-scrollbar-track {
+        background-color: #45455c;
+    }
+    .contentMembers::-webkit-scrollbar {
+        width: 3px;
+        background: #45455c;
+    }
+    .contentMembers::-webkit-scrollbar-thumb {
+        background: #23232e;
     }
 }

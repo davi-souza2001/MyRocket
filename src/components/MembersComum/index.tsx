@@ -14,6 +14,27 @@ export function MembersComum() {
                 <p>Tripulantes</p>
             </div>
             <div className={styles.contentMembers}>
+                <p>Daviaa</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
+                <p>Davi</p>
                 <p>Davi</p>
                 <p>Davi</p>
                 <p>Davi</p>
