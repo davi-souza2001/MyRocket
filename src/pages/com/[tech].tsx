@@ -48,6 +48,11 @@ export default function Commun() {
             <div>
               <SendPost/>
               <BoxPostComum/>
+              <BoxPostComum/>
+              <BoxPostComum/>
+              <BoxPostComum/>
+              <BoxPostComum/>
+              <BoxPostComum/>
             </div>
           </div>
           <div className={styles.contentRight}>

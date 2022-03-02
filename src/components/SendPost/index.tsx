@@ -8,7 +8,7 @@ export function SendPost() {
   return (
     <div className={styles.contentGeral}>
         <div className={styles.contentImageUser}>
-            <Image src={Test} width={30} height={30}/>
+            <Image src={Test} width={40} height={40}/>
         </div>
         <div className={styles.contentFormPost}>
             <form>

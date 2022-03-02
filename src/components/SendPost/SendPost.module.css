@@ -48,3 +48,21 @@
     border: none;
     border-radius: 10px;
 }
+
+@media (min-width: 750px){
+    .contentGeral{
+        width: 30vw;
+        justify-content: center;
+    }
+    
+    .contentFormPost input[type='text']{
+        height: 2vw;
+        width: 10vw;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        margin-right: 4px;
+        background-color: #565672;
+        color: #fff;
+    }
+}
