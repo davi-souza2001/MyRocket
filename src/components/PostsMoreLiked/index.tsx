@@ -11,26 +11,33 @@ export function PostsMoreLiked() {
         </div>
         <div className={styles.contentPosts}>
             <div className={styles.boxPost}>
-                <Image src={Teste} width={30} height={30} alt="User image"/>
+                <div>
+                    <Image src={Teste} width={30} height={30} alt="User image"/>
+                </div>
                 <div className={styles.contentNameandPost}>
                     <p>Blablablabalbal</p>
-                    <p>Davi Souza</p>
+                    <h4>Davi Souza</h4>
                 </div>
             </div>
             <div className={styles.boxPost}>
-                <Image src={Teste} width={30} height={30} alt="User image"/>
+                <div>
+                    <Image src={Teste} width={30} height={30} alt="User image"/>
+                </div>
                 <div className={styles.contentNameandPost}>
                     <p>Blablablabalbal</p>
-                    <p>Davi Souza</p>
+                    <h4>Davi Souza</h4>
                 </div>
             </div>
             <div className={styles.boxPost}>
-                <Image src={Teste} width={30} height={30} alt="User image"/>
+                <div>
+                    <Image src={Teste} width={30} height={30} alt="User image"/>
+                </div>
                 <div className={styles.contentNameandPost}>
                     <p>Blablablabalbal</p>
-                    <p>Davi Souza</p>
+                    <h4>Davi Souza</h4>
                 </div>
             </div>
+            
         </div>
     </div>
   )
