@@ -9,7 +9,6 @@ Building...
 - Usar o Hostinger para hospedar o front e o dominio e back na horoku 
 
 <!-- 
-Yarn
 
 npm i -g yarn
 
