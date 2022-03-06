@@ -26,3 +26,13 @@
     border-radius: 10px;
     background-color: #272733;
 }
+
+.contentPosts{
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 20px;
+}
