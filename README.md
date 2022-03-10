@@ -11,7 +11,6 @@ Building...
 
 Falta
 
-- Pesquisar
 - Perfil proprio
 - Perfil de outros
 - Caixa de logout
