@@ -19,6 +19,13 @@ export default function Search() {
                     <BoxUser />
                     <BoxUser />
                     <BoxUser />
+                    <BoxUser />
+                    <BoxUser />
+                    <BoxUser />
+                    <BoxUser />
+                    <BoxUser />
+                    <BoxUser />
+                    <BoxUser />
                 </div>
             </div>
         </>
