@@ -42,3 +42,13 @@
     color: #fff;
     font-family: 'Poppins', sans-serif;
 }
+
+.contentResponseUser{
+    background-color: blue;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}

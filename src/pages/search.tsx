@@ -1,3 +1,4 @@
+import { BoxUser } from "../components/BoxUser";
 import { Header } from "../components/Header";
 import styles from '../styles/Search.module.css'
 
@@ -13,6 +14,12 @@ export default function Search() {
                     <input type="text" />
                     <button type="submit">Search</button>
                 </form>
+                <div className={styles.contentResponseUser}>
+                    <BoxUser />
+                    <BoxUser />
+                    <BoxUser />
+                    <BoxUser />
+                </div>
             </div>
         </>
     )
