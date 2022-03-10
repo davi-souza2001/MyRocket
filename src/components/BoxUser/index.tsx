@@ -12,7 +12,15 @@ export function BoxUser() {
             <Image src={Teste} width={40} height={40}/>
         </div>
         <div className={styles.contentUserInfo}>
-
+            <div className={styles.contentInfo}>
+                <p>Davi Souza</p>
+            </div>
+            <div className={styles.contentInfo}>
+                <p>Full-Stack em Pernambuco</p>
+            </div>
+            <div className={styles.contentInfo}>
+                <p>CTO do MyRocket :)</p>
+            </div>
         </div>
         <div className={styles.contentFollowUser}>
             <AiFillRocket/>
