@@ -15,17 +15,18 @@ export default function Search() {
                     <button type="submit">Search</button>
                 </form>
                 <div className={styles.contentResponseUser}>
-                    <BoxUser />
-                    <BoxUser />
-                    <BoxUser />
-                    <BoxUser />
-                    <BoxUser />
-                    <BoxUser />
-                    <BoxUser />
-                    <BoxUser />
-                    <BoxUser />
-                    <BoxUser />
-                    <BoxUser />
+                    <div className={styles.contentBoxUser}>
+                        <BoxUser />
+                    </div>
+                    <div className={styles.contentBoxUser}>
+                        <BoxUser />
+                    </div>
+                    <div className={styles.contentBoxUser}>
+                        <BoxUser />
+                    </div>
+                    <div className={styles.contentBoxUser}>
+                        <BoxUser />
+                    </div>
                 </div>
             </div>
         </>

@@ -48,3 +48,14 @@
     justify-content: center;
     font-size: 200%;
 }
+
+@media (min-width: 900px){
+    .contentGeral{
+        width: 420px;
+        height: 100px;
+    }
+
+    .contentInfo{
+        margin: -4px 0;
+    }
+}
