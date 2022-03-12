@@ -32,7 +32,7 @@ export function Header(props: Header) {
                     <p onClick={() => Router.push('/feed')}>Feed</p>
                     <p onClick={() => Router.push('/search')}>Pesquisar</p>
                     <p onClick={() => Router.push('/meet')}>Reuniões</p>
-                    <p onClick={() => Router.push('/profile')}>Foto</p>
+                    <p onClick={() => Router.push('/profile/davi-souza2001')}>Foto</p>
                 </div>
             </div>
         </div>

@@ -28,6 +28,11 @@ export default function Profile() {
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam dolorem facere corporis eligendi corrupti! Doloremque aut quae quia alias quaerat. Ea accusamus voluptatem cum aspernatur itaque sequi voluptates atque earum?</p>
           </div>
         </div>
+        <div className={styles.contentBarOptions}>
+          <p>Comunidades</p>
+          <p>Projetos</p>
+          <p>Redes Sociais</p>
+        </div>
     </>
   )
 }
