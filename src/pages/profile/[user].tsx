@@ -33,6 +33,9 @@ export default function Profile() {
           <p>Projetos</p>
           <p>Redes Sociais</p>
         </div>
+        <div className={styles.contentOptionSelected}>
+          <h1>teste</h1>
+        </div>
     </>
   )
 }

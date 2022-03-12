@@ -67,3 +67,12 @@
     padding: 10px;
     border-radius: 5px;
 }
+
+.contentOptionSelected{
+    margin-top: 15px;
+    width: 100%;
+    min-height: 28vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
