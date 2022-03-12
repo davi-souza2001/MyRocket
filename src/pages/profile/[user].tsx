@@ -5,6 +5,7 @@ import { Header } from "../../components/Header";
 import styles from '../../styles/Profile.module.css'
 
 import Test from '../../../public/img/social_medias/gmail.svg'
+import BoxCommunitiesProfile from "../../components/BoxCommunitiesProfile";
 
 export default function Profile() {
   const router = useRouter();
@@ -34,7 +35,7 @@ export default function Profile() {
           <p>Redes Sociais</p>
         </div>
         <div className={styles.contentOptionSelected}>
-          <h1>teste</h1>
+          <BoxCommunitiesProfile/>
         </div>
     </>
   )

@@ -1,0 +1,11 @@
+.contentGeral{
+    width: 40vw;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: #272733;
+    color: rgb(192, 192, 192);
+}
