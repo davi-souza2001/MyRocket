@@ -25,7 +25,7 @@ export default function Profile() {
         </div>
         <div className={styles.contentUserDescription}>
           <div className={styles.contentDescBox}>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quis harum nesciunt. Nulla dignissimos sed omnis repellat doloribus, sunt dolorem reiciendis impedit, facilis enim modi necessitatibus ab explicabo architecto adipisci!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam dolorem facere corporis eligendi corrupti! Doloremque aut quae quia alias quaerat. Ea accusamus voluptatem cum aspernatur itaque sequi voluptates atque earum?</p>
           </div>
         </div>
     </>
