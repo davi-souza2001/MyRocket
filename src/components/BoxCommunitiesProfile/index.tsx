@@ -1,6 +1,6 @@
 import styles from './BoxCommunitiesProfile.module.css'
 
-export default function BoxCommunitiesProfile() {
+export function BoxCommunitiesProfile() {
   return (
     <div className={styles.contentGeral}>
         <p>React</p>

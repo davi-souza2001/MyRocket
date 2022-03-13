@@ -1,0 +1,24 @@
+.contentGeral{
+    width: 40vw;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: #272733;
+    color: rgb(192, 192, 192);
+}
+
+.contentBoxSocialMedia{
+    width: 40vw;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100%;
+}
+
+.contentBoxSocialMedia p{
+    margin-left: 5px;
+}
