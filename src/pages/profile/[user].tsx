@@ -45,7 +45,7 @@ export default function Profile() {
           <Image src={Test} width={60} height={60} />
         </div>
         <div className={styles.imageUserDesktop}>
-          <Image src={Test} width={100} height={100} />
+          <Image src={Test} width={90} height={90} />
         </div>
       </div>
       <div className={styles.contentUserInfo}>
