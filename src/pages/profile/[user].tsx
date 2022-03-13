@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { Header } from "../../components/Header";
@@ -12,6 +13,28 @@ import { BoxSocialMediaProfile } from "../../components/BoxSocialMediaProfile";
 export default function Profile() {
   const router = useRouter();
   const comumSearch = router.query.user;
+
+  const [communities, setCommunities] = useState(true)
+  const [projects, setProjects] = useState(false)
+  const [socialMedia, setSocialMedia] = useState(false)
+
+  function handleComum(){
+    setCommunities(true)
+    setProjects(false)
+    setSocialMedia(false)
+  }
+
+  function handleProjects(){
+    setCommunities(false)
+    setProjects(true)
+    setSocialMedia(false)
+  }
+
+  function handleSocialMedia(){
+    setCommunities(false)
+    setProjects(false)
+    setSocialMedia(true)
+  }
 
   return (
     <>
@@ -32,14 +55,20 @@ export default function Profile() {
           </div>
         </div>
         <div className={styles.contentBarOptions}>
-          <p>Comunidades</p>
-          <p>Projetos</p>
-          <p>Redes Sociais</p>
+          <p onClick={handleComum}>Comunidades</p>
+          <p onClick={handleProjects}>Projetos</p>
+          <p onClick={handleSocialMedia}>Redes Sociais</p>
         </div>
         <div className={styles.contentOptionSelected}>
-          {/* <BoxCommunitiesProfile/> */}
-          {/* <BoxProjectsProfile/> */}
-          <BoxSocialMediaProfile/>
+          {communities && (
+            <BoxCommunitiesProfile/>
+          )}
+          {projects && (
+            <BoxProjectsProfile/>
+          )}
+          {socialMedia && (
+            <BoxSocialMediaProfile/>
+          )}
         </div>
     </>
   )

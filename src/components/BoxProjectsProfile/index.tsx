@@ -8,6 +8,42 @@ export default function BoxProjectsProfile() {
             <AiFillGithub/>
             <p>AngularCrud</p>
         </div>
+        <div className={styles.contentBoxProject}>
+            <AiFillGithub/>
+            <p>AngularCrud</p>
+        </div>
+        <div className={styles.contentBoxProject}>
+            <AiFillGithub/>
+            <p>AngularCrud</p>
+        </div>
+        <div className={styles.contentBoxProject}>
+            <AiFillGithub/>
+            <p>AngularCrud</p>
+        </div>
+        <div className={styles.contentBoxProject}>
+            <AiFillGithub/>
+            <p>AngularCrud</p>
+        </div>
+        <div className={styles.contentBoxProject}>
+            <AiFillGithub/>
+            <p>AngularCrud</p>
+        </div>
+        <div className={styles.contentBoxProject}>
+            <AiFillGithub/>
+            <p>AngularCrud</p>
+        </div>
+        <div className={styles.contentBoxProject}>
+            <AiFillGithub/>
+            <p>AngularCrud</p>
+        </div>
+        <div className={styles.contentBoxProject}>
+            <AiFillGithub/>
+            <p>AngularCrud</p>
+        </div>
+        <div className={styles.contentBoxProject}>
+            <AiFillGithub/>
+            <p>AngularCrud</p>
+        </div>
     </div>
   )
 }
