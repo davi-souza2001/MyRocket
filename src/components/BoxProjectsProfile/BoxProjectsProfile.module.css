@@ -1,0 +1,25 @@
+.contentGeral{
+    height: 210px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: #272733;
+    color: #fff;
+    overflow: scroll;
+}
+
+.contentBoxProject{
+    width: 250px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.contentBoxProject p{
+    margin-left: 5px;
+}
