@@ -76,3 +76,63 @@
     align-items: center;
     justify-content: center;
 }
+
+.contentOptionUserDesktop{
+    display: none;
+}
+
+.imageUserDesktop{
+    display: none;
+}
+
+@media (min-width: 750px){
+    .contentImageBackGround{
+        background-image: url('../../public/backgroundProfile.svg');
+        background-repeat:  repeat;
+    }
+
+    .contentBarOptions{
+        display: none;
+    }
+
+    .contentOptionSelected{
+        display: none;
+    }
+
+    .contentUserInfo{
+        margin-bottom: 3vh;
+    }
+
+    .contentOptionUserDesktop{
+        width: 100%;
+        min-height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 4vh;
+    }
+
+    .contentUserInfo h2, .contentUserInfo p{
+        margin-left: 8VW;
+    }
+
+    .imageUser{
+        margin-left: 8VW;
+    }
+}
+
+@media (min-width: 1200px){
+    .imageUserDesktop{
+        display: block;
+        margin-left: 8VW;
+        margin-bottom: 4vh;
+    }
+
+    .imageUser{
+        display: none;
+    }
+
+    .contentUserInfo{
+        font-size: 1.2vw;
+    }
+}

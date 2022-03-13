@@ -21,4 +21,23 @@
 
 .contentBoxSocialMedia p{
     margin-left: 5px;
+    cursor: pointer;
+}
+
+@media (min-width: 750px){
+    .contentGeral{
+        width: 200px;
+        height: 150px;
+    }
+
+    .contentBoxSocialMedia{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px){
+    .contentGeral{
+        width: 250px;
+        height: 200px;
+    }
 }

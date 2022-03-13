@@ -23,4 +23,42 @@
 
 .contentBoxProject p{
     margin-left: 5px;
+    cursor: pointer;
+}
+
+@media (min-width: 750px){
+    .contentGeral{
+        width: 200px;
+        height: 150px;
+    }
+
+    .contentBoxProject{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1055px){
+    .contentGeral{
+        width: 250px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 1200px){
+    .contentGeral{
+        width: 450px;
+        height: 250px;
+        overflow-x: hidden;
+    }
+
+    .contentGeral::-webkit-scrollbar-track {
+        background-color: #45455c;
+    }
+    .contentGeral::-webkit-scrollbar {
+        width: 3px;
+        background: #45455c;
+    }
+    .contentGeral::-webkit-scrollbar-thumb {
+        background: #373749;
+    }
 }
