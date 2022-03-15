@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: center;
     color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
 }
 
 .contentTechs{
@@ -24,7 +26,8 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    background-color: #272733;
+    background-color: var(--purpleGlobal);
+    cursor: pointer;
 }
 
 .contentPosts{
@@ -35,4 +38,23 @@
     justify-content: flex-start;
     flex-direction: column;
     margin-top: 20px;
+}
+
+@media(min-width: 750px){
+    .contentTitle{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .techBox{
+        margin: 0px 15px;
+        width: 150px;
+        height: 50px;
+        transition: 0.5s;
+    }
+
+    .techBox:hover{
+        transform: scale(1.05);
+        border: solid 2px var(--purple);
+    }
 }

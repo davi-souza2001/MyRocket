@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import route from "next/router";
+
 import Gmail from '../../public/img/social_medias/gmail.svg';
 import GitHub from '../../public/img/social_medias/github.svg';
 import Logo from '../../public/img/logo.svg';
@@ -39,7 +41,7 @@ export default function Login() {
                     </div>
 
                     <div className={styles.skipLogin}>
-                        <a href=""><strong>Continue without Login</strong></a>
+                        <a onClick={() => { route.push('/') }}><strong>Continue without Login</strong></a>
                     </div>
                 </div>
 

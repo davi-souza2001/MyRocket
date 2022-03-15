@@ -41,7 +41,7 @@
     width: 100%;
 }
 
-.title{
+.titleContent{
     height: 9vh;
     width: 100%;
     display: flex;
@@ -51,7 +51,20 @@
     color: #fff;
 }
 
-.title h3{
+.titleContent h3{
+    margin-right: 10px;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.title p{
+    color: var(--purple);
+    font-size: 1.17em;
+    font-weight: bold;
     margin-right: 10px;
 }
 
@@ -107,7 +120,7 @@
 
     .contetBoxes{
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-around;
         flex-direction: row;
     }

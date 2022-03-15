@@ -79,7 +79,7 @@
 }
 
 .socialMediaContent input[type='text']{
-    margin: 0px 1px;
+    margin: 10px 0 10px 0;
     width: 161px;
 }
 
@@ -90,13 +90,12 @@
     width: 100%;
 }
 
-
-
 .description{
     width: 100%;
     height: 100px;
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
+    resize: none;
 }
 
 .termsAndConditions{
@@ -165,18 +164,16 @@
     .contentGeral{
         display: flex;
         align-items: center;
-        /* Animated Background */
         background-image: url('../../public/backgroundGalaxy.svg');
-
-        /* background-size: 300% 300%;
-        animation: gradient 15s ease infinite;  */
+        background-repeat: no-repeat;
+        background-size: 100%;
     }
 
     .registerContent{
         display: flex;
         align-items: center;
-        width: 55vw;
-        height: 80vh;
+        width: 45vw;
+        height: 65vh;
         background-color: var(--grey);
         border-radius: 25px;
     }
@@ -191,24 +188,33 @@
         flex-direction: column;
     }
 
-    .decidetudo{
-        height: 58vh;
+    .formSeparator{
+        height: 50vh;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        
     }
 
-    .form1{
-        margin: 0 2vw;
+    .formContent1{
+        width: 50%;
+        margin: 0 1vw;
     }
 
-    .form2{
-        margin: 0 2vw;
+    .formContent2{
+        width: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0 1vw;
+    }
+
+    .description{
+        height: 210px;
+    }
+
+    .formContent3{
+        margin-top: -50px;
     }
 
     .submitSend button{

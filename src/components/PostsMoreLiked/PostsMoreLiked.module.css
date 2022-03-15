@@ -44,10 +44,10 @@
 
 @media (min-width: 750px){
     .contentGeral{
-        background-color: #272733;
+        background-color: var(--purpleGlobal);
         border-radius: 10px;
-        margin-right: 10px;
-        height: 320px;
+        margin-right: 40px;
+        height: 340px;
         width: 24vw;
     }
 
@@ -57,7 +57,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
 
+    .contentTitle p{
+        font-size: 20px;
     }
 
     .contentPosts{
@@ -72,11 +75,11 @@
     }
 
     .boxPost{
-        width: 90%;
-        height: 60px;
+        width: 70%;
+        height: 70px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
         flex-direction: row;
         margin-bottom: 10px;
     }

@@ -5,9 +5,9 @@ import styles from '../styles/Feed.module.css'
 export default function Feed() {
     return (
         <>
-            <Header />
+            <Header/>
             <div className={styles.contentTitle}>
-                <h2>Posts recentes da Comunidade </h2>
+                <h2>Recent Community Posts</h2>
             </div>
             <div className={styles.contentTechs}>
                 <div className={styles.techBox}>

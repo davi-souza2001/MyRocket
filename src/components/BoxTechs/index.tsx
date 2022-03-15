@@ -19,7 +19,7 @@ export default function BoxTechs(props: BoxTechs) {
         <h3>{props.title}</h3>
       </div>
       <div className={styles.contentDescription}>
-        <p>Comunidade {props.title}, fique a vontade para compartilhar com outros passageiros sua experiencia ou duvidas com a feature!</p>
+        <p>Community {props.title}, feel free to share with other passengers your experience or doubts with the feature!</p>
       </div>
     </div>
   )

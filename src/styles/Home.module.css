@@ -8,6 +8,19 @@
   justify-content: space-around;
 }
 
+.title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title p{
+  font-size: 1.5em;
+  color: var(--purple); 
+  font-weight: bold;
+  margin-left: 10px;
+}
+
 .contentIcon{
   font-size: 70px;
   height: 80px;
