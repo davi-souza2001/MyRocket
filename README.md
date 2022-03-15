@@ -1,19 +1,6 @@
 Building...
 
-- Utilizar teste auto
 
-- Fazer hook para dizer qual comunidade seguir
-
-- Fazer rota para caso a pagina não exista
-
-- Usar o Hostinger para hospedar o front e o dominio e back na horoku 
-
-
-Falta
-
-- Perfil proprio
-- Perfil de outros
-- Caixa de logout
 <!-- 
 
 npm i -g yarn
