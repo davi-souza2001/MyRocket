@@ -31,7 +31,7 @@ export function Header(props: Header) {
                     <p onClick={() => Router.push('/')}>Home</p>
                     <p onClick={() => Router.push('/feed')}>Feed</p>
                     <p onClick={() => Router.push('/search')}>Search</p>
-                    <p onClick={() => Router.push('/meet')}>Reuniões</p>
+                    {/* <p onClick={() => Router.push('/meet')}>Reuniões</p> */}
                     <p onClick={() => Router.push('/profile/davi-souza2001')}>Profile</p>
                 </div>
             </div>
