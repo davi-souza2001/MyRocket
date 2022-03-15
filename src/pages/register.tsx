@@ -16,19 +16,21 @@ export default function Register() {
                 <h4>Register</h4>
 
                 <form className={styles.formsContent}>
-                    <div className={styles.decidetudo}>
-                        <div className={styles.form1}>
+                    <div className={styles.formSeparator}>
+                        <div className={styles.formContent1}>
                             <input placeholder='Your Name' type="text" name="" id="" />
                             <input placeholder='Nickname' type="text" name="" id="" />
 
-                            <div className={styles.socialMediaContent}>
-                                <input placeholder='LinkedIn @' type="text" name="" id="" />
-                                <input placeholder='GitHub @' type="text" name="" id="" />
-                            </div>
+                            <div className={styles.allSocialMediaContent}>
+                                <div className={styles.socialMediaContent}>
+                                    <input placeholder='LinkedIn @' type="text" name="" id="" />
+                                    <input placeholder='GitHub @' type="text" name="" id="" />
+                                </div>
 
-                            <div className={styles.socialMediaContent}>
-                                <input placeholder='Instagram @' type="text" name="" id="" />
-                                <input placeholder='Youtube @' type="text" name="" id="" />
+                                <div className={styles.socialMediaContent}>
+                                    <input placeholder='Instagram @' type="text" name="" id="" />
+                                    <input placeholder='Youtube @' type="text" name="" id="" />
+                                </div>
                             </div>
 
                             <select required>
@@ -40,7 +42,7 @@ export default function Register() {
                             </select>
                         </div>
 
-                        <div className={styles.form2}>
+                        <div className={styles.formContent2}>
                             <p>Choose 3 technologies you like</p>
 
                             <div className={styles.ocupationArea}>
@@ -83,7 +85,7 @@ export default function Register() {
                     </div>
  
 
-                    <div className={styles.form3}>
+                    <div className={styles.formContent3}>
                         <div className={styles.termsAndConditions}>
                             <input type="checkbox" name="" id="" />
                             <p>Do you agree with the <strong>Terms and Conditions</strong>?</p>

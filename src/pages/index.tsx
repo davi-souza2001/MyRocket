@@ -21,7 +21,10 @@ export default function index(){
         <div className={styles.contentIcon}>
           <HiOutlineGlobe/>
         </div>
-        <h2>Choosing a stack</h2>
+        <div className={styles.title}>
+          <h2>Choosing a</h2>
+          <p>stack</p>
+        </div>
       </div>
       <div className={styles.contentBoxes}>
         <BoxStacks onClick={() => {
@@ -30,21 +33,21 @@ export default function index(){
           }}
           logo={Front} 
           area={'Front-End'} 
-          description={'Comunidade Front-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: React, Angular, Vue'}/>
+          description={'Front-end community, here you can see other passengers boarding the same technologies as you. Among them, here people on board like: React, Angular, Vue'}/>
         <BoxStacks onClick={() => {
           setComumUnic('Back') 
           route.push('/communities')
           }} 
         logo={Back} 
         area={'Back-End'} 
-        description={'Comunidade Back-end, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: Node, Java'}/>
+        description={'Back-end community, here you can see other passengers boarding the same technologies as you. Among them, here people on board like: Node, Java'}/>
         <BoxStacks onClick={() => {
           setComumUnic('Mobile') 
           route.push('/communities')
           }} 
         logo={Mobile} 
         area={'Mobile'} 
-        description={'Comunidade Mobile, aqui você pode ver encontrar outros passageiros embarcando nas mesmas tecnologias que você. Entre elas, aqui as pessoas a bordo gostam de: React-Native, Kotlin'}/>
+        description={'Mobile Community, here you can see other passengers boarding the same technologies as you. Among them, here people on board like: React-Native, Kotlin'}/>
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ export function Header(props: Header) {
     const [open, setOpen] = useState(false)
     return (
         <div className={styles.contentGeral}>
-            <div className={styles.contentLogo}>
+            <div onClick={() => Router.push('/')} className={styles.contentLogo}>
                 <AiFillRocket />
                 <p>MyRocket</p>
             </div>
@@ -28,11 +28,11 @@ export function Header(props: Header) {
                     )}
                 </div>
                 <div className={open ? styles.contentToggle : styles.contentToggleInicial}>
-                    <p onClick={() => Router.push('/')}>Inicio</p>
+                    <p onClick={() => Router.push('/')}>Home</p>
                     <p onClick={() => Router.push('/feed')}>Feed</p>
-                    <p onClick={() => Router.push('/search')}>Pesquisar</p>
+                    <p onClick={() => Router.push('/search')}>Search</p>
                     <p onClick={() => Router.push('/meet')}>Reuniões</p>
-                    <p onClick={() => Router.push('/profile/davi-souza2001')}>Perfil</p>
+                    <p onClick={() => Router.push('/profile/davi-souza2001')}>Profile</p>
                 </div>
             </div>
         </div>

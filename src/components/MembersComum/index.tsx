@@ -5,13 +5,13 @@ export function MembersComum() {
     return (
         <div className={styles.contentGeral}>
             <div className={styles.contentTitle}>
-                <p>Comandante</p>
+                <p>Commander</p>
             </div>
             <div className={styles.contentCommander}>
                 <p>Davi Souza</p>
             </div>
             <div className={styles.contentTitle}>
-                <p>Tripulantes</p>
+                <p>Crew Members</p>
             </div>
             <div className={styles.contentMembers}>
                 <p>Daviaa</p>

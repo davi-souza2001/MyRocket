@@ -13,7 +13,18 @@
 }
 
 .contentTitle p{
-    margin-left: 20px;
+    margin-left: 10px;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.communityTitle{
+    color: var(--purple); 
+    font-weight: bold;
 }
 
 .contentBoxesTechs{

@@ -7,7 +7,7 @@ export function PostsMoreLiked() {
   return (
     <div className={styles.contentGeral}>
         <div className={styles.contentTitle}>
-            <p>Posts mais relevantes</p>
+            <p>Most relevant posts</p>
         </div>
         <div className={styles.contentPosts}>
             <div className={styles.boxPost}>

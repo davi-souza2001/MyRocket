@@ -21,7 +21,11 @@ export default function Comum() {
       <Header/>
       <div className={styles.contentTitle}>
         <BiWrench/>
-        <p>Which {comumUnic} tool do you choose?</p>
+        <div className={styles.title}>
+          <p>Which</p>
+          <p className={styles.communityTitle}>{comumUnic}</p>
+          <p>tool do you choose?</p>
+        </div>
       </div>
       <div className={styles.contentBoxesTechs}>
         {comumUnic === 'Front' && (

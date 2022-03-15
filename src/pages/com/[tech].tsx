@@ -36,8 +36,11 @@ export default function Commun() {
         </div>
       </Header>
       <div className={styles.contentGeral}>
-        <div className={styles.title}>
-          <h3>Planeta {comumSearch}</h3>
+        <div className={styles.titleContent}>
+          <div className={styles.title}>
+            <h3>Planet</h3>
+            <p>{comumSearch}</p>
+          </div>
           <HiOutlineGlobe />
         </div>
         <div className={styles.contetBoxes}>

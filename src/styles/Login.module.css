@@ -81,6 +81,7 @@
 
 .skipLogin a{
     text-decoration: none;
+    cursor: pointer;
 }
 
 .readMore{

@@ -14,6 +14,11 @@
     align-items: center;
     justify-content: space-around;
     color: #fff;
+    cursor: pointer;
+}
+
+.contentLogo:hover p{
+    color: var(--purple);
 }
 
 .contentOptions{
@@ -41,7 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ff4040;
+    background-color: var(--purple);
     border-radius: 10px;
 }
 
@@ -55,7 +60,7 @@
     width: 80vw;
     top: 10vh;
     right: 30px;
-    background-color: #272733;
+    background-color: var(--purpleGlobal);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,6 +73,14 @@
 @media (min-width: 750px){
     .contentToggleMenu{
         display: none;
+    }
+
+    .contentLogo p{
+        transition: 0.5s;
+    }
+
+    .contentLogo:hover p{
+        color: var(--purple);
     }
 
     .contentToggleInicial{
