@@ -12,57 +12,88 @@
 .contentImageUser{
     height: 100%;
     width: 50px;
+    margin-left: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .contentFormPost{
-    height: 60%;
-    width: 280px;
+/*     height: 60%; */
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.contentFormPost input{
+.contentFormPost input[type="text"]{
     font-family: 'Poppins', sans-serif;
 }
 
-.contentFormPost input[type='text']{
-    height: 30px;
+.contentFormPost input::placeholder{
+    color: var(--white);
+}
+
+.contentFormPost input[type="text"]{
+    height: 5vh;
     outline: none;
     border: none;
     border-radius: 10px;
     margin-right: 4px;
     background-color: #565672;
-    color: #fff;
+    color: var(--white);
 }
 
 .contentFormPost button{
     width: 50px;
-    height: 30px;
+    height: 5vh;
     background-color: #565672;
-    color: #fff;
+    color: var(--white);
     outline: none;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 @media (min-width: 750px){
     .contentGeral{
-        width: 30vw;
+        width: 100%;
         justify-content: center;
     }
     
-    .contentFormPost input[type='text']{
-        height: 2vw;
-        width: 10vw;
+    .contentImageUser{
+        margin-left: 30px;
+    }
+
+    .contentFormPost{
+        width: 90%;
+    }
+
+    .contentFormPost form{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin: 0 0 0 5px;
+    }
+
+    .contentFormPost input[type="text"]{
+        height: 5vh;
+        width: 80%;
         outline: none;
         border: none;
         border-radius: 10px;
         margin-right: 4px;
-        background-color: #565672;
-        color: #fff;
+        background-color: var();
+        color: var(--white);
+    }
+
+    .contentFormPost button{
+        height: 5vh;
+        transition: 0.5s;
+    }
+
+    .contentFormPost button:hover{
+        background-color: var(--purple);
     }
 }

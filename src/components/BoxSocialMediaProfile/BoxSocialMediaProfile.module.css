@@ -17,6 +17,11 @@
     align-items: center;
     justify-content: center;
     font-size: 100%;
+    transition: 0.5s;
+}
+
+.contentBoxSocialMedia:hover{
+    color: var(--purple);
 }
 
 .contentBoxSocialMedia p{
@@ -38,6 +43,6 @@
 @media (min-width: 1200px){
     .contentGeral{
         width: 250px;
-        height: 200px;
+        height: 250px;
     }
 }

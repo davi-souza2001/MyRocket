@@ -36,6 +36,22 @@
     flex-direction: column;
 }
 
+@media (max-width: 470px) {
+    .contentTitle{
+        font-size: 3vh;
+    }
+
+    .title{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title p{
+        margin: 0 0 0 10px;
+    }
+}
+
 @media (min-width: 750px){
     .contentBoxesTechs{
         display: grid;
