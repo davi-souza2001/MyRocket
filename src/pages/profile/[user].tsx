@@ -58,9 +58,9 @@ export default function Profile() {
         </div>
       </div>
       <div className={styles.contentBarOptions}>
-        <p onClick={handleComum}>Comunidades</p>
-        <p onClick={handleProjects}>Projetos</p>
-        <p onClick={handleSocialMedia}>Redes Sociais</p>
+        <p onClick={handleComum}>Communities</p>
+        <p onClick={handleProjects}>Projects</p>
+        <p onClick={handleSocialMedia}>Social media</p>
       </div>
       <div className={styles.contentOptionSelected}>
         {communities && (

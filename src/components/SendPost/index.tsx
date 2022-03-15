@@ -12,7 +12,7 @@ export function SendPost() {
         </div>
         <div className={styles.contentFormPost}>
             <form>
-                <input type="text" placeholder="Escrever publicação" />
+                <input type="text" placeholder="Write publication" />
                 <button type="submit">
                     <HiPaperAirplane/>
                 </button>
