@@ -42,8 +42,9 @@
     margin-right: 4px;
     background-color: #565672;
     color: var(--white);
-    width: 160px;
+    width: 180px;
     margin-right: 10px;
+    margin-left: -15px;
 }
 
 .contentFormPost button{
