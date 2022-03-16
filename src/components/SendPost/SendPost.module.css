@@ -42,7 +42,8 @@
     margin-right: 4px;
     background-color: #565672;
     color: var(--white);
-    width: 10px;
+    width: 130px;
+    margin-right: 10px;
 }
 
 .contentFormPost button{
