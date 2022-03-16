@@ -63,10 +63,6 @@
         width: 100%;
         justify-content: center;
     }
-    
-    .contentImageUser{
-        margin-left: 30px;
-    }
 
     .contentFormPost{
         width: 90%;
@@ -77,7 +73,7 @@
         flex-direction: row;
         align-items: center;
         width: 100%;
-        margin: 0 0 0 5px;
+        margin: 0 0 0 20px;
     }
 
     .contentFormPost input[type="text"]{
