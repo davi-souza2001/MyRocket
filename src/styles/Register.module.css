@@ -1,231 +1,36 @@
-/* Here you will have the register CSS */
-
-/* Remember to use "Mobile First"!!! */
-
 .contentGeral{
+    height: 100%;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
-}
-
-.registerContent{
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    color: var(--white);
-    width: 80vw;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .astronaut{
-    margin-right: 80px;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .formsContent{
+    color: #fff;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .formsContent input{
-    color: var(--white);
-}
-
-.formsContent input[type='text']{
-    width: 100%;
-    height: 50px;
-    font-family: 'Poppins', sans-serif;
-    margin: 10px 0px;
-    background-color: var(--lightgrey);
-    border: none;
-    border-radius: 5px;
-}
-
-.formsContent input[type='text']::placeholder{
-    color: var(--white);
-}
-
-.formsContent select{
-    width: 100%;
-    height: 50px;
-    font-family: 'Poppins', sans-serif;
-    margin: 10px 0px; 
-    background-color: var(--lightgrey);
-    color: var(--white);
-    border: none;
-    border-radius: 5px;
-}
-
-.formsContent textarea{
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    margin: 10px 0px;  
-    background-color: var(--lightgrey);
-    border: none;
-    border-radius: 5px;
-    color: var(---white);
-}
-
-.formsContent textarea::placeholder{
-    color: var(--white);
-}
-
-.socialMediaContent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.socialMediaContent input[type='text']{
-    margin: 10px 0 10px 0;
-    width: 161px;
-}
-
-.ocupationArea{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.description{
-    width: 100%;
-    height: 100px;
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
-    resize: none;
-}
-
-.termsAndConditions{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 70px;
-}
-
-.termsAndConditions input[type='checkbox']{
-    width: 25px;
+    width: 250px;
     height: 25px;
-}
-
-.submitSend{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.submitSend button{
-    background-color: var(--purple);
-    width: 30%;
-    height: 30px;
-    transform: scale(1.2);
+    border-radius: 5px;
     outline: none;
     border: none;
-    border-radius: 5px;
-    color: var(--white);
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    transition: 0.3s;
-}
-
-/* Animated Submit Button */
-@keyframes animateBg {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 0% 100%; }
-}
-
-.submitSend button:hover{
-    animation: animateBg 2s linear infinite;
-    background: linear-gradient(0deg, #3936EB, #3936EB, #7f7dff, #3936EB, #3936EB);
-    background-size: 100% 1100%;
-    transform: scale(1.3);
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@media (min-width: 980px){
-    
-    .contentGeral{
-        display: flex;
-        align-items: center;
-        background-image: url('../../public/backgroundGalaxy.svg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-    }
-
-    .registerContent{
-        display: flex;
-        align-items: center;
-        width: 45vw;
-        height: 65vh;
-        background-color: var(--grey);
-        border-radius: 25px;
-    }
-
-    .registerContent h4{
-        margin-bottom: -30px;
-        font-size: 120%;
-    }
-
-    .formsContent{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .formSeparator{
-        height: 50vh;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .formContent1{
-        width: 50%;
-        margin: 0 1vw;
-    }
-
-    .formContent2{
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 1vw;
-    }
-
-    .description{
-        height: 210px;
-    }
-
-    .formContent3{
-        margin-top: -50px;
-    }
-
-    .submitSend button{
-        transform: scale(1.2);
-    }
-
-    .astronaut{
-        display: none;
-    }
-}
-
-@media (min-width: 1200px){
-
+    margin: 5px 0px;
+    background-color: #343444;
+    color: #d3d3d3;
 }
