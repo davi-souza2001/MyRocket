@@ -47,11 +47,6 @@
     margin-left: -15px;
 }
 
-.contentFormPost input[type="text"]:focus{
-    height: 5vh;
-    width: 180px;
-}
-
 .contentFormPost button{
     width: 50px;
     height: 5vh;
