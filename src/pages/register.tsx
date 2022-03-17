@@ -63,8 +63,10 @@ export default function Register() {
                 </select>
 
                 <textarea className={styles.description} placeholder='Description' name="" id="" />
-                <input type="checkbox" name="" id="" />
-                <p>Do you agree with the <strong>Terms and Conditions</strong>?</p>
+                <div className={styles.checkBoxSend}>
+                    <input type="checkbox" name="" id="" />
+                    <p>Do you agree with the <strong>Terms and Conditions</strong>?</p>
+                </div>
                 <button type='submit'>Submit</button>
             </form>
         </div>

@@ -34,3 +34,54 @@
     background-color: #343444;
     color: #d3d3d3;
 }
+
+.formsContent select{
+    width: 250px;
+    height: 25px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin: 5px 0px;
+    background-color: #343444;
+    color: #d3d3d3;
+}
+
+.formsContent textarea{
+    height: 45px;
+    width: 250px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin: 5px 0px;
+    background-color: #343444;
+    color: #d3d3d3;
+}
+
+.checkBoxSend{
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80%;
+}
+
+.checkBoxSend p{
+    margin-left: -20px;
+}
+
+.checkBoxSend input{
+    /* margin-left: -120px; */
+    width: 20%;
+    height: 20%;
+}
+.formsContent button{
+    height: 35px;
+    width: 80px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin: 5px 0px;
+    background-color: #343444;
+    color: #d3d3d3;
+}
