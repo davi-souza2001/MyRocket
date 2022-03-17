@@ -1,6 +1,7 @@
 Building...
 
 <!-- Refazer tela de registro -->
+<!-- Aumentar caixa de posts -->
 
 <!-- npm i -g yarn
 
