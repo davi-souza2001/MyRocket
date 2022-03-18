@@ -7,7 +7,7 @@ export default function Search() {
         <>
             <Header />
             <div className={styles.contentTitle}>
-                <h2>Escolha qual modalidade você quer procurar outros devs !</h2>
+                <h2>Choose which modality you want to find other devs!</h2>
             </div>
             <div className={styles.contentSearch}>
                 <form>

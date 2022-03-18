@@ -9,7 +9,7 @@ export function BoxUser() {
   return (
     <div className={styles.contentGeral}>
         <div className={styles.contentPhotoUser}>
-            <Image src={Teste} width={40} height={40}/>
+            <Image src={Teste} width={40} height={40} alt="Image user"/>
         </div>
         <div className={styles.contentUserInfo}>
             <div className={styles.contentInfo}>

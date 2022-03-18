@@ -8,11 +8,11 @@ export default function Register() {
     return (
         <div className={styles.contentGeral}>
             <div className={styles.contentPhrase}>
-                <p>We're glad you're coming <br/>aboard with us!</p>
+                <p>We are glad you are coming <br/>aboard with us!</p>
             </div>
             <div className={styles.contentRegister}>
                 <div className={styles.contentImageRocket}>
-                    <Image src={Rocket} width={650} height={650} />
+                    <Image src={Rocket} width={650} height={650} alt="rocket logo"/>
                 </div>
 
                 <form className={styles.formsContent}>

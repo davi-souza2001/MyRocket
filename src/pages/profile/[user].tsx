@@ -42,10 +42,10 @@ export default function Profile() {
       <div className={styles.contentImageBackGround} />
       <div className={styles.contentImageUser}>
         <div className={styles.imageUser}>
-          <Image src={Test} width={60} height={60} />
+          <Image src={Test} width={60} height={60} alt="logo" />
         </div>
         <div className={styles.imageUserDesktop}>
-          <Image src={Test} width={90} height={90} />
+          <Image src={Test} width={90} height={90} alt="logo" />
         </div>
       </div>
       <div className={styles.contentUserInfo}>

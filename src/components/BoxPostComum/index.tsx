@@ -12,7 +12,7 @@ export function BoxPostComum() {
         </div>
         <div className={styles.contentInfoUser}>
             <div className={styles.contentImageUser}>
-                <Image src={Test} width={30} height={30}/>
+                <Image src={Test} width={30} height={30} alt="Image user"/>
                 <p>Davi Souza</p>
             </div>
             <div className={styles.contentLikePost}>
