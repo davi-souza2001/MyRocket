@@ -3,8 +3,9 @@
 :root{
   --purple: #3936EB;
   --white: #fff;
+  --darkwhite: rgb(167, 167, 167);
   --grey: #1a1a22;
-  --lightgrey: #6B6B6B;
+  --lightgrey: #565672;
   --purpleGlobal: #272733;
 }
 
