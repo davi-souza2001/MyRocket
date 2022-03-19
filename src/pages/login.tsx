@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import route from "next/router";
+import UseAuth from '../service/hook/useAuth';
 
 import Gmail from '../../public/img/social_medias/gmail.svg';
 import GitHub from '../../public/img/social_medias/github.svg';
@@ -9,6 +10,8 @@ import Logo from '../../public/img/logo.svg';
 import styles from '../styles/Login.module.css';
 
 export default function Login() {
+
+    const { loginGoogle } = UseAuth()
     return (
         <div className={styles.contentGeral}>
             <div className={styles.msgIntroduction}>
@@ -35,7 +38,7 @@ export default function Login() {
                             <Image src={GitHub} width={40} height={40} alt='githubLogo'/>
                         </button>
                         <p>or</p>
-                        <button onClick={() => console.log("Login com Google")}>
+                        <button onClick={loginGoogle}>
                             <Image src={Gmail} width={40} height={40} alt='gmailLogo'/>
                         </button>
                     </div>

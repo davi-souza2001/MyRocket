@@ -1,12 +1,15 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ComumProvider } from '../service/context/CommunitiesContext'
+import { AuthProvider } from '../service/context/AuthContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ComumProvider>
-      <Component {...pageProps} />
-    </ComumProvider>
+    <AuthProvider>
+      <ComumProvider>
+        <Component {...pageProps} />
+      </ComumProvider>
+    </AuthProvider>
   )
 }
 
