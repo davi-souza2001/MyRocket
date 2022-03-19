@@ -27,39 +27,79 @@ export default function Register() {
                         <option value="senior">Senior</option>
                     </select>
 
+                    <p>Choose your area</p>
+
+                    <select required>
+                        <option defaultValue="ocupation_area" >--Area--</option>
+                        <option value="Frontend">Front-End</option>
+                        <option value="Backend">Back-End</option>
+                        <option value="Fullstack">Full-Stack</option>
+                        <option value="Mobile">Mobile</option>
+                        <option value="Data">Data</option>
+                        <option value="IOS">IOS</option>
+                        <option value="Android">Android</option>
+                    </select>
+
                     <p>Choose 3 technologies you like</p>
 
                     <select required>
-                        <option defaultValue="ocupation_area" >--Area--</option>
-                        <option value="Frontend">Front-End</option>
-                        <option value="Backend">Back-End</option>
-                        <option value="Fullstack">Full-Stack</option>
-                        <option value="Mobile">Mobile</option>
-                        <option value="Data">Data</option>
-                        <option value="IOS">IOS</option>
-                        <option value="Android">Android</option>
+                        <option value="">--Front-End--</option>
+                        <option value="React">React</option>
+                        <option value="Next">Next</option>
+                        <option value="Angular">Angular</option>
+                        <option value="Vue">Vue</option>
+                        <option value="Ember">Ember</option>
+                        <option value="">--Back-End--</option>
+                        <option value="Node">Node</option>
+                        <option value="Java">Java</option>
+                        <option value="Firebase">Firebase</option>
+                        <option value="Sql">Sql</option>
+                        <option value="Mongo">Mongo</option>
+                        <option value="">--Mobile--</option>
+                        <option value="Flutter">Flutter</option>
+                        <option value="ReactNative">React-Native</option>
+                        <option value="Ionic">Ionic</option>
+                        <option value="Swift">Swift</option>
                     </select>
 
                     <select required>
-                        <option defaultValue="ocupation_area" >--Area--</option>
-                        <option value="Frontend">Front-End</option>
-                        <option value="Backend">Back-End</option>
-                        <option value="Fullstack">Full-Stack</option>
-                        <option value="Mobile">Mobile</option>
-                        <option value="Data">Data</option>
-                        <option value="IOS">IOS</option>
-                        <option value="Android">Android</option>
+                        <option value="">--Front-End--</option>
+                        <option value="React">React</option>
+                        <option value="Next">Next</option>
+                        <option value="Angular">Angular</option>
+                        <option value="Vue">Vue</option>
+                        <option value="Ember">Ember</option>
+                        <option value="">--Back-End--</option>
+                        <option value="Node">Node</option>
+                        <option value="Java">Java</option>
+                        <option value="Firebase">Firebase</option>
+                        <option value="Sql">Sql</option>
+                        <option value="Mongo">Mongo</option>
+                        <option value="">--Mobile--</option>
+                        <option value="Flutter">Flutter</option>
+                        <option value="ReactNative">React-Native</option>
+                        <option value="Ionic">Ionic</option>
+                        <option value="Swift">Swift</option>
                     </select>
 
                     <select required>
-                        <option defaultValue="ocupation_area" >--Area--</option>
-                        <option value="Frontend">Front-End</option>
-                        <option value="Backend">Back-End</option>
-                        <option value="Fullstack">Full-Stack</option>
-                        <option value="Mobile">Mobile</option>
-                        <option value="Data">Data</option>
-                        <option value="IOS">IOS</option>
-                        <option value="Android">Android</option>
+                        <option value="">--Front-End--</option>
+                        <option value="React">React</option>
+                        <option value="Next">Next</option>
+                        <option value="Angular">Angular</option>
+                        <option value="Vue">Vue</option>
+                        <option value="Ember">Ember</option>
+                        <option value="">--Back-End--</option>
+                        <option value="Node">Node</option>
+                        <option value="Java">Java</option>
+                        <option value="Firebase">Firebase</option>
+                        <option value="Sql">Sql</option>
+                        <option value="Mongo">Mongo</option>
+                        <option value="">--Mobile--</option>
+                        <option value="Flutter">Flutter</option>
+                        <option value="ReactNative">React-Native</option>
+                        <option value="Ionic">Ionic</option>
+                        <option value="Swift">Swift</option>
                     </select>
 
                     <textarea className={styles.description} placeholder='Description' />
