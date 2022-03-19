@@ -51,18 +51,11 @@ export default function Register() {
 
     async function sendUser(e: any) {
         e.preventDefault()
-        // if (checkBox === 'off') {
-        //     alert('Aceite nossos termos')
-        //     return
-        // }
-        // if (github === '') {
-        //     alert('Digite seu Github')
-        //     return
-        // }
-        // if (comumone === '') {
-        //     alert('Escolhe uma das opções no primerio formulário de comunidade!')
-        //     return
-        // }
+        if (checkBox === 'off') {
+            setErrorSend(true)
+            setErrorSendMensage('Aceite nossos termos!')
+            return
+        }
         try {
             const data = await Client.post('/users/register', useComplete).then((res) => {
                 console.log(res.data)
