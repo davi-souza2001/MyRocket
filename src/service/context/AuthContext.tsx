@@ -16,10 +16,9 @@ const AuthContext = createContext<AuthContextProps>({});
 const provider = new GoogleAuthProvider();
 
 function setCookieIdUser(user: any) {
-    Cookie.set('Admin-cookie-MyRocket', user.id, {
+    Cookie.set('Admin-cookie-MyRocket', user.email, {
         expires: 7,
     });
-    route.push('/');
 }
 
 export function AuthProvider(props: any) {
@@ -37,6 +36,7 @@ export function AuthProvider(props: any) {
                     photo: user.photoURL,
                     id: user.uid,
                 };
+                setCookieIdUser(userFinal)
                 setEmail(userFinal.email)
                 setPhoto(userFinal.photo)
                 route.push('/register')
@@ -50,6 +50,7 @@ export function AuthProvider(props: any) {
     useEffect(() => {
         if (token) {
             console.log('Mudou o token');
+            console.log(token);
         }
     }, [token]);
 
