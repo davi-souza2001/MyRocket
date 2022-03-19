@@ -1,9 +1,75 @@
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import route from "next/router";
+import UseAuth from '../service/hook/useAuth';
+
+import Client from '../data/client'
 
 import Rocket from '../../public/rocketRegister.svg'
 import styles from '../styles/Register.module.css';
 
 export default function Register() {
+    const {email} = UseAuth()
+    const [name, setName] = useState('')
+    const [nickname, setNickName] = useState('')
+    const [seniority, setSeniority] = useState('')
+    const [area, setArea] = useState('')
+    const [comumone, setComumOne] = useState('')
+    const [comumtwo, setComumTwo] = useState('')
+    const [comumthree, setComumThree] = useState('')
+    const [description, setDescription] = useState('')
+    const [linkedin, setLinkedin] = useState('')
+    const [github, setGithub] = useState('')
+    const [instagram, setInstagram] = useState('')
+    const [youtube, setYoutube] = useState('')
+    const [checkBox, setCheckBox] = useState('off')
+
+    useEffect(() => {
+        if(email === ''){
+            route.replace('/login')
+        }
+    }, [])
+
+    const useComplete = {
+        name,
+        nickname,
+        seniority,
+        area,
+        comumone,
+        email,
+        description,
+        github,
+        comumtwo,
+        comumthree,
+        linkedin,
+        youtube,
+        instagram
+    }
+
+    async function sendUser(e: any){
+        e.preventDefault()
+        console.log(useComplete)
+        if(checkBox === 'off'){
+            alert('Aceite nossos termos')
+            return
+        }
+        if(github === ''){
+            alert('Digite seu Github')
+            return
+        }
+        if(comumone === ''){
+            alert('Escolhe uma das opções no primerio formulário de comunidade!')
+            return
+        }
+        try {
+            const data = await Client.post('/users/register', useComplete).then((res) => {
+                console.log(res.data)
+                return res.data
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return (
         <div className={styles.contentGeral}>
@@ -15,11 +81,11 @@ export default function Register() {
                     <Image src={Rocket} width={650} height={650} alt="rocket logo"/>
                 </div>
 
-                <form className={styles.formsContent}>
+                <form className={styles.formsContent} onSubmit={(e) => sendUser(e)}>
                     <h2>Register</h2>
-                    <input placeholder='Your Name' type="text" name="" id="" />
-                    <input placeholder='Nickname' type="text" name="" id="" />
-                    <select required>
+                    <input placeholder='Your Name' type="text" onChange={(e) => setName(e.target.value)}/>
+                    <input placeholder='Nickname' type="text" onChange={(e) => setNickName(e.target.value)}/>
+                    <select required onChange={(e) => setSeniority(e.target.value)}>
                         <option defaultValue="seniority" >--Seniority--</option>
                         <option value="student">Student</option>
                         <option value="junior">Junior</option>
@@ -29,7 +95,7 @@ export default function Register() {
 
                     <p>Choose your area</p>
 
-                    <select required>
+                    <select required onChange={(e) => setArea(e.target.value)}>
                         <option defaultValue="ocupation_area" >--Area--</option>
                         <option value="Frontend">Front-End</option>
                         <option value="Backend">Back-End</option>
@@ -42,7 +108,7 @@ export default function Register() {
 
                     <p>Choose 3 technologies you like</p>
 
-                    <select required>
+                    <select required onChange={(e) => setComumOne(e.target.value)}>
                         <option value="">--Front-End--</option>
                         <option value="React">React</option>
                         <option value="Next">Next</option>
@@ -62,7 +128,7 @@ export default function Register() {
                         <option value="Swift">Swift</option>
                     </select>
 
-                    <select required>
+                    <select required onChange={(e) => setComumTwo(e.target.value)}>
                         <option value="">--Front-End--</option>
                         <option value="React">React</option>
                         <option value="Next">Next</option>
@@ -82,7 +148,7 @@ export default function Register() {
                         <option value="Swift">Swift</option>
                     </select>
 
-                    <select required>
+                    <select required onChange={(e) => setComumThree(e.target.value)}>
                         <option value="">--Front-End--</option>
                         <option value="React">React</option>
                         <option value="Next">Next</option>
@@ -102,16 +168,16 @@ export default function Register() {
                         <option value="Swift">Swift</option>
                     </select>
 
-                    <textarea className={styles.description} placeholder='Description' />
+                    <textarea className={styles.description} placeholder='Description' onChange={(e) => setDescription(e.target.value)}/>
 
                     <p>Optional</p>
-                    <input placeholder='LinkedIn @' type="text" />
-                    <input placeholder='GitHub @' type="text" />
-                    <input placeholder='Instagram @' type="text" />
-                    <input placeholder='Youtube @' type="text" />
+                    <input placeholder='LinkedIn @' type="text" onChange={(e) => setLinkedin(e.target.value)}/>
+                    <input placeholder='GitHub @' type="text" onChange={(e) => setGithub(e.target.value)}/>
+                    <input placeholder='Instagram @' type="text" onChange={(e) => setInstagram(e.target.value)}/>
+                    <input placeholder='Youtube @' type="text" onChange={(e) => setYoutube(e.target.value)}/>
 
-                    <div className={styles.checkBoxSend}>
-                        <input type="checkbox" name="" id="" />
+                    <div className={styles.checkBoxSend} >
+                        <input type="checkbox" onChange={(e) => setCheckBox(e.target.value)}/>
                         <p>Do you agree with the <strong>Terms and Conditions</strong>?</p>
                     </div>
 

@@ -2,19 +2,10 @@ import route from 'next/router';
 import { createContext, useEffect, useState } from 'react';
 
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import {
-    auth,
-    database,
-    ref,
-    get,
-    set,
-    child,
-    onValue,
-} from '../../firebase/connect';
+import { auth } from '../../firebase/connect';
 import Cookie from 'js-cookie';
 
 interface AuthContextProps {
-    loading?: boolean;
     email?: string;
     loginGoogle?: () => Promise<void>;
 };
@@ -31,12 +22,10 @@ function setCookieIdUser(user: any) {
 }
 
 export function AuthProvider(props: any) {
-    const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState('');
     const token = Cookie.get('Admin-cookie-MyRocket');
 
     async function loginGoogle() {
-        setLoading(true);
         await signInWithPopup(auth, provider)
             .then((result) => {
                 const user = result.user;
@@ -46,13 +35,13 @@ export function AuthProvider(props: any) {
                     photo: user.photoURL,
                     id: user.uid,
                 };
-                console.log(userFinal)
-                setLoading(false);
+                // console.log(userFinal)
+                setEmail(userFinal.email)
+                route.push('/register')
             })
             .catch((error) => {
                 const errorMessage = error.message;
                 console.log(errorMessage);
-                setLoading(false);
             });
     }
 
@@ -63,7 +52,7 @@ export function AuthProvider(props: any) {
     }, [token]);
 
     return (
-        <AuthContext.Provider value={{ loginGoogle, loading, email}}>
+        <AuthContext.Provider value={{ loginGoogle, email }}>
             {props.children}
         </AuthContext.Provider>
     );

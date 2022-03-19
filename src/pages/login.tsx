@@ -10,8 +10,8 @@ import Logo from '../../public/img/logo.svg';
 import styles from '../styles/Login.module.css';
 
 export default function Login() {
-
     const { loginGoogle } = UseAuth()
+
     return (
         <div className={styles.contentGeral}>
             <div className={styles.msgIntroduction}>
