@@ -7,6 +7,7 @@ import Cookie from 'js-cookie';
 
 interface AuthContextProps {
     email?: string;
+    photo?: string;
     loginGoogle?: () => Promise<void>;
 };
 
@@ -23,6 +24,7 @@ function setCookieIdUser(user: any) {
 
 export function AuthProvider(props: any) {
     const [email, setEmail] = useState('');
+    const [photo, setPhoto] = useState('');
     const token = Cookie.get('Admin-cookie-MyRocket');
 
     async function loginGoogle() {
@@ -35,8 +37,8 @@ export function AuthProvider(props: any) {
                     photo: user.photoURL,
                     id: user.uid,
                 };
-                // console.log(userFinal)
                 setEmail(userFinal.email)
+                setPhoto(userFinal.photo)
                 route.push('/register')
             })
             .catch((error) => {
@@ -52,7 +54,7 @@ export function AuthProvider(props: any) {
     }, [token]);
 
     return (
-        <AuthContext.Provider value={{ loginGoogle, email }}>
+        <AuthContext.Provider value={{ loginGoogle, email, photo}}>
             {props.children}
         </AuthContext.Provider>
     );
