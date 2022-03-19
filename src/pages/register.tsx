@@ -105,10 +105,10 @@ export default function Register() {
                     <textarea className={styles.description} placeholder='Description' />
 
                     <p>Optional</p>
-                    <input placeholder='LinkedIn @' type="text" name="" id="" />
-                    <input placeholder='GitHub @' type="text" name="" id="" />
-                    <input placeholder='Instagram @' type="text" name="" id="" />
-                    <input placeholder='Youtube @' type="text" name="" id="" />
+                    <input placeholder='LinkedIn @' type="text" />
+                    <input placeholder='GitHub @' type="text" />
+                    <input placeholder='Instagram @' type="text" />
+                    <input placeholder='Youtube @' type="text" />
 
                     <div className={styles.checkBoxSend}>
                         <input type="checkbox" name="" id="" />
