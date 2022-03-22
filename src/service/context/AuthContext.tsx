@@ -1,18 +1,21 @@
 import route from 'next/router';
 import { createContext, MouseEventHandler, useEffect, useState } from 'react';
-
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+
+import Client from '../../data/client'
 import { auth } from '../../firebase/connect';
 import Cookie from 'js-cookie';
 
 interface AuthContextProps {
     email?: string;
     photo?: string;
+    user?: Object;
+    users?: Array<any>;
     loginGoogle?: () => Promise<void>;
     logout?: MouseEventHandler<HTMLParagraphElement>
 };
 
-interface User{
+interface User {
     name?: String;
     nickname?: String;
     seniority?: String;
@@ -42,6 +45,8 @@ function setCookieIdUser(user: any) {
 export function AuthProvider(props: any) {
     const [email, setEmail] = useState('');
     const [photo, setPhoto] = useState('');
+    const [user, setUser] = useState<User>({})
+    const [users, setUsers] = useState([])
     const token = Cookie.get('Admin-cookie-MyRocket');
 
     async function loginGoogle() {
@@ -61,13 +66,25 @@ export function AuthProvider(props: any) {
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                console.log(errorMessage);
+                console.log('errou' + errorMessage);
             });
     }
 
-    async function logout(){
+    async function logout() {
         Cookie.remove('Admin-cookie-MyRocket');
         route.replace('/login')
+    }
+
+    async function getAllUsers() {
+        try {
+            const data = await Client.get('/users/getAllUsers').then((res) => {
+                setUsers(res.data)
+                return res.data
+            })
+            // .then(() => route.push('/'))
+        } catch (error: any) {
+            console.log(error.response)
+        }
     }
 
     useEffect(() => {
@@ -77,8 +94,12 @@ export function AuthProvider(props: any) {
         }
     }, [token]);
 
+    useEffect(() => {
+        getAllUsers()
+    }, []);
+
     return (
-        <AuthContext.Provider value={{ loginGoogle, email, photo, logout}}>
+        <AuthContext.Provider value={{ loginGoogle, email, photo, user, users, logout }}>
             {props.children}
         </AuthContext.Provider>
     );
