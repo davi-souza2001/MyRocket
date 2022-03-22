@@ -11,7 +11,8 @@ type Header = {
 
 export function Header(props: Header) {
     const [open, setOpen] = useState(false)
-    const { logout } = UseAuth()
+    const { logout, user } = UseAuth()
+    console.log(user)
     return (
         <div className={styles.contentGeral}>
             <div onClick={() => Router.push('/')} className={styles.contentLogo}>
@@ -34,8 +35,7 @@ export function Header(props: Header) {
                     <p onClick={() => Router.push('/feed')}>Feed</p>
                     <p onClick={() => Router.push('/search')}>Search</p>
                     {/* <p onClick={() => Router.push('/meet')}>Reuniões</p> */}
-                    <p onClick={() => Router.push('/profile/davi-souza2001')}>Profile</p>
-                    <p onClick={logout}>Logout</p>
+                    <p onClick={() => Router.push(`/profile/${user?.nickname}`)}>Profile</p>
                 </div>
             </div>
         </div>

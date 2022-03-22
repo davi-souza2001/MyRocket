@@ -9,7 +9,7 @@ import Cookie from 'js-cookie';
 interface AuthContextProps {
     email?: string;
     photo?: string;
-    user?: Object;
+    user?: any;
     users?: Array<any>;
     loginGoogle?: () => Promise<void>;
     logout?: MouseEventHandler<HTMLParagraphElement>
@@ -87,10 +87,24 @@ export function AuthProvider(props: any) {
         }
     }
 
+    async function getUserLogged() {
+        const sendUser = {
+            emailuser: token
+        }
+        try {
+            const data = await Client.post('/users/checkuser', sendUser).then((res) => {
+                setUser(res.data)
+                return res.data
+            })
+        } catch (error: any) {
+            console.log(error.response)
+        }
+    }
+
     useEffect(() => {
         if (token) {
             console.log('Mudou o token');
-            console.log(token);
+            getUserLogged()
         }
     }, [token]);
 
