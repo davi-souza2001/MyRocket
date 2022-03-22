@@ -102,7 +102,6 @@ export function AuthProvider(props: any) {
 
     useEffect(() => {
         if (token) {
-            // console.log('Mudou o token');
             getUserLogged()
         }
     }, [token]);

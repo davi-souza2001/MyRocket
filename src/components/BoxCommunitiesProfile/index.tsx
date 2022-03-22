@@ -1,11 +1,17 @@
 import styles from './BoxCommunitiesProfile.module.css'
 
-export function BoxCommunitiesProfile() {
+interface BoxCommunitiesProfileProps{
+  comumone?: String
+  comumtwo?: String
+  comumthree?: String
+}
+
+export function BoxCommunitiesProfile(props: BoxCommunitiesProfileProps) {
   return (
     <div className={styles.contentGeral}>
-        <p>React</p>
-        <p>Node</p>
-        <p>React-Native</p>
+        <p>{props.comumone}</p>
+        <p>{props?.comumtwo}</p>
+        <p>{props?.comumthree}</p>
     </div>
   )
 }

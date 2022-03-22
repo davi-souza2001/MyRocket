@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import Router from 'next/router';
+
+import UseAuth from '../../service/hook/useAuth';
+
 import { HiMenu } from 'react-icons/hi';
 import { AiFillRocket, AiOutlineClose } from 'react-icons/ai';
+
 import styles from './Header.module.css'
-import Router from 'next/router';
-import UseAuth from '../../service/hook/useAuth';
 
 type Header = {
     children?: any

@@ -86,6 +86,14 @@
     display: none;
 }
 
+.imageUserDesktop img{
+    border-radius: 999px;
+}
+
+.contentMenuLogout{
+    font-size: 40%;
+}
+
 @media (min-width: 750px){
     .contentImageBackGround{
         background-image: url('../../public/backgroundProfile.svg');
