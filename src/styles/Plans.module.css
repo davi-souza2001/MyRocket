@@ -27,6 +27,7 @@
 @media (min-width: 1366px) {
     .background{
         background-image: url('../../public/backgroundGalaxy.svg');
+        background-size: 100%;
     }
 
     .mainBody{
