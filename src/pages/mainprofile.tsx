@@ -1,42 +1,24 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import route from "next/router";
 
-import UseAuth from "../../service/hook/useAuth";
+import UseAuth from "../service/hook/useAuth";
 
-import { Header } from "../../components/Header";
-import { BoxCommunitiesProfile } from "../../components/BoxCommunitiesProfile";
-import { BoxProjectsProfile } from "../../components/BoxProjectsProfile";
-import { BoxSocialMediaProfile } from "../../components/BoxSocialMediaProfile";
+import { Header } from "../components/Header";
+import { BoxCommunitiesProfile } from "../components/BoxCommunitiesProfile";
+import { BoxProjectsProfile } from "../components/BoxProjectsProfile";
+import { BoxSocialMediaProfile } from "../components/BoxSocialMediaProfile";
 
-import styles from '../../styles/Profile.module.css'
+import styles from '../styles/Profile.module.css'
 
-import Test from '../../../public/img/social_medias/gmail.svg'
+import Test from '../../public/img/social_medias/gmail.svg'
 
 export default function Profile() {
-  const { users } = UseAuth()
-  const [userSelected, setUserSelected]: any = useState({})
-
-  const router = useRouter();
-  const userSearch = router.query.user;
+  const { user } = UseAuth()
 
   console.log('Rota')
-  console.log(userSearch)
-  console.log('Usuário')
-
-  useEffect(() => {
-    users?.map((users) => {
-      if (users.nickname === userSearch) {
-        setUserSelected(users)
-      }
-    })
-    if (userSelected === {}) {
-      route.replace('/')
-    }
-  }, [])
-
-  console.log(userSelected)
+  console.log(user.nickname)
+  console.log('Perfil')
+  console.log(user)
 
   const [communities, setCommunities] = useState(true)
   const [projects, setProjects] = useState(false)
@@ -73,12 +55,12 @@ export default function Profile() {
         </div>
       </div>
       <div className={styles.contentUserInfo}>
-        <h2>{userSelected?.name}</h2>
-        <p>@{userSearch}</p>
+        <h2>{user.name}</h2>
+        <p>@{user.nickname}</p>
       </div>
       <div className={styles.contentUserDescription}>
         <div className={styles.contentDescBox}>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam dolorem facere corporis eligendi corrupti! Doloremque aut quae quia alias quaerat. Ea accusamus voluptatem cum aspernatur itaque sequi voluptates atque earum?</p>
+          <p>{user.description}</p>
         </div>
       </div>
       <div className={styles.contentBarOptions}>

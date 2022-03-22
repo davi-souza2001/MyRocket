@@ -1,7 +1,7 @@
 import { AiFillGithub } from 'react-icons/ai'
 import styles from './BoxProjectsProfile.module.css'
 
-export default function BoxProjectsProfile() {
+export function BoxProjectsProfile() {
   return (
     <div className={styles.contentGeral}>
         <div className={styles.contentBoxProject}>

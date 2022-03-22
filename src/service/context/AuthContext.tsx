@@ -81,7 +81,6 @@ export function AuthProvider(props: any) {
                 setUsers(res.data)
                 return res.data
             })
-            // .then(() => route.push('/'))
         } catch (error: any) {
             console.log(error.response)
         }
@@ -103,7 +102,7 @@ export function AuthProvider(props: any) {
 
     useEffect(() => {
         if (token) {
-            console.log('Mudou o token');
+            // console.log('Mudou o token');
             getUserLogged()
         }
     }, [token]);
