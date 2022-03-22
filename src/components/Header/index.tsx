@@ -5,6 +5,7 @@ import UseAuth from '../../service/hook/useAuth';
 
 import { HiMenu } from 'react-icons/hi';
 import { AiFillRocket, AiOutlineClose } from 'react-icons/ai';
+import { BiGasPump } from "react-icons/bi";
 
 import styles from './Header.module.css'
 
@@ -22,6 +23,12 @@ export function Header(props: Header) {
                 <AiFillRocket />
                 <p>MyRocket</p>
             </div>
+
+            <div className={styles.gasDiv}>
+                <BiGasPump className={styles.gasIcon}/>
+                <p>x15</p>
+            </div>
+            
             <div className={styles.contentOptions}>
                 {props.children}
                 <div className={styles.contentToggleMenu}>
@@ -33,7 +40,7 @@ export function Header(props: Header) {
                         <HiMenu onClick={() => setOpen(!open)} />
                     )}
                 </div>
-                <div className={open ? styles.contentToggle : styles.contentToggleInicial}>
+                <div className={open ? styles.contentToggle : styles.contentToggleInitial}>
                     <p onClick={() => Router.push('/')}>Home</p>
                     <p onClick={() => Router.push('/feed')}>Feed</p>
                     <p onClick={() => Router.push('/search')}>Search</p>
