@@ -1,5 +1,5 @@
 import route from 'next/router';
-import { createContext, useEffect, useState } from 'react';
+import { createContext, MouseEventHandler, useEffect, useState } from 'react';
 
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../../firebase/connect';
@@ -9,7 +9,25 @@ interface AuthContextProps {
     email?: string;
     photo?: string;
     loginGoogle?: () => Promise<void>;
+    logout?: MouseEventHandler<HTMLParagraphElement>
 };
+
+interface User{
+    name?: String;
+    nickname?: String;
+    seniority?: String;
+    area?: String;
+    comumone?: String;
+    comumtwo?: String;
+    comumthree?: String;
+    description?: String;
+    linkedin?: String;
+    github?: String;
+    youtube?: String;
+    instagram?: String;
+    photo?: String;
+    email?: String;
+}
 
 const AuthContext = createContext<AuthContextProps>({});
 
@@ -47,6 +65,11 @@ export function AuthProvider(props: any) {
             });
     }
 
+    async function logout(){
+        Cookie.remove('Admin-cookie-MyRocket');
+        route.replace('/login')
+    }
+
     useEffect(() => {
         if (token) {
             console.log('Mudou o token');
@@ -55,7 +78,7 @@ export function AuthProvider(props: any) {
     }, [token]);
 
     return (
-        <AuthContext.Provider value={{ loginGoogle, email, photo}}>
+        <AuthContext.Provider value={{ loginGoogle, email, photo, logout}}>
             {props.children}
         </AuthContext.Provider>
     );

@@ -3,13 +3,15 @@ import { HiMenu } from 'react-icons/hi';
 import { AiFillRocket, AiOutlineClose } from 'react-icons/ai';
 import styles from './Header.module.css'
 import Router from 'next/router';
+import UseAuth from '../../service/hook/useAuth';
 
-type Header={
+type Header = {
     children?: any
 }
 
 export function Header(props: Header) {
     const [open, setOpen] = useState(false)
+    const { logout } = UseAuth()
     return (
         <div className={styles.contentGeral}>
             <div onClick={() => Router.push('/')} className={styles.contentLogo}>
@@ -33,6 +35,7 @@ export function Header(props: Header) {
                     <p onClick={() => Router.push('/search')}>Search</p>
                     {/* <p onClick={() => Router.push('/meet')}>Reuniões</p> */}
                     <p onClick={() => Router.push('/profile/davi-souza2001')}>Profile</p>
+                    <p onClick={logout}>Logout</p>
                 </div>
             </div>
         </div>
