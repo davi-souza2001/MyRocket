@@ -134,7 +134,7 @@
         height: 100vh;
         background-image: url('../../public/backgroundGalaxy.svg');
         background-repeat: no-repeat;
-        background-size: 120% ;
+        background-size: 100% ;
     }
 
     .msgIntroduction{
@@ -165,6 +165,6 @@
 
 @media (max-width: 1036px){
     .contentGeral{
-        background-size: 150%;
+        background-size: 100%;
     }
 }
