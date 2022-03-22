@@ -1,5 +1,5 @@
 .contentGeral{
-    background-color: #272733;
+    background-color: var(--purpleGlobal);
     height: 90px;
     width: 350px;
     display: flex;
@@ -35,22 +35,22 @@
 }
 
 .contentFormPost input[type="text"]{
-    height: 5vh;
+    height: 45px;
     outline: none;
     border: none;
     border-radius: 10px;
     margin-right: 4px;
-    background-color: #565672;
+    background-color: var(--lightgrey);
     color: var(--white);
     width: 180px;
     margin-right: 10px;
-    margin-left: -15px;
+    margin-left: -20px;
 }
 
 .contentFormPost button{
     width: 50px;
-    height: 5vh;
-    background-color: #565672;
+    height: 45px;
+    background-color: var(--lightgrey);
     color: var(--white);
     outline: none;
     border: none;
@@ -77,18 +77,17 @@
     }
 
     .contentFormPost input[type="text"]{
-        height: 5vh;
-        width: 80%;
+        height: 50px;
+        width: 90%;
         outline: none;
         border: none;
         border-radius: 10px;
         margin-right: 4px;
-        background-color: var();
-        color: var(--white);
+        margin-left: -15px;
     }
 
     .contentFormPost button{
-        height: 5vh;
+        height: 50px;
         transition: 0.5s;
     }
 
