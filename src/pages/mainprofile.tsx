@@ -13,12 +13,7 @@ import styles from '../styles/Profile.module.css'
 import Test from '../../public/img/social_medias/gmail.svg'
 
 export default function Profile() {
-  const { user } = UseAuth()
-
-  console.log('Rota')
-  console.log(user.nickname)
-  console.log('Perfil')
-  console.log(user)
+  const { user, logout } = UseAuth()
 
   const [communities, setCommunities] = useState(true)
   const [projects, setProjects] = useState(false)
@@ -44,17 +39,13 @@ export default function Profile() {
 
   return (
     <>
-      <Header>
-        <div className={styles.contentMenuLogout}>
-          <p>Logout</p>
-        </div>
-      </Header>
+      <Header/>
       <div className={styles.contentImageBackGround} />
       <div className={styles.contentImageUser}>
-        <div className={styles.imageUser}>
+        <div className={styles.imageUser} onClick={logout}>
           <Image src={Test} width={60} height={60} alt="logo" />
         </div>
-        <div className={styles.imageUserDesktop}>
+        <div className={styles.imageUserDesktop} onClick={logout}>
           <Image src={user.photo || Test} width={100} height={100} alt="logo" />
         </div>
       </div>
