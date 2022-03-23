@@ -1,3 +1,5 @@
+import route from "next/router";
+
 import styles from './BoxCommunitiesProfile.module.css'
 
 interface BoxCommunitiesProfileProps{
@@ -9,9 +11,9 @@ interface BoxCommunitiesProfileProps{
 export function BoxCommunitiesProfile(props: BoxCommunitiesProfileProps) {
   return (
     <div className={styles.contentGeral}>
-        <p>{props.comumone}</p>
-        <p>{props?.comumtwo}</p>
-        <p>{props?.comumthree}</p>
+        <p onClick={() => route.push(`/com/${props.comumone}`)}>{props.comumone}</p>
+        <p onClick={() => route.push(`/com/${props.comumtwo}`)}>{props?.comumtwo}</p>
+        <p onClick={() => route.push(`/com/${props.comumthree}`)}>{props?.comumthree}</p>
     </div>
   )
 }
