@@ -26,7 +26,7 @@ export function Header(props: Header) {
 
             <div className={styles.gasDiv}>
                 <BiGasPump className={styles.gasIcon}/>
-                <p>x15</p>
+                <p>x{user?.gas}</p>
             </div>
             
             <div className={styles.contentOptions}>

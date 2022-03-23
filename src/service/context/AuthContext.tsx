@@ -9,7 +9,7 @@ import Cookie from 'js-cookie';
 interface AuthContextProps {
     email?: string;
     photo?: string;
-    user?: any;
+    user?: User;
     users?: Array<any>;
     loginGoogle?: () => Promise<void>;
     logout?: MouseEventHandler<HTMLParagraphElement>
@@ -30,6 +30,7 @@ interface User {
     instagram?: String;
     photo?: String;
     email?: String;
+    gas?: Number;
 }
 
 const AuthContext = createContext<AuthContextProps>({});
