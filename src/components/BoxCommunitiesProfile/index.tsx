@@ -1,19 +1,16 @@
 import route from "next/router";
+import useAuth from "../../service/hook/useAuth";
 
 import styles from './BoxCommunitiesProfile.module.css'
 
-interface BoxCommunitiesProfileProps{
-  comumone?: String
-  comumtwo?: String
-  comumthree?: String
-}
+export function BoxCommunitiesProfile() {
+  const {user} = useAuth()
 
-export function BoxCommunitiesProfile(props: BoxCommunitiesProfileProps) {
   return (
     <div className={styles.contentGeral}>
-        <p onClick={() => route.push(`/com/${props.comumone}`)}>{props.comumone}</p>
-        <p onClick={() => route.push(`/com/${props.comumtwo}`)}>{props?.comumtwo}</p>
-        <p onClick={() => route.push(`/com/${props.comumthree}`)}>{props?.comumthree}</p>
+        <p onClick={() => route.push(`/com/${user?.comumone}`)}>{user?.comumone}</p>
+        <p onClick={() => route.push(`/com/${user?.comumtwo}`)}>{user?.comumtwo}</p>
+        <p onClick={() => route.push(`/com/${user?.comumthree}`)}>{user?.comumthree}</p>
     </div>
   )
 }

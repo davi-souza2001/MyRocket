@@ -39,11 +39,11 @@ export default function Profile() {
 
   return (
     <>
-      <Header/>
+      <Header />
       <div className={styles.contentImageBackGround} />
       <div className={styles.contentImageUser}>
         <div className={styles.imageUser} onClick={logout}>
-          <Image src={Test} width={60} height={60} alt="logo" />
+          <Image src={user.photo || Test} width={60} height={60} alt="logo" />
         </div>
         <div className={styles.imageUserDesktop} onClick={logout}>
           <Image src={user.photo || Test} width={100} height={100} alt="logo" />
@@ -65,10 +65,7 @@ export default function Profile() {
       </div>
       <div className={styles.contentOptionSelected}>
         {communities && (
-          <BoxCommunitiesProfile
-            comumone={user.comumone}
-            comumtwo={user.comumtwo}
-            comumthree={user.comumthree} />
+          <BoxCommunitiesProfile />
         )}
         {projects && (
           <BoxProjectsProfile />
@@ -78,10 +75,7 @@ export default function Profile() {
         )}
       </div>
       <div className={styles.contentOptionUserDesktop}>
-        <BoxCommunitiesProfile
-          comumone={user.comumone}
-          comumtwo={user.comumtwo}
-          comumthree={user.comumthree} />
+        <BoxCommunitiesProfile />
         <BoxProjectsProfile />
         <BoxSocialMediaProfile />
       </div>
