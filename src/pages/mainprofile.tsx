@@ -1,5 +1,7 @@
 import { useState } from "react";
+import route from "next/router";
 import Image from "next/image";
+import { HiCog } from "react-icons/hi";
 
 import UseAuth from "../service/hook/useAuth";
 
@@ -11,6 +13,7 @@ import { BoxSocialMediaProfile } from "../components/BoxSocialMediaProfile";
 import styles from '../styles/Profile.module.css'
 
 import Test from '../../public/img/social_medias/gmail.svg'
+
 
 export default function Profile() {
   const { user, logout } = UseAuth()
@@ -43,19 +46,19 @@ export default function Profile() {
       <div className={styles.contentImageBackGround} />
       <div className={styles.contentImageUser}>
         <div className={styles.imageUser} onClick={logout}>
-          <Image src={user.photo || Test} width={60} height={60} alt="logo" />
+          <Image src={user?.photo || Test} width={60} height={60} alt="logo" />
         </div>
         <div className={styles.imageUserDesktop} onClick={logout}>
-          <Image src={user.photo || Test} width={100} height={100} alt="logo" />
+          <Image src={user?.photo || Test} width={100} height={100} alt="logo" />
         </div>
       </div>
       <div className={styles.contentUserInfo}>
-        <h2>{user.name}</h2>
-        <p>@{user.nickname}</p>
+        <h2>{user?.name} <HiCog style={{'cursor': 'pointer'}} onClick={() => route.push('/editProfile')}/></h2>
+        <p>@{user?.nickname}</p>
       </div>
       <div className={styles.contentUserDescription}>
         <div className={styles.contentDescBox}>
-          <p>{user.description}</p>
+          <p>{user?.description}</p>
         </div>
       </div>
       <div className={styles.contentBarOptions}>
