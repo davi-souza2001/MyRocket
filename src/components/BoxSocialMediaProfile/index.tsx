@@ -11,25 +11,25 @@ export function BoxSocialMediaProfile() {
             {user?.github && (
                 <div className={styles.contentBoxSocialMedia}>
                     <AiFillGithub />
-                    <a target='_blank' href={`https://github.com/${user?.github}`}>Github</a>
+                    <a rel="noopener" href={`https://github.com/${user?.github}`}>Github</a>
                 </div>
             )}
             {user?.instagram && (
                 <div className={styles.contentBoxSocialMedia}>
                     <AiFillInstagram />
-                    <a target='_blank' href={`https://www.instagram.com/${user?.instagram}`}>Instagram</a>
+                    <a rel="noopener" href={`https://www.instagram.com/${user?.instagram}`}>Instagram</a>
                 </div>
             )}
             {user?.youtube && (
                 <div className={styles.contentBoxSocialMedia}>
                     <AiFillYoutube />
-                    <a target='_blank' href={`https://www.youtube.com/user/${user?.youtube}`}>Youtube</a>
+                    <a rel="noopener" href={`https://www.youtube.com/user/${user?.youtube}`}>Youtube</a>
                 </div>
             )}
             {user?.linkedin && (
                 <div className={styles.contentBoxSocialMedia}>
                     <AiFillTwitterSquare />
-                    <a target='_blank' href={`https://www.linkedin.com/in/${user?.linkedin}/`}>Twitter</a>
+                    <a rel="noopener" href={`https://www.linkedin.com/in/${user?.linkedin}/`}>Twitter</a>
                 </div>
             )}
         </div>
