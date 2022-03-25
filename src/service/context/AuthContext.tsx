@@ -104,6 +104,8 @@ export function AuthProvider(props: any) {
     useEffect(() => {
         if (token) {
             getUserLogged()
+        } else{
+            route.push('/login')
         }
     }, [token]);
 

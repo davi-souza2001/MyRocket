@@ -26,10 +26,10 @@ export function BoxSocialMediaProfile() {
                     <a target='_blank' href={`https://www.youtube.com/user/${user?.youtube}`}>Youtube</a>
                 </div>
             )}
-            {user?.twitter && (
+            {user?.linkedin && (
                 <div className={styles.contentBoxSocialMedia}>
                     <AiFillTwitterSquare />
-                    <a target='_blank' href={`https://twitter.com/${user?.twitter}`}>Twitter</a>
+                    <a target='_blank' href={`https://www.linkedin.com/in/${user?.linkedin}/`}>Twitter</a>
                 </div>
             )}
         </div>
