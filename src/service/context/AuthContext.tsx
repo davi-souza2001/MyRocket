@@ -11,6 +11,7 @@ interface AuthContextProps {
     photo?: string;
     user?: User;
     users?: Array<any>;
+    repos?: Array<any>;
     loginGoogle?: () => Promise<void>;
     logout?: MouseEventHandler<HTMLParagraphElement>
 };
@@ -48,6 +49,7 @@ export function AuthProvider(props: any) {
     const [photo, setPhoto] = useState('');
     const [user, setUser] = useState<User>({})
     const [users, setUsers] = useState([])
+    const [repos, setRepos] = useState([])
     const token = Cookie.get('Admin-cookie-MyRocket');
 
     async function loginGoogle() {
@@ -101,6 +103,20 @@ export function AuthProvider(props: any) {
         }
     }
 
+    async function getReposUserGitHub(){
+        const sendUser = {
+            emailuser: token
+        }
+        try {
+            const data = await Client.post('/users/getGitHubUser', sendUser).then((res) => {
+                setRepos(res.data)
+                return res.data
+            })
+        } catch (error: any) {
+            console.log(error.response)
+        }
+    }
+
     useEffect(() => {
         if (token) {
             getUserLogged()
@@ -111,10 +127,11 @@ export function AuthProvider(props: any) {
 
     useEffect(() => {
         getAllUsers()
+        getReposUserGitHub()
     }, []);
 
     return (
-        <AuthContext.Provider value={{ loginGoogle, email, photo, user, users, logout }}>
+        <AuthContext.Provider value={{ loginGoogle, email, photo, user, users, logout, repos }}>
             {props.children}
         </AuthContext.Provider>
     );
