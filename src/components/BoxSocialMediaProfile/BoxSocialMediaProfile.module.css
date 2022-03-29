@@ -23,6 +23,7 @@
 .contentBoxSocialMedia a{
     text-decoration: none;
     color: #c0c0c0;
+    margin-left: 10px;
 }
 
 .contentBoxSocialMedia:hover{

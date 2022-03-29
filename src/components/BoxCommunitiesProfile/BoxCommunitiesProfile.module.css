@@ -16,13 +16,33 @@
     transition: 0.5s;
 }
 
+.communities{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.community{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.community .worldIcon{
+    transition: 0.5s;
+}
+
+.community p{
+    margin-left: 10px;
+}
+
 @media (min-width: 750px){
     .contentGeral{
         width: 200px;
         height: 150px;
     }
 
-    .contentGeral p:hover{
+    .community:hover .worldIcon{
         color: var(--purple);
     }
 }
