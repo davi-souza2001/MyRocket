@@ -58,7 +58,7 @@ export default function Search() {
                 <button onClick={handleChangeHowToSearch}>{howSearch}</button>
             </div>
             <div className={styles.contentSearch}>
-                {howSearch === 'NickName' ? (
+                {howSearch === 'Community' ? (
                     <form onSubmit={handleFoundUsersByComum}>
                         <input type="text" onChange={(e) => setSearch(e.target.value)} value={search} />
                         <button type="submit">Search</button>
