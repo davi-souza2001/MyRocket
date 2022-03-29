@@ -11,8 +11,7 @@ export default function Search() {
     const [howSearch, setHowSearch] = useState('NickName')
     const [search, setSearch] = useState('')
     const [foundUsers, setFoundUsers] = useState([])
-
-    console.log(foundUsers)
+    const [error, setError] = useState('')
 
     function handleChangeHowToSearch() {
         if (howSearch === 'NickName') {
@@ -27,6 +26,8 @@ export default function Search() {
 
     async function handleFoundUsersByComum(e: any) {
         e.preventDefault()
+        setError('')
+        setFoundUsers([])
         const sendData = {
             comum: search
         }
@@ -37,7 +38,8 @@ export default function Search() {
                 return res.data
             })
         } catch (error: any) {
-            console.log(error.response.data)
+            setError(error.response.data.error)
+            console.log(error.response.data.error)
         }
     }
 
@@ -57,29 +59,21 @@ export default function Search() {
                         <button type="submit">Search</button>
                     </form>
                 ) : <h1>alo</h1>}
-
+                {error != '' && (
+                    <div className={styles.contentTitleError}>
+                        <h2>{error}</h2>
+                    </div>
+                )}
                 <div className={styles.contentResponseUser}>
-                    <div className={styles.contentBoxUser}>
-                        <BoxUser />
-                    </div>
-                    <div className={styles.contentBoxUser}>
-                        <BoxUser />
-                    </div>
-                    <div className={styles.contentBoxUser}>
-                        <BoxUser />
-                    </div>
-                    <div className={styles.contentBoxUser}>
-                        <BoxUser />
-                    </div>
-                    <div className={styles.contentBoxUser}>
-                        <BoxUser />
-                    </div>
-                    <div className={styles.contentBoxUser}>
-                        <BoxUser />
-                    </div>
-                    <div className={styles.contentBoxUser}>
-                        <BoxUser />
-                    </div>
+                    {foundUsers && foundUsers?.map((user: any) => {
+                        return (
+                            <div className={styles.contentBoxUser} key={user._id}>
+                                <BoxUser area={user.area} name={user.name} description={user.description}
+                                photo={user?.photo}
+                                />
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </>

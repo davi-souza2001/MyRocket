@@ -5,21 +5,28 @@ import styles from './BoxUser.module.css'
 
 import Teste from '../../../public/img/social_medias/gmail.svg'
 
-export function BoxUser() {
+interface BoxUserProps{
+    photo?: string,
+    name: string,
+    area: string,
+    description: string,
+}
+
+export function BoxUser(props: BoxUserProps) {
   return (
     <div className={styles.contentGeral}>
         <div className={styles.contentPhotoUser}>
-            <Image src={Teste} width={40} height={40} alt="Image user"/>
+            <Image src={props.photo || Teste} width={40} height={40} alt="Image user"/>
         </div>
         <div className={styles.contentUserInfo}>
             <div className={styles.contentInfo}>
-                <p>Davi Souza</p>
+                <p>{props.name}</p>
             </div>
             <div className={styles.contentInfo}>
-                <p>Full-Stack em Pernambuco</p>
+                <p>{props.area}</p>
             </div>
             <div className={styles.contentInfo}>
-                <p>CTO do MyRocket :)</p>
+                <p>{props.description}</p>
             </div>
         </div>
         <div className={styles.contentFollowUser}>
