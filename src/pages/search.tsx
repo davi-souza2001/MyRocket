@@ -13,6 +13,11 @@ export default function Search() {
     const [foundUsers, setFoundUsers] = useState([])
     const [error, setError] = useState('')
 
+    // function handleCapsSearch(sentence: string) {
+    //     const searchUpperCase= sentence.charAt(0).toUpperCase() + sentence.slice(1);
+    //     setSearch(searchUpperCase)
+    // }
+
     function handleChangeHowToSearch() {
         if (howSearch === 'NickName') {
             setHowSearch('Community')
@@ -28,10 +33,10 @@ export default function Search() {
         e.preventDefault()
         setError('')
         setFoundUsers([])
+        // handleCapsSearch(search)
         const sendData = {
             comum: search
         }
-        const comum = { search }
         try {
             const data = await Client.post('/users/searchuserByComum', sendData).then((res) => {
                 setFoundUsers(res.data.userFoundComum)
@@ -69,7 +74,7 @@ export default function Search() {
                         return (
                             <div className={styles.contentBoxUser} key={user._id}>
                                 <BoxUser area={user.area} name={user.name} description={user.description}
-                                photo={user?.photo}
+                                    photo={user?.photo}
                                 />
                             </div>
                         )

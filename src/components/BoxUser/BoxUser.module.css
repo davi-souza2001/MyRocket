@@ -40,6 +40,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.contentInfo p {
+    margin-top: 15px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .contentFollowUser{
     height: 100%;
     width: 40px;
