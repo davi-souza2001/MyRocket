@@ -7,6 +7,32 @@
     justify-content: center;
 }
 
+.contentTitle h2{
+    margin-left: 5px;
+}
+
+.contentSelectHowToSearch{
+    color: var(--white);
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentSelectHowToSearch button{
+    width: 100px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--purpleGlobal);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 .contentSearch{
     width: 100%;
     height: 60px;
