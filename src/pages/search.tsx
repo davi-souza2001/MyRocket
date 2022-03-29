@@ -8,7 +8,7 @@ import { Header } from "../components/Header";
 import styles from '../styles/Search.module.css'
 
 export default function Search() {
-    const [howSearch, setHowSearch] = useState('NickName')
+    const [howSearch, setHowSearch] = useState('Community')
     const [search, setSearch] = useState('')
     const [foundUsers, setFoundUsers] = useState([])
     const [error, setError] = useState('')
