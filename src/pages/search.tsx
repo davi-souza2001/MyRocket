@@ -7,10 +7,18 @@ import { Header } from "../components/Header";
 
 import styles from '../styles/Search.module.css'
 
+interface userBox{
+    area: string
+    name: string
+    description: string
+    photo?: string
+}
+
 export default function Search() {
     const [howSearch, setHowSearch] = useState('Community')
     const [search, setSearch] = useState('')
     const [foundUsers, setFoundUsers] = useState([])
+    const [userNickName, setUserNickName] = useState<userBox>({area: '', name: '', description: ''})
     const [error, setError] = useState('')
 
     // function handleCapsSearch(sentence: string) {
@@ -22,10 +30,14 @@ export default function Search() {
         if (howSearch === 'NickName') {
             setHowSearch('Community')
             setSearch('')
+            setFoundUsers([])
+            setUserNickName({area: '', name: '', description: ''})
         }
         if (howSearch === 'Community') {
             setHowSearch('NickName')
             setSearch('')
+            setFoundUsers([])
+            setUserNickName({area: '', name: '', description: ''})
         }
     }
 
@@ -40,6 +52,25 @@ export default function Search() {
         try {
             const data = await Client.post('/users/searchuserByComum', sendData).then((res) => {
                 setFoundUsers(res.data.userFoundComum)
+                return res.data
+            })
+        } catch (error: any) {
+            setError(error.response.data.error)
+            console.log(error.response.data.error)
+        }
+    }
+
+    async function handleFoundUsersByNickName(e: any) {
+        e.preventDefault()
+        setError('')
+        setFoundUsers([])
+        const sendData = {
+            usersearch: search
+        }
+
+        try {
+            const data = await Client.post('/users/searchuserByNickName', sendData).then((res) => {
+                setUserNickName(res.data)
                 return res.data
             })
         } catch (error: any) {
@@ -63,7 +94,14 @@ export default function Search() {
                         <input type="text" onChange={(e) => setSearch(e.target.value)} value={search} />
                         <button type="submit">Search</button>
                     </form>
-                ) : <h1>alo</h1>}
+                ) :
+                    (
+                        <form onSubmit={handleFoundUsersByNickName}>
+                            <input type="text" onChange={(e) => setSearch(e.target.value)} value={search} />
+                            <button type="submit">Search</button>
+                        </form>
+                    )
+                }
                 {error != '' && (
                     <div className={styles.contentTitleError}>
                         <h2>{error}</h2>
@@ -79,6 +117,12 @@ export default function Search() {
                             </div>
                         )
                     })}
+
+                    {userNickName.area != '' && (
+                        <BoxUser area={userNickName.area} name={userNickName.name} description={userNickName.description}
+                        photo={userNickName?.photo}
+                    />
+                    )}
                 </div>
             </div>
         </>

@@ -14,7 +14,6 @@ import styles from '../styles/Profile.module.css'
 
 import Test from '../../public/img/social_medias/gmail.svg'
 
-
 export default function Profile() {
   const { user, logout } = UseAuth()
 

@@ -1,4 +1,4 @@
-import { AiFillGithub, AiFillInstagram, AiFillYoutube, AiFillTwitterCircle, AiFillTwitterSquare } from 'react-icons/ai'
+import { AiFillGithub, AiFillInstagram, AiFillYoutube, AiFillLinkedin } from 'react-icons/ai'
 import UseAuth from '../../service/hook/useAuth';
 
 import styles from './BoxSocialMediaProfile.module.css'
@@ -28,8 +28,8 @@ export function BoxSocialMediaProfile() {
             )}
             {user?.linkedin && (
                 <div className={styles.contentBoxSocialMedia}>
-                    <AiFillTwitterSquare />
-                    <a rel="noopener" href={`https://www.linkedin.com/in/${user?.linkedin}/`}>Twitter</a>
+                    <AiFillLinkedin />
+                    <a rel="noopener" href={`https://www.linkedin.com/in/${user?.linkedin}/`}>Linkedin</a>
                 </div>
             )}
         </div>
