@@ -45,6 +45,8 @@
     text-overflow: ellipsis;
 }
 
+
+
 @media (min-width: 750px){
     .contentGeral{
         background-color: var(--purpleGlobal);
