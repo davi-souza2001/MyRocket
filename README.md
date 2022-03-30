@@ -1,7 +1,7 @@
 Building...
 
-<!-- Refazer tela de registro -->
-<!-- Aumentar caixa de posts -->
+<!-- Falar cada comunidades quais membros tem
+Fazer função postagem -->
 
 <!-- npm i -g yarn
 
