@@ -17,7 +17,7 @@ export function BoxUser(props: BoxUserProps) {
   return (
     <div className={styles.contentGeral}>
         <div className={styles.contentPhotoUser}>
-            <Image src={props.photo || Test} width={40} height={40} alt="Image user"/>
+            <Image className={styles.photo} src={props.photo || Test} width={40} height={40} alt="Image user"/>
         </div>
         <div className={styles.contentUserInfo}>
             <div className={styles.contentInfo}>

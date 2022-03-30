@@ -19,6 +19,10 @@
     justify-content: center;
 }
 
+.photo{
+    border-radius: 10px;
+}
+
 .contentUserInfo{
     width: 230px;
     height: 100%;
