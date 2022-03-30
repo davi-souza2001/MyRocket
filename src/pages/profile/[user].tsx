@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import route, { useRouter } from "next/router";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import route from "next/router";
+import { HiCog } from "react-icons/hi";
 
 import UseAuth from "../../service/hook/useAuth";
 
@@ -15,32 +15,14 @@ import styles from '../../styles/Profile.module.css'
 import Test from '../../../public/img/social_medias/gmail.svg'
 
 export default function Profile() {
-  const { users } = UseAuth()
-  const [userSelected, setUserSelected]: any = useState({})
-
-  const router = useRouter();
-  const userSearch = router.query.user;
-
-  console.log('Rota')
-  console.log(userSearch)
-  console.log('Usuário')
-
-  useEffect(() => {
-    users?.map((users) => {
-      if (users.nickname === userSearch) {
-        setUserSelected(users)
-      }
-    })
-    if (userSelected === {}) {
-      route.replace('/')
-    }
-  }, [])
-
-  console.log(userSelected)
+  const { user, logout } = UseAuth()
 
   const [communities, setCommunities] = useState(true)
   const [projects, setProjects] = useState(false)
   const [socialMedia, setSocialMedia] = useState(false)
+
+  const router = useRouter();
+  const userSearch = router.query.user;
 
   function handleComum() {
     setCommunities(true)
@@ -65,20 +47,20 @@ export default function Profile() {
       <Header />
       <div className={styles.contentImageBackGround} />
       <div className={styles.contentImageUser}>
-        <div className={styles.imageUser}>
-          <Image src={Test} width={60} height={60} alt="logo" />
+        <div className={styles.imageUser} onClick={logout}>
+          <Image src={user?.photo || Test} width={60} height={60} alt="logo" />
         </div>
-        <div className={styles.imageUserDesktop}>
-          <Image src={Test} width={90} height={90} alt="logo" />
+        <div className={styles.imageUserDesktop} onClick={logout}>
+          <Image src={user?.photo || Test} width={100} height={100} alt="logo" />
         </div>
       </div>
       <div className={styles.contentUserInfo}>
-        <h2>{userSelected?.name}</h2>
-        <p>@{userSearch}</p>
+        <h2>{user?.name} <HiCog style={{ 'cursor': 'pointer' }} onClick={() => route.push('/editProfile')} /></h2>
+        <p>@{user?.nickname}</p>
       </div>
       <div className={styles.contentUserDescription}>
         <div className={styles.contentDescBox}>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam dolorem facere corporis eligendi corrupti! Doloremque aut quae quia alias quaerat. Ea accusamus voluptatem cum aspernatur itaque sequi voluptates atque earum?</p>
+          <p>{user?.description}</p>
         </div>
       </div>
       <div className={styles.contentBarOptions}>
