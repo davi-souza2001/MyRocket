@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Router from 'next/router';
 
 import Client from '../data/client'
 
@@ -7,18 +8,19 @@ import { Header } from "../components/Header";
 
 import styles from '../styles/Search.module.css'
 
-interface userBox{
+interface userBox {
     area: string
     name: string
     description: string
     photo?: string
+    nickname: string
 }
 
 export default function Search() {
     const [howSearch, setHowSearch] = useState('Community')
     const [search, setSearch] = useState('')
     const [foundUsers, setFoundUsers] = useState([])
-    const [userNickName, setUserNickName] = useState<userBox>({area: '', name: '', description: ''})
+    const [userNickName, setUserNickName] = useState<userBox>({ area: '', name: '', description: '', nickname: '' })
     const [error, setError] = useState('')
 
     // function handleCapsSearch(sentence: string) {
@@ -31,13 +33,13 @@ export default function Search() {
             setHowSearch('Community')
             setSearch('')
             setFoundUsers([])
-            setUserNickName({area: '', name: '', description: ''})
+            setUserNickName({ area: '', name: '', description: '', nickname: '' })
         }
         if (howSearch === 'Community') {
             setHowSearch('NickName')
             setSearch('')
             setFoundUsers([])
-            setUserNickName({area: '', name: '', description: ''})
+            setUserNickName({ area: '', name: '', description: '', nickname: '' })
         }
     }
 
@@ -112,16 +114,15 @@ export default function Search() {
                         return (
                             <div className={styles.contentBoxUser} key={user._id}>
                                 <BoxUser area={user.area} name={user.name} description={user.description}
-                                    photo={user?.photo}
-                                />
+                                    photo={user?.photo} onClick={() => Router.push(`/profile/${user.nickname}`)} />
                             </div>
                         )
                     })}
 
                     {userNickName.area != '' && (
                         <BoxUser area={userNickName.area} name={userNickName.name} description={userNickName.description}
-                        photo={userNickName?.photo}
-                    />
+                            photo={userNickName?.photo} onClick={() => Router.push(`/profile/${userNickName.nickname}`)}
+                        />
                     )}
                 </div>
             </div>

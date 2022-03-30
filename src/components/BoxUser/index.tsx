@@ -10,6 +10,7 @@ interface BoxUserProps{
     name: string,
     area: string,
     description: string,
+    onClick: () => void
 }
 
 export function BoxUser(props: BoxUserProps) {
@@ -29,7 +30,7 @@ export function BoxUser(props: BoxUserProps) {
                 <p>{props.description}</p>
             </div>
         </div>
-        <div className={styles.contentFollowUser}>
+        <div className={styles.contentFollowUser} onClick={props.onClick}>
             <AiFillRocket/>
         </div>
     </div>
