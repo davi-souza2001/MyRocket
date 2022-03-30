@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import route, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import Image from "next/image";
-import { HiCog } from "react-icons/hi";
 
 import Client from '../../data/client';
 
@@ -13,6 +12,7 @@ import { BoxProjectsProfile } from "../../components/BoxProjectsProfile";
 import styles from '../../styles/Profile.module.css'
 
 import Test from '../../../public/img/social_medias/gmail.svg'
+import { BoxProjectsUserSearch } from "../../components/BoxProjectsProfile/BoxProjectsUserSearch";
 
 interface User {
   name?: String;
@@ -54,6 +54,7 @@ export default function Profile() {
         })
       } catch (error: any) {
         console.log(error.response.data.error)
+        alert('asdas')
       }
     }
   }
@@ -83,9 +84,9 @@ export default function Profile() {
   return (
     <>
       <Header />
-      <div className={styles.contentImageBackGround} />
       {user && (
         <>
+          <div className={styles.contentImageBackGround} />
           <div className={styles.contentImageUser}>
             <div className={styles.imageUser}>
               <Image src={user?.photo || Test} width={60} height={60} alt="logo" />
@@ -95,7 +96,7 @@ export default function Profile() {
             </div>
           </div>
           <div className={styles.contentUserInfo}>
-            <h2>{user?.name} <HiCog style={{ 'cursor': 'pointer' }} onClick={() => route.push('/editProfile')} /></h2>
+            <h2>{user?.name}</h2>
             <p>@{user?.nickname}</p>
           </div>
           <div className={styles.contentUserDescription}>
@@ -116,7 +117,7 @@ export default function Profile() {
                 comumthree={user.comumthree} />
             )}
             {projects && (
-              <BoxProjectsProfile />
+              <BoxProjectsUserSearch nickname={user.github} />
             )}
             {socialMedia && (
               <BoxUserWantedSocialMedias
@@ -132,7 +133,7 @@ export default function Profile() {
               comumone={user.comumone}
               comumtwo={user.comumtwo}
               comumthree={user.comumthree} />
-            <BoxProjectsProfile />
+            <BoxProjectsUserSearch nickname={user.github} />
             <BoxUserWantedSocialMedias
               github={user.github}
               linkedin={user.linkedin}
