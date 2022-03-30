@@ -7,8 +7,8 @@ import Client from '../../data/client';
 
 import { Header } from "../../components/Header";
 import { BoxUserWanted } from "../../components/BoxCommunitiesProfile/BoxUserWanted";
+import { BoxUserWantedSocialMedias } from "../../components/BoxSocialMediaProfile/BoxUserWantedSocialMedias";
 import { BoxProjectsProfile } from "../../components/BoxProjectsProfile";
-import { BoxSocialMediaProfile } from "../../components/BoxSocialMediaProfile";
 
 import styles from '../../styles/Profile.module.css'
 
@@ -50,7 +50,6 @@ export default function Profile() {
       try {
         const data = await Client.post('/users/searchuserByNickName', sendData).then((res) => {
           setUser(res.data)
-          console.log(res.data)
           return res.data
         })
       } catch (error: any) {
@@ -120,7 +119,12 @@ export default function Profile() {
               <BoxProjectsProfile />
             )}
             {socialMedia && (
-              <BoxSocialMediaProfile />
+              <BoxUserWantedSocialMedias
+                github={user.github}
+                linkedin={user.linkedin}
+                youtube={user.youtube}
+                instagram={user.instagram}
+              />
             )}
           </div>
           <div className={styles.contentOptionUserDesktop}>
@@ -129,7 +133,12 @@ export default function Profile() {
               comumtwo={user.comumtwo}
               comumthree={user.comumthree} />
             <BoxProjectsProfile />
-            <BoxSocialMediaProfile />
+            <BoxUserWantedSocialMedias
+              github={user.github}
+              linkedin={user.linkedin}
+              youtube={user.youtube}
+              instagram={user.instagram}
+            />
           </div>
         </>
       )}
