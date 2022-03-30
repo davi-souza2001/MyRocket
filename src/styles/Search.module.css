@@ -92,20 +92,3 @@
     justify-content: flex-start;
     flex-direction: column;
 }
-
-@media (min-width: 900px){
-    .contentResponseUser{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .contentBoxUser{
-        margin-left: 10vw;
-    }
-}
-
-@media (min-width: 1600px) {
-    .contentBoxUser{
-        margin-left: 13vw;
-    } 
-}
