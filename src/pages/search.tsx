@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Router from 'next/router';
 
-import Client from '../data/client'
+import Client from '../data/client';
 
 import { BoxUser } from "../components/BoxUser";
 import { Header } from "../components/Header";

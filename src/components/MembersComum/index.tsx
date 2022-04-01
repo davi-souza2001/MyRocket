@@ -1,7 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
+
+import Client from '../../data/client'
+
 import styles from './MembersComum.module.css'
 
-export function MembersComum() {
+interface MembersComum{
+    communities?: string | string[]
+}
+
+export function MembersComum(props: MembersComum) {
+
+    const [foundUsers, setFoundUsers] = useState([])
+
+    async function handleFoundUsersByComum() {
+        setFoundUsers([])
+        const comum = props.communities
+        const sendData = {
+            comum
+        }
+        try {
+            const data = await Client.post('/users/searchuserByComum', sendData).then((res) => {
+                setFoundUsers(res.data.userFoundComum)
+                return res.data
+            })
+        } catch (error: any) {
+            console.log(error.response.data.error)
+        }
+    }
+
+    useEffect(() => {
+        handleFoundUsersByComum()
+    }, [props.communities])
+
     return (
         <div className={styles.contentGeral}>
             <div className={styles.contentTitle}>
@@ -14,37 +45,14 @@ export function MembersComum() {
                 <p>Crew Members</p>
             </div>
             <div className={styles.contentMembers}>
-                <p>Daviaa</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
-                <p>Davi</p>
+                {foundUsers?.map((user: any) => {
+                    return (
+                        <div key={user._id} className={styles.contentMemberUnic}>
+                            <Image src={user.photo} width={30} height={30}/>
+                            <p >{user.name}</p>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )

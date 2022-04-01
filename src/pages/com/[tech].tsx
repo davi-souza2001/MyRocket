@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
-import { BoxPostComum } from "../../components/BoxPostComum";
 
+import { BoxPostComum } from "../../components/BoxPostComum";
 import { Header } from "../../components/Header";
-import {MembersComum} from "../../components/MembersComum";
-import {PostsMoreLiked} from "../../components/PostsMoreLiked";
-import {SendPost} from "../../components/SendPost";
+import { MembersComum } from "../../components/MembersComum";
+import { PostsMoreLiked } from "../../components/PostsMoreLiked";
+import { SendPost } from "../../components/SendPost";
 
 import styles from '../../styles/Com.module.css'
 
@@ -22,15 +22,15 @@ export default function Commun() {
       <Header>
         <div className={styles.contentMoreOptions}>
           <div className={styles.contentIconOne} onClick={() => setMembersEnable(!membersEnable)}>
-            <HiUser/>
+            <HiUser />
             <div className={membersEnable ? styles.contentIconEnable : styles.contentIconDisable}>
-              <MembersComum/>
+              <MembersComum communities={comumSearch} />
             </div>
           </div>
           <div onClick={() => setPostsMoreLiked(!postsMoreLiked)}>
-            <HiFire/>
+            <HiFire />
             <div className={postsMoreLiked ? styles.contentIconEnable : styles.contentIconDisable}>
-              <PostsMoreLiked/>
+              <PostsMoreLiked />
             </div>
           </div>
         </div>
@@ -45,21 +45,21 @@ export default function Commun() {
         </div>
         <div className={styles.contetBoxes}>
           <div className={styles.contentLeft}>
-            <MembersComum/>
+            <MembersComum communities={comumSearch} />
           </div>
           <div className={styles.contentCenter}>
             <div>
-              <SendPost/>
-              <BoxPostComum/>
-              <BoxPostComum/>
-              <BoxPostComum/>
-              <BoxPostComum/>
-              <BoxPostComum/>
-              <BoxPostComum/>
+              <SendPost />
+              <BoxPostComum />
+              <BoxPostComum />
+              <BoxPostComum />
+              <BoxPostComum />
+              <BoxPostComum />
+              <BoxPostComum />
             </div>
           </div>
           <div className={styles.contentRight}>
-            <PostsMoreLiked/>
+            <PostsMoreLiked />
           </div>
         </div>
       </div>
