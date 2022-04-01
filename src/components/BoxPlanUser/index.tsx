@@ -1,3 +1,5 @@
+import route from "next/router";
+
 import styles from '../BoxPlanUser/BoxPlanUser.module.css'
 
 type BoxPlans = {
@@ -29,7 +31,7 @@ export default function BoxPlanUser(props: BoxPlans) {
                 </div>
 
                 <div className={styles.buttonDiv}>
-                    <button>Select</button>
+                    <button onClick={() => route.push('/')}>Select</button>
                 </div>
             </div>
         </>
