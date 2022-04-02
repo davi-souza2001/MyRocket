@@ -1,8 +1,7 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
 import Client from '../../data/client'
-
 
 import { BoxPostComum } from "../../components/BoxPostComum";
 import { Header } from "../../components/Header";
@@ -18,7 +17,8 @@ interface PostsProps {
   tech?: String,
   likes?: String[],
   userName?: String,
-  userPhoto?: String
+  userPhoto?: String,
+  idUnic?: Key | null | undefined
 }
 
 export default function Commun() {
@@ -33,12 +33,13 @@ export default function Commun() {
     try {
       const data = await Client.get('/posts/getAllPosts').then((res) => {
         setPosts(res.data)
-      }).then(() => console.log(posts))
+      })
     } catch (error: any) {
       console.log(error.response.data.error)
     }
   }
 
+  console.log(posts)
   useEffect(() => {
     handleFoundPostsByComum()
   }, [comumSearch])
@@ -77,12 +78,20 @@ export default function Commun() {
           <div className={styles.contentCenter}>
             <div>
               <SendPost tech={comumSearch} />
-              <BoxPostComum />
-              <BoxPostComum />
-              <BoxPostComum />
-              <BoxPostComum />
-              <BoxPostComum />
-              <BoxPostComum />
+              {posts?.map((post) => {
+                if (post.tech === comumSearch) {
+                  return (
+                    <div key={post.idUnic}>
+                      <BoxPostComum
+                        post={post.post}
+                        userName={post.userName}
+                        userPhoto={post.userPhoto}
+                        likes={post.likes?.length}
+                      />
+                    </div>
+                  )
+                }
+              })}
             </div>
           </div>
           <div className={styles.contentRight}>

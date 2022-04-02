@@ -1,8 +1,6 @@
 Building...
 
 <!-- 
-Fazer função que pega os posts da comunidade por parametro
-Fazer função para fazer nova requisição quando postar
 Fazer função de like
 Usar swr para consumir posts
 Refatorar para tudo em inglês
