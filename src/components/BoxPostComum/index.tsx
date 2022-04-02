@@ -9,6 +9,7 @@ interface BoxPostComumProps {
     post?: String
     likes?: Number
     userName?: String
+    userNick?: String
     userPhoto?: String
 }
 
@@ -22,6 +23,7 @@ export function BoxPostComum(props: BoxPostComumProps) {
                 <div className={styles.contentImageUser}>
                     <Image src={props.userPhoto || Test} width={30} height={30} alt="Image user" />
                     <p>{props.userName}</p>
+                    <h6>{props.userNick}</h6>
                 </div>
                 <div className={styles.contentLikePost}>
                     <HiOutlineThumbUp />

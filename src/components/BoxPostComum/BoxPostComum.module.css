@@ -1,11 +1,11 @@
 .contentGeral{
-    background-color: #272733;
+    background-color: var(--purpleGlobal);
     min-height: 70px;
     width: 330px;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
-    color: #fff;
+    color: var(--white);
 }
 
 .contentPostUser{

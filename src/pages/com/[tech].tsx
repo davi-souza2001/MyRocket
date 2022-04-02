@@ -17,6 +17,7 @@ interface PostsProps {
   tech?: String,
   likes?: String[],
   userName?: String,
+  userNick?: String,
   userPhoto?: String,
   idUnic?: Key | null | undefined
 }
@@ -76,8 +77,10 @@ export default function Commun() {
             <MembersComum communities={comumSearch} />
           </div>
           <div className={styles.contentCenter}>
-            <div>
+            <div className={styles.formComment}>
               <SendPost tech={comumSearch} />
+            </div>
+            <div className={styles.commentsArea}>
               {posts?.map((post) => {
                 if (post.tech === comumSearch) {
                   return (
@@ -85,6 +88,7 @@ export default function Commun() {
                       <BoxPostComum
                         post={post.post}
                         userName={post.userName}
+                        userNick={post.userNick}
                         userPhoto={post.userPhoto}
                         likes={post.likes?.length}
                       />

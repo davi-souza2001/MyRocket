@@ -9,12 +9,13 @@
     height: 25px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 5px 0;
+    margin-left: 20px;
 }
 
 .contentTitle p{
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid var(--purple);
 }
 
 .contentCommander{
@@ -22,7 +23,8 @@
     height: 25px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 20px;
 }
 
 .contentMembers{
@@ -40,7 +42,7 @@
     width: 90%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .contentMemberUnic img{
@@ -63,20 +65,21 @@
     .contentTitle{
         height: 5vh;
         width: 100%;
+        margin-left: 20px;
     }
 
     .contentCommander{
         height: 5vh;
         width: 100%;
+        margin-left: 20px;
     }
 
     .contentMembers{
         width: 100%;
         min-height: 30vh;
         display: flex;
-        align-items: center;
-        justify-content: flex-start;
         flex-direction: column;
+        align-items: center;
         overflow-x: hidden;
     }
 
