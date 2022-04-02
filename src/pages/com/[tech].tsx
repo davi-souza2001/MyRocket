@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
+import Client from '../../data/client'
+
 
 import { BoxPostComum } from "../../components/BoxPostComum";
 import { Header } from "../../components/Header";
@@ -10,12 +12,37 @@ import { SendPost } from "../../components/SendPost";
 
 import styles from '../../styles/Com.module.css'
 
+interface PostsProps {
+  email?: String,
+  post?: String,
+  tech?: String,
+  likes?: String[],
+  userName?: String,
+  userPhoto?: String
+}
+
 export default function Commun() {
   const router = useRouter();
   const comumSearch = router.query.tech;
 
+  const [posts, setPosts] = useState<PostsProps[]>([])
   const [membersEnable, setMembersEnable] = useState(false)
   const [postsMoreLiked, setPostsMoreLiked] = useState(false)
+
+  async function handleFoundPostsByComum() {
+    try {
+      const data = await Client.get('/posts/getAllPosts').then((res) => {
+        setPosts(res.data)
+      }).then(() => console.log(posts))
+    } catch (error: any) {
+      console.log(error.response.data.error)
+    }
+  }
+
+  useEffect(() => {
+    handleFoundPostsByComum()
+  }, [comumSearch])
+
 
   return (
     <>
@@ -49,7 +76,7 @@ export default function Commun() {
           </div>
           <div className={styles.contentCenter}>
             <div>
-              <SendPost tech={comumSearch}/>
+              <SendPost tech={comumSearch} />
               <BoxPostComum />
               <BoxPostComum />
               <BoxPostComum />
