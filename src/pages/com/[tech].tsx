@@ -49,7 +49,7 @@ export default function Commun() {
           </div>
           <div className={styles.contentCenter}>
             <div>
-              <SendPost />
+              <SendPost tech={comumSearch}/>
               <BoxPostComum />
               <BoxPostComum />
               <BoxPostComum />

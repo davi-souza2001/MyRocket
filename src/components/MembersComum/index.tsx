@@ -48,7 +48,7 @@ export function MembersComum(props: MembersComum) {
                 {foundUsers?.map((user: any) => {
                     return (
                         <div key={user._id} className={styles.contentMemberUnic}>
-                            <Image src={user.photo} width={30} height={30}/>
+                            <Image src={user.photo} width={35} height={35}/>
                             <p >{user.name}</p>
                         </div>
                     )
