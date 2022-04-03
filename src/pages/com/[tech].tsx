@@ -13,8 +13,8 @@ import { SendPost } from "../../components/SendPost";
 import styles from '../../styles/Com.module.css'
 
 export default function Commun() {
-  const router = useRouter();
   const { posts, handleFoundPostsByComum } = UsePosts();
+  const router = useRouter();
   const comumSearch = router.query.tech;
 
   const [membersEnable, setMembersEnable] = useState(false)
