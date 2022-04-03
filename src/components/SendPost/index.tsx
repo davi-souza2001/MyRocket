@@ -34,6 +34,7 @@ export function SendPost(props: SendPostProps) {
         }
         try {
             const data = await Client.post('/posts/publicPost', postUserAll).then((res) => {
+                setPost('')
                 handleFoundPostsByComum()
                 return res.data
             })
@@ -51,7 +52,7 @@ export function SendPost(props: SendPostProps) {
             </div>
             <div className={styles.contentFormPost}>
                 <form onSubmit={(e) => sendPost(e)}>
-                    <input type="text" placeholder="Write publication" onChange={(e) => setPost(e.target.value)} />
+                    <input type="text" value={post} placeholder="Write publication" onChange={(e) => setPost(e.target.value)} />
                     <button type="submit">
                         <HiPaperAirplane />
                     </button>
