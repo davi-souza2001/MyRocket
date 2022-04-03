@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Client from '../../data/client';
+import UsePosts from "../../service/hook/usePosts";
 
 import { Key, useEffect, useState } from "react";
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
@@ -12,40 +12,17 @@ import { SendPost } from "../../components/SendPost";
 
 import styles from '../../styles/Com.module.css'
 
-interface PostsProps {
-  email?: String,
-  post?: String,
-  tech?: String,
-  likes?: String[],
-  userName?: String,
-  userNick?: String,
-  userPhoto?: String,
-  idUnic?: Key | null | undefined
-}
-
 export default function Commun() {
   const router = useRouter();
+  const { posts, handleFoundPostsByComum } = UsePosts();
   const comumSearch = router.query.tech;
 
-  const [posts, setPosts] = useState<PostsProps[]>([])
   const [membersEnable, setMembersEnable] = useState(false)
   const [postsMoreLiked, setPostsMoreLiked] = useState(false)
 
-  async function handleFoundPostsByComum() {
-    try {
-      const data = await Client.get('/posts/getAllPosts').then((res) => {
-        setPosts(res.data)
-      })
-    } catch (error: any) {
-      console.log(error.response.data.error)
-    }
-  }
-
-  console.log(posts)
   useEffect(() => {
     handleFoundPostsByComum()
   }, [comumSearch])
-
 
   return (
     <>
