@@ -2,6 +2,8 @@ Building...
 
 <!-- 
 Fazer função de like
+Fazer função de posts most likes
+Fazer função de feed
 Usar swr para consumir posts
 Refatorar para tudo em inglês
 -->
