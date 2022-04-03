@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
+import Client from '../../data/client';
+
 import { Key, useEffect, useState } from "react";
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
-import Client from '../../data/client'
 
 import { BoxPostComum } from "../../components/BoxPostComum";
 import { Header } from "../../components/Header";

@@ -1,9 +1,8 @@
 import Image from "next/image";
 import route from "next/router";
+import Client from '../../data/client'
 
 import { HiPaperAirplane } from "react-icons/hi";
-
-import Client from '../../data/client'
 
 import Test from '../../../public/img/social_medias/gmail.svg'
 
