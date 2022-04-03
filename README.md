@@ -1,6 +1,7 @@
 Building...
 
 <!-- 
+Fazer função de tirar uma gasolina ao postar
 Fazer função de like
 Fazer função de posts most likes
 Fazer login com github

@@ -33,6 +33,10 @@
     border-radius: 10px;
 }
 
+.boxPost img{
+    border-radius: 9999px;
+}
+
 .contentNameandPost{
     width: 140px;
     height: 100%;

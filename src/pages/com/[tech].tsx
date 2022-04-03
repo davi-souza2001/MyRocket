@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import UsePosts from "../../service/hook/usePosts";
 
-import { Key, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
 
 import { BoxPostComum } from "../../components/BoxPostComum";
@@ -37,7 +37,7 @@ export default function Commun() {
           <div onClick={() => setPostsMoreLiked(!postsMoreLiked)}>
             <HiFire />
             <div className={postsMoreLiked ? styles.contentIconEnable : styles.contentIconDisable}>
-              <PostsMoreLiked />
+              <PostsMoreLiked comum={comumSearch} />
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Commun() {
             </div>
           </div>
           <div className={styles.contentRight}>
-            <PostsMoreLiked />
+            <PostsMoreLiked comum={comumSearch} />
           </div>
         </div>
       </div>
