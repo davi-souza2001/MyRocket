@@ -1,14 +1,15 @@
+import { useState } from "react";
 import Image from "next/image";
-import route from "next/router";
+
 import Client from '../../data/client'
+import UseAuth from "../../service/hook/useAuth";
+import UsePosts from "../../service/hook/usePosts";
 
 import { HiPaperAirplane } from "react-icons/hi";
 
 import Test from '../../../public/img/social_medias/gmail.svg'
 
 import styles from './SendPost.module.css'
-import { useState } from "react";
-import UseAuth from "../../service/hook/useAuth";
 
 interface SendPostProps {
     tech?: string | string[]
@@ -16,6 +17,7 @@ interface SendPostProps {
 
 export function SendPost(props: SendPostProps) {
     const { user } = UseAuth()
+    const { handleFoundPostsByComum } = UsePosts()
     const [post, setPost] = useState('')
     const [errorSend, setErrorSend] = useState(false)
     const [errorSendMensage, setErrorSendMensage] = useState('')
@@ -32,7 +34,7 @@ export function SendPost(props: SendPostProps) {
         }
         try {
             const data = await Client.post('/posts/publicPost', postUserAll).then((res) => {
-                console.log(res.data)
+                handleFoundPostsByComum()
                 return res.data
             })
         } catch (error: any) {

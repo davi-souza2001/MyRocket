@@ -66,7 +66,6 @@ export default function Register() {
         }
         try {
             const data = await Client.post('/users/register', useComplete).then((res) => {
-                console.log(res.data)
                 return res.data
             }).then(() => route.push('/plans'))
         } catch (error: any) {

@@ -85,7 +85,6 @@ export default function Register() {
         setErrorSend(false)
         try {
             const data = await Client.patch(`/users/edituser/${id}`, userComplete).then((res) => {
-                console.log(res.data)
                 return res.data
             }).then(() => {
                 route.push('/mainprofile')
