@@ -24,7 +24,6 @@
 }
 
 .contentImageUser{
-    border-radius: 9999px;
     height: 100%;
     width: 100%;
     display: flex;
@@ -50,10 +49,42 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
+.contentImageUserDesktop{
+    display: none;
+}
+
+.contentImageUserDesktop p:last-child{
+    font-weight: 200;
+}
+
 @media (min-width: 750px){
     .contentGeral{
         width: 400px;
         /* max-width: 29vw; */
+    }
+
+    .contentImageUserDesktop{
+        display: inline-flex;
+    }
+
+    .contentImageUserDesktop{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .contentImageUserDesktop img{
+        border-radius: 9999px;
+    }
+    
+    .contentImageUserDesktop p {
+        margin-left: 10px;
+    }
+
+    .contentImageUser{
+        display: none;
     }
 }
 

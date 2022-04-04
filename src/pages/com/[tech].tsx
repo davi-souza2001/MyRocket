@@ -24,6 +24,8 @@ export default function Commun() {
     handleFoundPostsByComum()
   }, [comumSearch])
 
+  console.log(posts)
+
   return (
     <>
       <Header>
