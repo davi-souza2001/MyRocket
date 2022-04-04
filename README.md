@@ -1,10 +1,9 @@
 Building...
 
 <!-- 
-Fazer função de like no front
+Refatorar para tudo em inglês
 Fazer login com github
 Usar swr para consumir posts
-Refatorar para tudo em inglês
 -->
 
 <!-- npm i -g yarn

@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import UsePosts from "../../service/hook/usePosts";
+import Client from '../../data/client'
 
-import { useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
 
 import { BoxPostComum } from "../../components/BoxPostComum";
@@ -11,14 +12,44 @@ import { PostsMoreLiked } from "../../components/PostsMoreLiked";
 import { SendPost } from "../../components/SendPost";
 
 import styles from '../../styles/Com.module.css'
+import useAuth from "../../service/hook/useAuth";
+
+interface PostsProps {
+  email?: String,
+  post?: String,
+  tech?: String,
+  likes?: String[],
+  userName?: String,
+  userNick?: String,
+  userPhoto?: String,
+  idUnic?: Key | null | undefined
+  _id?: String
+}
 
 export default function Commun() {
   const { posts, handleFoundPostsByComum } = UsePosts();
+  const { user } = useAuth();
   const router = useRouter();
   const comumSearch = router.query.tech;
 
   const [membersEnable, setMembersEnable] = useState(false)
   const [postsMoreLiked, setPostsMoreLiked] = useState(false)
+
+
+  async function handleGiveLike(test: PostsProps) {
+    const sendLike = {
+      idPost: test._id,
+      emailUser: user?.email
+    }
+    try {
+      const data = await Client.post('/posts/giveLike', sendLike).then((res) => {
+        handleFoundPostsByComum()
+        return res.data
+      })
+    } catch (error: any) {
+      console.log(error.response.data.message)
+    }
+  }
 
   useEffect(() => {
     handleFoundPostsByComum()
@@ -69,6 +100,7 @@ export default function Commun() {
                         userNick={post.userNick}
                         userPhoto={post.userPhoto}
                         likes={post.likes?.length}
+                        giveLike={() => handleGiveLike(post)}
                       />
                     </div>
                   )

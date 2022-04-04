@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Key } from 'react';
+import { MouseEventHandler } from 'react';
 import { HiOutlineThumbUp } from "react-icons/hi";
 import Test from '../../../public/img/social_medias/gmail.svg'
 
@@ -11,6 +11,7 @@ interface BoxPostComumProps {
     userName?: String
     userNick?: String
     userPhoto?: String
+    giveLike?: MouseEventHandler<HTMLDivElement> | undefined
 }
 
 export function BoxPostComum(props: BoxPostComumProps) {
@@ -29,7 +30,7 @@ export function BoxPostComum(props: BoxPostComumProps) {
                     <p>{props.userName}</p>
                     <p>@{props.userNick}</p>
                 </div>
-                <div className={styles.contentLikePost}>
+                <div className={styles.contentLikePost} onClick={props.giveLike}>
                     <HiOutlineThumbUp />
                     <p>{props.likes}</p>
                 </div>
