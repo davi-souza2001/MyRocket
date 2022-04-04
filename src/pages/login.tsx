@@ -42,10 +42,6 @@ export default function Login() {
                             <Image src={Gmail} width={40} height={40} alt='gmailLogo'/>
                         </button>
                     </div>
-
-                    <div className={styles.skipLogin}>
-                        <a onClick={() => { route.push('/') }}><strong>Continue without Login</strong></a>
-                    </div>
                 </div>
 
                 <div className={styles.readMore}>
