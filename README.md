@@ -1,7 +1,7 @@
 Building...
 
 <!-- 
-Fazer função de like
+Fazer função de like no front
 Fazer login com github
 Usar swr para consumir posts
 Refatorar para tudo em inglês
