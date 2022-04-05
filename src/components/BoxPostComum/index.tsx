@@ -3,6 +3,8 @@ import { MouseEventHandler } from 'react';
 import { HiOutlineThumbUp } from "react-icons/hi";
 import Test from '../../../public/img/social_medias/gmail.svg'
 
+import Router from 'next/router';
+
 import styles from './BoxPostComum.module.css'
 
 interface BoxPostComumProps {
@@ -22,13 +24,16 @@ export function BoxPostComum(props: BoxPostComumProps) {
             </div>
             <div className={styles.contentInfoUser}>
                 <div className={styles.contentImageUser}>
-                    <Image src={props.userPhoto || Test} width={30} height={30} alt="Image user" />
-                    <p>{props.userName}</p>
+                    <Image src={props.userPhoto || Test} width={40} height={40} alt="Image user" />
+                    <div className={styles.userIdentification}>
+                        <p onClick={() => Router.push(`/profile/${props.userNick}`)}><strong>{props.userName}</strong><br/>@{props.userNick}</p>
+                    </div>
                 </div>
                 <div className={styles.contentImageUserDesktop}>
-                    <Image src={props.userPhoto || Test} width={30} height={30} alt="Image user" />
-                    <p>{props.userName}</p>
-                    <p>@{props.userNick}</p>
+                    <Image src={props.userPhoto || Test} width={40} height={40} alt="Image user" />
+                    <div className={styles.userIdentification}>
+                        <p onClick={() => Router.push(`/profile/${props.userNick}`)}><strong>{props.userName}</strong><br/>@{props.userNick}</p>
+                    </div>
                 </div>
                 <div className={styles.contentLikePost} onClick={props.giveLike}>
                     <HiOutlineThumbUp />

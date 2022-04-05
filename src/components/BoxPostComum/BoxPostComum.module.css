@@ -63,6 +63,14 @@
     font-weight: 200;
 }
 
+.userIdentification p strong{
+    font-size: medium;
+}
+
+.userIdentification p{
+    font-size: smaller;
+}
+
 @media (min-width: 750px){
     .contentGeral{
         width: 400px;
@@ -71,6 +79,13 @@
 
     .contentImageUserDesktop{
         display: inline-flex;
+    }
+
+    .userIdentification{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        cursor: pointer;
     }
 
     .contentImageUserDesktop{
