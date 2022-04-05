@@ -8,6 +8,8 @@
     align-items: center;
     justify-content: space-around;
     background-image: url('../../../public/backgroundGalaxy.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
     border-radius: 10px;
 }
 
@@ -34,6 +36,7 @@
         width: 230px;
         justify-content: center;
         flex-direction: column;
+        background-size: 180%;
     }
 
     .contentGeral{
@@ -78,7 +81,7 @@
     }
     
     .contentImage{
-        height: 30vh;
-        width: 12vw;
+        height: 40vh;
+        width: 300px;
     }
 }

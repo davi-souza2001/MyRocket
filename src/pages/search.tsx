@@ -6,6 +6,9 @@ import Client from '../data/client';
 import { BoxUser } from "../components/BoxUser";
 import { Header } from "../components/Header";
 
+import Image from 'next/image';
+import searchingImage from '../../public/img/search_image.svg';
+
 import styles from '../styles/Search.module.css'
 
 interface userBox {
@@ -109,6 +112,9 @@ export default function Search() {
                         <h2>{error}</h2>
                     </div>
                 )}
+                <div className={styles.searchingImage}>
+                    <Image width={200} height={200} src={searchingImage} alt='Searching Image'/>
+                </div>
                 <div className={styles.contentResponseUser}>
                     {foundUsers && foundUsers?.map((user: any) => {
                         return (
