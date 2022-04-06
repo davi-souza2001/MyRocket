@@ -8,14 +8,13 @@ import { Header } from "../components/Header";
 
 import styles from '../styles/Feed.module.css'
 
-
 export default function Feed() {
     const { user } = UseAuth()
     const { posts } = UsePosts()
     const [userComum, setUserComum] = useState<String | undefined>(user?.comumone)
 
     return (
-        <>
+        <div className={styles.contentGeral}>
             <Header />
             <div className={styles.contentTitle}>
                 <h2>Recent Community Posts</h2>
@@ -53,6 +52,6 @@ export default function Feed() {
                     }
                 })}
             </div>
-        </>
+        </div>
     )
 }
