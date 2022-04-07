@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import Image from "next/image";
 
 import Client from '../../data/client';
@@ -7,12 +7,11 @@ import Client from '../../data/client';
 import { Header } from "../../components/Header";
 import { BoxUserWanted } from "../../components/BoxCommunitiesProfile/BoxUserWanted";
 import { BoxUserWantedSocialMedias } from "../../components/BoxSocialMediaProfile/BoxUserWantedSocialMedias";
-import { BoxProjectsProfile } from "../../components/BoxProjectsProfile";
+import { BoxProjectsUserSearch } from "../../components/BoxProjectsProfile/BoxProjectsUserSearch";
 
 import styles from '../../styles/Profile.module.css'
 
 import Test from '../../../public/img/social_medias/gmail.svg'
-import { BoxProjectsUserSearch } from "../../components/BoxProjectsProfile/BoxProjectsUserSearch";
 
 interface User {
   name?: String;
@@ -54,7 +53,7 @@ export default function Profile() {
         })
       } catch (error: any) {
         console.log(error.response.data.error)
-        alert('asdas')
+        Router.push('/404')
       }
     }
   }
