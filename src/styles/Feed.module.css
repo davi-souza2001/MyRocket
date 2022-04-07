@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--white);
     font-size: 12px;
     margin-top: 20px;
 }
@@ -16,7 +16,7 @@
 .contentTechs{
     width: 100vw;
     height: 50px;
-    color: #fff;
+    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +39,7 @@
     min-height: 700px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     flex-direction: column-reverse;
     margin-top: 30px;
 }
