@@ -36,7 +36,6 @@ export default function Commun() {
   const [membersEnable, setMembersEnable] = useState(false)
   const [postsMoreLiked, setPostsMoreLiked] = useState(false)
 
-
   async function handleGiveLike(test: PostsProps) {
     const sendLike = {
       idPost: test._id,

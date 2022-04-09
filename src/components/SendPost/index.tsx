@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import Client from '../../data/client'
@@ -42,6 +42,7 @@ export function SendPost(props: SendPostProps) {
             console.log(error.response.data.message)
             setErrorSend(true)
             setErrorSendMensage(error.response.data.message)
+            setPost('')
         }
     }
 
@@ -52,7 +53,7 @@ export function SendPost(props: SendPostProps) {
             </div>
             <div className={styles.contentFormPost}>
                 <form onSubmit={(e) => sendPost(e)}>
-                    <input type="text" value={post} placeholder="Write publication" onChange={(e) => setPost(e.target.value)} />
+                    <input type="text" value={post} placeholder={errorSend ? errorSendMensage : 'Write Publication'} onChange={(e) => setPost(e.target.value)} />
                     <button type="submit">
                         <HiPaperAirplane />
                     </button>
