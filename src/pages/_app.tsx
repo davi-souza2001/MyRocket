@@ -5,6 +5,8 @@ import { ComumProvider } from '../service/context/CommunitiesContext'
 import { AuthProvider } from '../service/context/AuthContext'
 import { PostProvider } from '../service/context/PostContext'
 
+import MyRocketLogoPage from '../../public/MyRocketLogoPage.svg'
+
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
