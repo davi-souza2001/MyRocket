@@ -1,8 +1,9 @@
+import { Key, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+
 import UsePosts from "../../service/hook/usePosts";
 import Client from '../../data/client'
 
-import { Key, useEffect, useState } from "react";
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
 
 import { BoxPostComum } from "../../components/BoxPostComum";
@@ -99,6 +100,7 @@ export default function Commun() {
                         userName={post.userName}
                         userNick={post.userNick}
                         userPhoto={post.userPhoto}
+                        likesList={post.likes}
                         likes={post.likes?.length}
                         giveLike={() => handleGiveLike(post)}
                       />

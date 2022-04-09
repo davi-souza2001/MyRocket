@@ -103,7 +103,7 @@ export function AuthProvider(props: any) {
         }
     }
 
-    async function getReposUserGitHub(){
+    async function getReposUserGitHub() {
         const sendUser = {
             emailuser: token
         }
@@ -120,7 +120,7 @@ export function AuthProvider(props: any) {
     useEffect(() => {
         if (token) {
             getUserLogged()
-        } else{
+        } else {
             route.push('/login')
         }
     }, [token]);
