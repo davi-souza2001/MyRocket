@@ -3,10 +3,10 @@ import useAuth from "../../service/hook/useAuth";
 
 import { HiOutlineGlobe } from "react-icons/hi";
 
-import styles from './BoxCommunitiesProfile.module.css'
+import styles from './BoxCommunitiesProfile.module.css';
 
 export function BoxCommunitiesProfile() {
-  const {user} = useAuth()
+  const {user} = useAuth();
 
   return (
     <div className={styles.contentGeral}>

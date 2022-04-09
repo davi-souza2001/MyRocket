@@ -10,33 +10,33 @@ import { BoxCommunitiesProfile } from "../components/BoxCommunitiesProfile";
 import { BoxProjectsProfile } from "../components/BoxProjectsProfile";
 import { BoxSocialMediaProfile } from "../components/BoxSocialMediaProfile";
 
-import styles from '../styles/Profile.module.css'
+import styles from '../styles/Profile.module.css';
 
-import Test from '../../public/img/social_medias/gmail.svg'
+import Test from '../../public/img/social_medias/gmail.svg';
 
 export default function Profile() {
-  const { user, logout } = UseAuth()
+  const { user, logout } = UseAuth();
 
-  const [communities, setCommunities] = useState(true)
-  const [projects, setProjects] = useState(false)
-  const [socialMedia, setSocialMedia] = useState(false)
+  const [communities, setCommunities] = useState(true);
+  const [projects, setProjects] = useState(false);
+  const [socialMedia, setSocialMedia] = useState(false);
 
   function handleComum() {
-    setCommunities(true)
-    setProjects(false)
-    setSocialMedia(false)
+    setCommunities(true);
+    setProjects(false);
+    setSocialMedia(false);
   }
 
   function handleProjects() {
-    setCommunities(false)
-    setProjects(true)
-    setSocialMedia(false)
+    setCommunities(false);
+    setProjects(true);
+    setSocialMedia(false);
   }
 
   function handleSocialMedia() {
-    setCommunities(false)
-    setProjects(false)
-    setSocialMedia(true)
+    setCommunities(false);
+    setProjects(false);
+    setSocialMedia(true);
   }
 
   return (
@@ -52,7 +52,7 @@ export default function Profile() {
         </div>
       </div>
       <div className={styles.contentUserInfo}>
-        <h2>{user?.name} <HiCog style={{'cursor': 'pointer'}} onClick={() => route.push('/editProfile')}/></h2>
+        <h2>{user?.name} <HiCog style={{ 'cursor': 'pointer' }} onClick={() => route.push('/editProfile')} /></h2>
         <p>@{user?.nickname}</p>
       </div>
       <div className={styles.contentUserDescription}>

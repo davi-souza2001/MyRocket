@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 type BoxStacks = {
     area: String,
-    description: String
-    logo: string
+    description: String,
+    logo: string,
     onClick: () => void
 };
 

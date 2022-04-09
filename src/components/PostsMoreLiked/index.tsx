@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import styles from './PostsMoreLiked.module.css'
+import Image from 'next/image';
+import styles from './PostsMoreLiked.module.css';
 
-import Teste from '../../../public/img/social_medias/gmail.svg'
+import Teste from '../../../public/img/social_medias/gmail.svg';
 import { Key, useEffect, useState } from 'react';
 import UsePosts from '../../service/hook/usePosts';
 
@@ -22,7 +22,7 @@ interface PostsProps {
 
 export function PostsMoreLiked(props: PostsMoreLikedProps) {
     const { posts } = UsePosts();
-    const [postsHaveLike, setPostsHaveLike] = useState<PostsProps[]>([])
+    const [postsHaveLike, setPostsHaveLike] = useState<PostsProps[]>([]);
 
     useEffect(() => {
         const postHaveLike = posts?.map((post: any) => {
@@ -43,12 +43,12 @@ export function PostsMoreLiked(props: PostsMoreLikedProps) {
             return 0;
         });
 
-        const handleItsNotNull = (post: PostsProps) => post != null
+        const handleItsNotNull = (post: PostsProps) => post != null;
 
-        const finalListPostsNoHaveNull = postsHaveLikeByOrder?.filter(handleItsNotNull)
+        const finalListPostsNoHaveNull = postsHaveLikeByOrder?.filter(handleItsNotNull);
 
         if (finalListPostsNoHaveNull) {
-            setPostsHaveLike(finalListPostsNoHaveNull)
+            setPostsHaveLike(finalListPostsNoHaveNull);
         }
 
     }, [posts]);

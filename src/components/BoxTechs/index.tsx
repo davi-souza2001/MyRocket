@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import styles from './BoxTechs.module.css'
+import styles from './BoxTechs.module.css';
 
 type BoxTechs = {
-  img?: any;
-  title: String;
-  onClick: () => void;
+  img?: any,
+  title: String,
+  onClick: () => void
 };
 
 export default function BoxTechs(props: BoxTechs) {

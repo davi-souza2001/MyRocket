@@ -1,37 +1,37 @@
-import Image from 'next/image'
+import Image from 'next/image';
 import { MouseEventHandler, useEffect, useState } from 'react';
 import { HiOutlineThumbUp, HiThumbUp } from "react-icons/hi";
-import Test from '../../../public/img/social_medias/gmail.svg'
+import Test from '../../../public/img/social_medias/gmail.svg';
 
 import Router from 'next/router';
 
-import styles from './BoxPostComum.module.css'
+import styles from './BoxPostComum.module.css';
 import UseAuth from '../../service/hook/useAuth';
 
 interface BoxPostComumProps {
-    post?: String
-    likes?: Number
-    likesList?: String[]
-    userName?: String
-    userNick?: String
-    userPhoto?: String
+    post?: String,
+    likes?: Number,
+    likesList?: String[],
+    userName?: String,
+    userNick?: String,
+    userPhoto?: String,
     giveLike?: MouseEventHandler<HTMLDivElement> | undefined
 }
 
 export function BoxPostComum(props: BoxPostComumProps) {
-    const [userLiked, setUserLiked] = useState(false)
-    const { user } = UseAuth()
+    const [userLiked, setUserLiked] = useState(false);
+    const { user } = UseAuth();
 
     function handleRenderIfUserGiveLiked() {
         props.likesList?.map((like: String) => {
             if (like === user?.email) {
-                setUserLiked(true)
+                setUserLiked(true);
             }
         })
     }
 
     useEffect(() => {
-        handleRenderIfUserGiveLiked()
+        handleRenderIfUserGiveLiked();
     }, [props.likesList])
 
 

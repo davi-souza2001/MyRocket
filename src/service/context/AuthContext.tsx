@@ -2,36 +2,36 @@ import route from 'next/router';
 import { createContext, MouseEventHandler, useEffect, useState } from 'react';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
-import Client from '../../data/client'
+import Client from '../../data/client';
 import { auth } from '../../firebase/connect';
 import Cookie from 'js-cookie';
 
 interface AuthContextProps {
-    email?: string;
-    photo?: string;
-    user?: User;
-    users?: Array<any>;
-    repos?: Array<any>;
-    loginGoogle?: () => Promise<void>;
+    email?: string,
+    photo?: string,
+    user?: User,
+    users?: Array<any>,
+    repos?: Array<any>,
+    loginGoogle?: () => Promise<void>,
     logout?: MouseEventHandler<HTMLParagraphElement>
 };
 
 interface User {
-    name?: String;
-    nickname?: String;
-    seniority?: String;
-    area?: String;
-    comumone?: String;
-    comumtwo?: String;
-    comumthree?: String;
-    description?: String;
-    linkedin?: String;
-    github?: String;
-    youtube?: String;
-    instagram?: String;
-    photo?: String;
-    email?: String;
-    gas?: Number;
+    name?: String,
+    nickname?: String,
+    seniority?: String,
+    area?: String,
+    comumone?: String,
+    comumtwo?: String,
+    comumthree?: String,
+    description?: String,
+    linkedin?: String,
+    github?: String,
+    youtube?: String,
+    instagram?: String,
+    photo?: String,
+    email?: String,
+    gas?: Number
 }
 
 const AuthContext = createContext<AuthContextProps>({});
@@ -47,9 +47,9 @@ function setCookieIdUser(user: any) {
 export function AuthProvider(props: any) {
     const [email, setEmail] = useState('');
     const [photo, setPhoto] = useState('');
-    const [user, setUser] = useState<User>({})
-    const [users, setUsers] = useState([])
-    const [repos, setRepos] = useState([])
+    const [user, setUser] = useState<User>({});
+    const [users, setUsers] = useState([]);
+    const [repos, setRepos] = useState([]);
     const token = Cookie.get('Admin-cookie-MyRocket');
 
     async function loginGoogle() {
@@ -62,10 +62,10 @@ export function AuthProvider(props: any) {
                     photo: user.photoURL,
                     id: user.uid,
                 };
-                setCookieIdUser(userFinal)
-                setEmail(userFinal.email)
-                setPhoto(userFinal.photo)
-                route.push('/register')
+                setCookieIdUser(userFinal);
+                setEmail(userFinal.email);
+                setPhoto(userFinal.photo);
+                route.push('/register');
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -75,41 +75,41 @@ export function AuthProvider(props: any) {
 
     async function logout() {
         Cookie.remove('Admin-cookie-MyRocket');
-        route.replace('/login')
+        route.replace('/login');
     }
 
     async function getAllUsers() {
         try {
             const data = await Client.get('/users/getAllUsers').then((res) => {
-                setUsers(res.data)
+                setUsers(res.data);
                 return res.data
             })
         } catch (error: any) {
-            console.log(error.response)
+            console.log(error.response);
         }
     }
 
     async function getUserLogged() {
         const sendUser = {
             emailuser: token
-        }
+        };
         try {
             const data = await Client.post('/users/checkuser', sendUser).then((res) => {
-                setUser(res.data)
+                setUser(res.data);
                 return res.data
             })
         } catch (error: any) {
-            console.log(error.response)
+            console.log(error.response);
         }
     }
 
     async function getReposUserGitHub() {
         const sendUser = {
             emailuser: token
-        }
+        };
         try {
             const data = await Client.post('/users/getGitHubUser', sendUser).then((res) => {
-                setRepos(res.data)
+                setRepos(res.data);
                 return res.data
             })
         } catch (error: any) {
@@ -119,15 +119,15 @@ export function AuthProvider(props: any) {
 
     useEffect(() => {
         if (token) {
-            getUserLogged()
+            getUserLogged();
         } else {
-            route.push('/login')
+            route.push('/login');
         }
     }, [token]);
 
     useEffect(() => {
-        getAllUsers()
-        getReposUserGitHub()
+        getAllUsers();
+        getReposUserGitHub();
     }, [user]);
 
     return (

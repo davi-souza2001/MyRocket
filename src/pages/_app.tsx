@@ -1,13 +1,13 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
-import type { AppProps } from 'next/app'
-import { ComumProvider } from '../service/context/CommunitiesContext'
-import { AuthProvider } from '../service/context/AuthContext'
-import { PostProvider } from '../service/context/PostContext'
+import type { AppProps } from 'next/app';
+import { ComumProvider } from '../service/context/CommunitiesContext';
+import { AuthProvider } from '../service/context/AuthContext';
+import { PostProvider } from '../service/context/PostContext';
 
-import MyRocketLogoPage from '../../public/MyRocketLogoPage.svg'
+import MyRocketLogoPage from '../../public/MyRocketLogoPage.svg';
 
-import '../styles/globals.css'
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

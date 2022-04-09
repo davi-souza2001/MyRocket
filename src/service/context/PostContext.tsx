@@ -4,7 +4,7 @@ import Client from '../../data/client';
 const PostContext = createContext<PostContext>({ handleFoundPostsByComum: () => { } });
 
 interface PostContext {
-  posts?: PostsProps[]
+  posts?: PostsProps[],
   handleFoundPostsByComum: () => void
 }
 
@@ -25,7 +25,7 @@ export function PostProvider(props: any) {
   async function handleFoundPostsByComum() {
     try {
       const data = await Client.get('/posts/getAllPosts').then((res) => {
-        setPosts(res.data)
+        setPosts(res.data);
       })
     } catch (error: any) {
       console.log(error.response.data.error)
@@ -33,7 +33,7 @@ export function PostProvider(props: any) {
   }
 
   useEffect(() => {
-    handleFoundPostsByComum()
+    handleFoundPostsByComum();
   }, [])
 
   return (

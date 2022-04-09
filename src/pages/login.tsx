@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-import route from "next/router";
 import UseAuth from '../service/hook/useAuth';
 
 import Gmail from '../../public/img/social_medias/gmail.svg';

@@ -3,19 +3,19 @@ import route from "next/router";
 
 import BoxPlans from "../components/BoxPlanUser/index";
 import UseAuth from "../service/hook/useAuth";
-import styles from '../styles/Plans.module.css'
+import styles from '../styles/Plans.module.css';
 
 export default function Plans() {
-    const { email, users } = UseAuth()
+    const { email, users } = UseAuth();
 
     useEffect(() => {
         if (email === '') {
-            route.replace('/login')
+            route.replace('/login');
         }
 
         const checkIfUserExists = users?.map((user) => {
             if (user.email === email) {
-                route.replace('/')
+                route.replace('/');
             }
         })
 

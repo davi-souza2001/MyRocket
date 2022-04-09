@@ -2,12 +2,12 @@ import route from "next/router";
 
 import { HiOutlineGlobe } from "react-icons/hi";
 
-import styles from './BoxCommunitiesProfile.module.css'
+import styles from './BoxCommunitiesProfile.module.css';
 
 interface BoxUserWantedProps{
-    comumone?: String;
-    comumtwo?: String;
-    comumthree?: String;
+    comumone?: String,
+    comumtwo?: String,
+    comumthree?: String
 }
 
 export function BoxUserWanted(props: BoxUserWantedProps) {

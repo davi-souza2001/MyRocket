@@ -1,10 +1,10 @@
-import { AiFillGithub, AiFillInstagram, AiFillYoutube, AiFillLinkedin } from 'react-icons/ai'
+import { AiFillGithub, AiFillInstagram, AiFillYoutube, AiFillLinkedin } from 'react-icons/ai';
 import UseAuth from '../../service/hook/useAuth';
 
-import styles from './BoxSocialMediaProfile.module.css'
+import styles from './BoxSocialMediaProfile.module.css';
 
 export function BoxSocialMediaProfile() {
-    const { user } = UseAuth()
+    const { user } = UseAuth();
 
     return (
         <div className={styles.contentGeral}>

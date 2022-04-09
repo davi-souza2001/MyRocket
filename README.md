@@ -1,10 +1,9 @@
 Building...
 
 <!-- 
-Colocar header nas páginas
 Refatorar para tudo em inglês
-Fazer login com github
 Usar swr para consumir posts
+Fazer login com github
 -->
 
 <!-- npm i -g yarn

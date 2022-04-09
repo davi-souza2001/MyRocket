@@ -23,7 +23,7 @@ interface PostsProps {
   userName?: String,
   userNick?: String,
   userPhoto?: String,
-  idUnic?: Key | null | undefined
+  idUnic?: Key | null | undefined,
   _id?: String
 }
 
@@ -33,14 +33,14 @@ export default function Commun() {
   const router = useRouter();
   const comumSearch = router.query.tech;
 
-  const [membersEnable, setMembersEnable] = useState(false)
-  const [postsMoreLiked, setPostsMoreLiked] = useState(false)
+  const [membersEnable, setMembersEnable] = useState(false);
+  const [postsMoreLiked, setPostsMoreLiked] = useState(false);
 
   async function handleGiveLike(test: PostsProps) {
     const sendLike = {
       idPost: test._id,
       emailUser: user?.email
-    }
+    };
     try {
       const data = await Client.post('/posts/giveLike', sendLike).then((res) => {
         handleFoundPostsByComum()
@@ -53,7 +53,7 @@ export default function Commun() {
 
   useEffect(() => {
     handleFoundPostsByComum()
-  }, [comumSearch])
+  }, [comumSearch]);
 
   return (
     <>

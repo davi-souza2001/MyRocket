@@ -1,9 +1,9 @@
-import Image from 'next/image'
+import Image from 'next/image';
 import { AiFillRocket } from 'react-icons/ai';
 
-import styles from './BoxUser.module.css'
+import styles from './BoxUser.module.css';
 
-import Test from '../../../public/img/social_medias/gmail.svg'
+import Test from '../../../public/img/social_medias/gmail.svg';
 
 interface BoxUserProps{
     photo?: string,

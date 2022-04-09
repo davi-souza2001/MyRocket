@@ -6,12 +6,12 @@ import UseAuth from "../service/hook/useAuth";
 import { BoxPostComum } from "../components/BoxPostComum";
 import { Header } from "../components/Header";
 
-import styles from '../styles/Feed.module.css'
+import styles from '../styles/Feed.module.css';
 
 export default function Feed() {
-    const { user } = UseAuth()
-    const { posts } = UsePosts()
-    const [userComum, setUserComum] = useState<String | undefined>(user?.comumone)
+    const { user } = UseAuth();
+    const { posts } = UsePosts();
+    const [userComum, setUserComum] = useState<String | undefined>(user?.comumone);
 
     return (
         <div className={styles.contentGeral}>

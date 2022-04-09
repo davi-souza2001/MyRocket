@@ -3,38 +3,38 @@ import Image from 'next/image';
 import route from "next/router";
 import UseAuth from '../service/hook/useAuth';
 
-import Client from '../data/client'
+import Client from '../data/client';
 
-import Rocket from '../../public/rocketRegister.svg'
+import Rocket from '../../public/rocketRegister.svg';
 import styles from '../styles/Register.module.css';
 
 export default function Register() {
-    const { email, photo, users } = UseAuth()
-    const [name, setName] = useState('')
-    const [nickname, setNickName] = useState('')
-    const [seniority, setSeniority] = useState('')
-    const [area, setArea] = useState('')
-    const [comumone, setComumOne] = useState('')
-    const [comumtwo, setComumTwo] = useState('')
-    const [comumthree, setComumThree] = useState('')
-    const [description, setDescription] = useState('')
-    const [linkedin, setLinkedin] = useState('')
-    const [github, setGithub] = useState('')
-    const [instagram, setInstagram] = useState('')
-    const [youtube, setYoutube] = useState('')
-    const [checkBox, setCheckBox] = useState('off')
+    const { email, photo, users } = UseAuth();
+    const [name, setName] = useState('');
+    const [nickname, setNickName] = useState('');
+    const [seniority, setSeniority] = useState('');
+    const [area, setArea] = useState('');
+    const [comumone, setComumOne] = useState('');
+    const [comumtwo, setComumTwo] = useState('');
+    const [comumthree, setComumThree] = useState('');
+    const [description, setDescription] = useState('');
+    const [linkedin, setLinkedin] = useState('');
+    const [github, setGithub] = useState('');
+    const [instagram, setInstagram] = useState('');
+    const [youtube, setYoutube] = useState('');
+    const [checkBox, setCheckBox] = useState('off');
 
-    const [errorSend, setErrorSend] = useState(false)
-    const [errorSendMensage, setErrorSendMensage] = useState('')
+    const [errorSend, setErrorSend] = useState(false);
+    const [errorSendMensage, setErrorSendMensage] = useState('');
 
     useEffect(() => {
         if (email === '') {
-            route.replace('/login')
+            route.replace('/login');
         }
 
         const checkIfUserExists = users?.map((user) => {
             if (user.email === email) {
-                route.replace('/')
+                route.replace('/');
             }
         })
 
@@ -55,13 +55,13 @@ export default function Register() {
         youtube,
         instagram,
         photo
-    }
+    };
 
     async function sendUser(e: any) {
-        e.preventDefault()
+        e.preventDefault();
         if (checkBox === 'off') {
-            setErrorSend(true)
-            setErrorSendMensage('Aceite nossos termos!')
+            setErrorSend(true);
+            setErrorSendMensage('Aceite nossos termos!');
             return
         }
         try {

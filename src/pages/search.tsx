@@ -9,77 +9,72 @@ import { Header } from "../components/Header";
 import Image from 'next/image';
 import searchingImage from '../../public/img/search_image.svg';
 
-import styles from '../styles/Search.module.css'
+import styles from '../styles/Search.module.css';
 
 interface userBox {
-    area: string
-    name: string
-    description: string
-    photo?: string
+    area: string,
+    name: string,
+    description: string,
+    photo?: string,
     nickname: string
 }
 
 export default function Search() {
-    const [howSearch, setHowSearch] = useState('Community')
-    const [search, setSearch] = useState('')
-    const [foundUsers, setFoundUsers] = useState([])
-    const [userNickName, setUserNickName] = useState<userBox>({ area: '', name: '', description: '', nickname: '' })
-    const [error, setError] = useState('')
-
-    // function handleCapsSearch(sentence: string) {
-    //     const searchUpperCase= sentence.charAt(0).toUpperCase() + sentence.slice(1);
-    //     setSearch(searchUpperCase)
-    // }
+    const [howSearch, setHowSearch] = useState('Community');
+    const [search, setSearch] = useState('');
+    const [foundUsers, setFoundUsers] = useState([]);
+    const [userNickName, setUserNickName] = useState<userBox>({ area: '', name: '', description: '', nickname: '' });
+    const [error, setError] = useState('');
 
     function handleChangeHowToSearch() {
         if (howSearch === 'NickName') {
-            setHowSearch('Community')
-            setSearch('')
-            setFoundUsers([])
-            setUserNickName({ area: '', name: '', description: '', nickname: '' })
+            setHowSearch('Community');
+            setSearch('');
+            setFoundUsers([]);
+            setUserNickName({ area: '', name: '', description: '', nickname: '' });
         }
         if (howSearch === 'Community') {
-            setHowSearch('NickName')
-            setSearch('')
-            setFoundUsers([])
-            setUserNickName({ area: '', name: '', description: '', nickname: '' })
+            setHowSearch('NickName');
+            setSearch('');
+            setFoundUsers([]);
+            setUserNickName({ area: '', name: '', description: '', nickname: '' });
         }
     }
 
     async function handleFoundUsersByComum(e: any) {
-        e.preventDefault()
-        setError('')
-        setFoundUsers([])
+        e.preventDefault();
+        setError('');
+        setFoundUsers([]);
         // handleCapsSearch(search)
         const sendData = {
             comum: search
         }
         try {
             const data = await Client.post('/users/searchuserByComum', sendData).then((res) => {
-                setFoundUsers(res.data.userFoundComum)
+                setFoundUsers(res.data.userFoundComum);
                 return res.data
             })
         } catch (error: any) {
-            setError(error.response.data.error)
+            setError(error.response.data.error);
             console.log(error.response.data.error)
         }
     }
 
     async function handleFoundUsersByNickName(e: any) {
-        e.preventDefault()
-        setError('')
-        setFoundUsers([])
+        e.preventDefault();
+        setError('');
+        setFoundUsers([]);
         const sendData = {
             usersearch: search
-        }
+        };
 
         try {
             const data = await Client.post('/users/searchuserByNickName', sendData).then((res) => {
-                setUserNickName(res.data)
+                setUserNickName(res.data);
                 return res.data
             })
         } catch (error: any) {
-            setError(error.response.data.error)
+            setError(error.response.data.error);
             console.log(error.response.data.error)
         }
     }

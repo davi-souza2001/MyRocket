@@ -1,12 +1,11 @@
 import route from "next/router";
 
-import styles from '../BoxPlanUser/BoxPlanUser.module.css'
+import styles from '../BoxPlanUser/BoxPlanUser.module.css';
 
 type BoxPlans = {
-    title: String;
-    price: String;
-    benefit: String;
-    /* onClick: () => void; */
+    title: String,
+    price: String,
+    benefit: String
   };
 
 export default function BoxPlanUser(props: BoxPlans) {

@@ -3,7 +3,7 @@ import { createContext, useState } from 'react';
 const ComumContext = createContext<ComumProps>({});
 
 interface ComumProps{
-    comumUnic?: string
+    comumUnic?: string,
     setComumUnic?: any
 }
 

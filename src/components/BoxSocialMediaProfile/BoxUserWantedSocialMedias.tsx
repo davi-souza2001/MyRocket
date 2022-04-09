@@ -1,12 +1,12 @@
-import { AiFillGithub, AiFillInstagram, AiFillYoutube, AiFillLinkedin } from 'react-icons/ai'
+import { AiFillGithub, AiFillInstagram, AiFillYoutube, AiFillLinkedin } from 'react-icons/ai';
 
-import styles from './BoxSocialMediaProfile.module.css'
+import styles from './BoxSocialMediaProfile.module.css';
 
 interface BoxUserWantedSocialMediasProps{
-    github?: String;
-    instagram?: String;
-    youtube?: String;
-    linkedin?: String;
+    github?: String,
+    instagram?: String,
+    youtube?: String,
+    linkedin?: String
 }
 
 export function BoxUserWantedSocialMedias(props: BoxUserWantedSocialMediasProps) {

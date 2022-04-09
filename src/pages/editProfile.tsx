@@ -7,32 +7,32 @@ import Client from '../data/client'
 import styles from '../styles/Register.module.css';
 
 export default function Register() {
-    const [id, setId] = useState('')
-    const [gas, setGas] = useState(0)
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [photo, setPhoto] = useState('')
-    const [nickname, setNickName] = useState('')
-    const [seniority, setSeniority] = useState('')
-    const [area, setArea] = useState('')
-    const [comumone, setComumOne] = useState('')
-    const [comumtwo, setComumTwo] = useState('')
-    const [comumthree, setComumThree] = useState('')
-    const [description, setDescription] = useState('')
-    const [linkedin, setLinkedin] = useState('')
-    const [github, setGithub] = useState('')
-    const [instagram, setInstagram] = useState('')
-    const [youtube, setYoutube] = useState('')
+    const [id, setId] = useState('');
+    const [gas, setGas] = useState(0);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [photo, setPhoto] = useState('');
+    const [nickname, setNickName] = useState('');
+    const [seniority, setSeniority] = useState('');
+    const [area, setArea] = useState('');
+    const [comumone, setComumOne] = useState('');
+    const [comumtwo, setComumTwo] = useState('');
+    const [comumthree, setComumThree] = useState('');
+    const [description, setDescription] = useState('');
+    const [linkedin, setLinkedin] = useState('');
+    const [github, setGithub] = useState('');
+    const [instagram, setInstagram] = useState('');
+    const [youtube, setYoutube] = useState('');
 
-    const [errorSend, setErrorSend] = useState(false)
-    const [errorSendMensage, setErrorSendMensage] = useState('')
+    const [errorSend, setErrorSend] = useState(false);
+    const [errorSendMensage, setErrorSendMensage] = useState('');
 
     const token = Cookie.get('Admin-cookie-MyRocket');
 
     async function getUserLogged() {
         const sendUser = {
             emailuser: token
-        }
+        };
         try {
             const data = await Client.post('/users/checkuser', sendUser).then((res) => {
                 setId(res.data._id)
@@ -59,7 +59,7 @@ export default function Register() {
     }
 
     useEffect(() => {
-        getUserLogged()
+        getUserLogged();
     }, [])
     
     const userComplete = {

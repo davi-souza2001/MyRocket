@@ -7,9 +7,9 @@ import { HiMenu } from 'react-icons/hi';
 import { AiFillRocket, AiOutlineClose } from 'react-icons/ai';
 import { BiGasPump } from "react-icons/bi";
 
-import styles from './Header.module.css'
+import styles from './Header.module.css';
 
-type Header = {
+interface Header {
     children?: any
 }
 
@@ -25,10 +25,10 @@ export function Header(props: Header) {
             </div>
 
             <div className={styles.gasDiv}>
-                <BiGasPump className={styles.gasIcon}/>
+                <BiGasPump className={styles.gasIcon} />
                 <p>x{user?.gas}</p>
             </div>
-            
+
             <div className={styles.contentOptions}>
                 {props.children}
                 <div className={styles.contentToggleMenu}>

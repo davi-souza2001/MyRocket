@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import route from "next/router";
 import axios from 'axios';
-import { AiFillGithub } from 'react-icons/ai'
+import { AiFillGithub } from 'react-icons/ai';
 
-import styles from './BoxProjectsProfile.module.css'
+import styles from './BoxProjectsProfile.module.css';
 
 interface getReposUserGitHubProps{
     nickname?: String;
@@ -16,15 +16,15 @@ const [repos, setRepos] = useState([]);
         try {
             const reposUserByGitHub = axios.get(`https://api.github.com/users/${props.nickname}/repos`)
             .then((repos) => {
-                setRepos(repos.data)
+                setRepos(repos.data);
             })
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 
     useEffect(() => {
-        getReposUserGitHub()
+        getReposUserGitHub();
     }, [props.nickname])
 
     return (

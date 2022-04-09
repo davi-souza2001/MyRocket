@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-import Client from '../../data/client'
+import Client from '../../data/client';
 import UseAuth from "../../service/hook/useAuth";
 import UsePosts from "../../service/hook/usePosts";
 
 import { HiPaperAirplane } from "react-icons/hi";
 
-import Test from '../../../public/img/social_medias/gmail.svg'
+import Test from '../../../public/img/social_medias/gmail.svg';
 
-import styles from './SendPost.module.css'
+import styles from './SendPost.module.css';
 
 interface SendPostProps {
     tech?: string | string[]
 }
 
 export function SendPost(props: SendPostProps) {
-    const { user } = UseAuth()
-    const { handleFoundPostsByComum } = UsePosts()
-    const [post, setPost] = useState('')
-    const [errorSend, setErrorSend] = useState(false)
-    const [errorSendMensage, setErrorSendMensage] = useState('')
+    const { user } = UseAuth();
+    const { handleFoundPostsByComum } = UsePosts();
+    const [post, setPost] = useState('');
+    const [errorSend, setErrorSend] = useState(false);
+    const [errorSendMensage, setErrorSendMensage] = useState('');
 
     async function sendPost(e: any) {
-        e.preventDefault()
+        e.preventDefault();
         const postUserAll = {
             email: user?.email,
             post,
@@ -31,7 +31,7 @@ export function SendPost(props: SendPostProps) {
             likes: [],
             userName: user?.name,
             userPhoto: user?.photo
-        }
+        };
         try {
             const data = await Client.post('/posts/publicPost', postUserAll).then((res) => {
                 setPost('')

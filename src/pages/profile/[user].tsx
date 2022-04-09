@@ -9,26 +9,26 @@ import { BoxUserWanted } from "../../components/BoxCommunitiesProfile/BoxUserWan
 import { BoxUserWantedSocialMedias } from "../../components/BoxSocialMediaProfile/BoxUserWantedSocialMedias";
 import { BoxProjectsUserSearch } from "../../components/BoxProjectsProfile/BoxProjectsUserSearch";
 
-import styles from '../../styles/Profile.module.css'
+import styles from '../../styles/Profile.module.css';
 
-import Test from '../../../public/img/social_medias/gmail.svg'
+import Test from '../../../public/img/social_medias/gmail.svg';
 
 interface User {
-  name?: String;
-  nickname?: String;
-  seniority?: String;
-  area?: String;
-  comumone?: String;
-  comumtwo?: String;
-  comumthree?: String;
-  description?: String;
-  linkedin?: String;
-  github?: String;
-  youtube?: String;
-  instagram?: String;
-  photo?: String;
-  email?: String;
-  gas?: Number;
+  name?: String,
+  nickname?: String,
+  seniority?: String,
+  area?: String,
+  comumone?: String,
+  comumtwo?: String,
+  comumthree?: String,
+  description?: String,
+  linkedin?: String,
+  github?: String,
+  youtube?: String,
+  instagram?: String,
+  photo?: String,
+  email?: String,
+  gas?: Number
 }
 
 export default function Profile() {

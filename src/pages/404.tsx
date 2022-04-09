@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import Router from 'next/router'
+import Image from 'next/image';
+import Router from 'next/router';
 
-import ImageError from '../../public/PageError.svg'
+import ImageError from '../../public/PageError.svg';
 
-import styles from '../styles/Page404.module.css'
+import styles from '../styles/Page404.module.css';
 
 export default function Page404() {
   return (

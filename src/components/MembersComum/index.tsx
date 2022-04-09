@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
-import Client from '../../data/client'
+import Client from '../../data/client';
 
-import styles from './MembersComum.module.css'
+import styles from './MembersComum.module.css';
 
 interface MembersComum{
-    communities?: string | string[]
+    communities?: string | string[];
 }
 
 export function MembersComum(props: MembersComum) {
 
-    const [foundUsers, setFoundUsers] = useState([])
+    const [foundUsers, setFoundUsers] = useState([]);
 
     async function handleFoundUsersByComum() {
         setFoundUsers([])
-        const comum = props.communities
+        const comum = props.communities;
         const sendData = {
             comum
-        }
+        };
         try {
             const data = await Client.post('/users/searchuserByComum', sendData).then((res) => {
-                setFoundUsers(res.data.userFoundComum)
+                setFoundUsers(res.data.userFoundComum);
                 return res.data
             })
         } catch (error: any) {
-            console.log(error.response.data.error)
+            console.log(error.response.data.error);
         }
     }
 
