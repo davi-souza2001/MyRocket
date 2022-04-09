@@ -128,7 +128,7 @@ export function AuthProvider(props: any) {
     useEffect(() => {
         getAllUsers()
         getReposUserGitHub()
-    }, []);
+    }, [user]);
 
     return (
         <AuthContext.Provider value={{ loginGoogle, email, photo, user, users, logout, repos }}>
