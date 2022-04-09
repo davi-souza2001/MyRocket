@@ -40,14 +40,16 @@ export default function Feed() {
                 {posts?.map((posts) => {
                     if (posts.tech === userComum) {
                         return (
-                            <BoxPostComum
-                                key={posts.idUnic}
-                                post={posts.post}
-                                userName={posts.userName}
-                                userNick={posts.userNick}
-                                userPhoto={posts.userPhoto}
-                                likes={posts.likes?.length}
-                            />
+                            <div key={posts.idUnic}>
+                                <BoxPostComum
+                                    post={posts.post}
+                                    userName={posts.userName}
+                                    userNick={posts.userNick}
+                                    userPhoto={posts.userPhoto}
+                                    likesList={posts.likes}
+                                    likes={posts.likes?.length}
+                                />
+                            </div>
                         )
                     }
                 })}

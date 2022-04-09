@@ -16,10 +16,7 @@ interface BoxPostComumProps {
     userNick?: String
     userPhoto?: String
     giveLike?: MouseEventHandler<HTMLDivElement> | undefined
-    liked?: Boolean
 }
-
-
 
 export function BoxPostComum(props: BoxPostComumProps) {
     const [userLiked, setUserLiked] = useState(false)

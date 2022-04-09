@@ -18,6 +18,10 @@
     justify-content: center;
 }
 
+.contentImageUser img{
+    border-radius: 999px;
+}
+
 .contentFormPost{
 /*     height: 60%; */
     width: 100%;
