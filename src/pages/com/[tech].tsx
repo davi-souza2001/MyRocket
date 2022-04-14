@@ -1,5 +1,6 @@
 import { Key, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { useQuery } from "react-query";
 
 import UsePosts from "../../service/hook/usePosts";
 import Client from '../../data/client'
@@ -35,6 +36,12 @@ export default function Commun() {
 
   const [membersEnable, setMembersEnable] = useState(false);
   const [postsMoreLiked, setPostsMoreLiked] = useState(false);
+
+  // const { data, isFetching } = useQuery('posts', async () => {
+  //   const response = await axios.get('http://localhost:5000/posts/getAllPosts');
+
+  //   return response.data;
+  // });
 
   async function handleGiveLike(test: PostsProps) {
     const sendLike = {

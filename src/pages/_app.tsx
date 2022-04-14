@@ -5,7 +5,8 @@ import { ComumProvider } from '../service/context/CommunitiesContext';
 import { AuthProvider } from '../service/context/AuthContext';
 import { PostProvider } from '../service/context/PostContext';
 
-import MyRocketLogoPage from '../../public/MyRocketLogoPage.svg';
+import { QueryClientProvider } from 'react-query';
+import { queryClient } from '../service/queryClient';
 
 import '../styles/globals.css';
 
@@ -15,13 +16,15 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>MyRocket</title>
       </Head>
-      <AuthProvider>
-        <ComumProvider>
-          <PostProvider>
-            <Component {...pageProps} />
-          </PostProvider>
-        </ComumProvider>
-      </AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <ComumProvider>
+            <PostProvider>
+              <Component {...pageProps} />
+            </PostProvider>
+          </ComumProvider>
+        </AuthProvider>
+      </QueryClientProvider>
     </>
   )
 }

@@ -79,6 +79,16 @@ export default function Search() {
         }
     }
 
+    function handleRenderImage() {
+        if (foundUsers.length === 0 && userNickName.nickname === '') {
+            return (
+                <div className={styles.searchingImage}>
+                    <Image width={200} height={200} src={searchingImage} alt='Searching Image' />
+                </div>
+            )
+        }
+    }
+
     return (
         <>
             <Header />
@@ -107,9 +117,12 @@ export default function Search() {
                         <h2>{error}</h2>
                     </div>
                 )}
-                <div className={styles.searchingImage}>
-                    <Image width={200} height={200} src={searchingImage} alt='Searching Image'/>
-                </div>
+                {/* {foundUsers.length === 0 && (
+                    <div className={styles.searchingImage}>
+                        <Image width={200} height={200} src={searchingImage} alt='Searching Image' />
+                    </div>
+                )} */}
+                {handleRenderImage()}
                 <div className={styles.contentResponseUser}>
                     {foundUsers && foundUsers?.map((user: any) => {
                         return (
