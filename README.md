@@ -1,9 +1,7 @@
 Building...
 
 <!-- 
-Refatorar para tudo em inglês
-Usar swr para consumir posts
-Fazer login com github
+Fazer com que ele salva o login ao cadastrar
 -->
 
 <!-- npm i -g yarn

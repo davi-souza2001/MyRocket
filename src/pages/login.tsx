@@ -9,7 +9,7 @@ import Logo from '../../public/img/logo.svg';
 import styles from '../styles/Login.module.css';
 
 export default function Login() {
-    const { loginGoogle } = UseAuth()
+    const { loginGoogle, loginGitHub } = UseAuth()
 
     return (
         <div className={styles.contentGeral}>
@@ -33,7 +33,7 @@ export default function Login() {
 
                     <p>Login with</p>
                     <div className={styles.btnField}>
-                        <button onClick={() => console.log("Login com Github")}>
+                        <button onClick={loginGitHub}>
                             <Image src={GitHub} width={40} height={40} alt='githubLogo'/>
                         </button>
                         <p>or</p>

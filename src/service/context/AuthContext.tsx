@@ -1,6 +1,6 @@
 import route from 'next/router';
 import { createContext, MouseEventHandler, useEffect, useState } from 'react';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from 'firebase/auth';
 
 import Client from '../../data/client';
 import { auth } from '../../firebase/connect';
@@ -13,6 +13,7 @@ interface AuthContextProps {
     users?: Array<any>,
     repos?: Array<any>,
     loginGoogle?: () => Promise<void>,
+    loginGitHub?: () => Promise<void>,
     logout?: MouseEventHandler<HTMLParagraphElement>
 };
 
@@ -36,7 +37,8 @@ interface User {
 
 const AuthContext = createContext<AuthContextProps>({});
 
-const provider = new GoogleAuthProvider();
+const providerGoogle = new GoogleAuthProvider();
+const providerGithub = new GithubAuthProvider();
 
 function setCookieIdUser(user: any) {
     Cookie.set('Admin-cookie-MyRocket', user.email, {
@@ -53,7 +55,28 @@ export function AuthProvider(props: any) {
     const token = Cookie.get('Admin-cookie-MyRocket');
 
     async function loginGoogle() {
-        await signInWithPopup(auth, provider)
+        await signInWithPopup(auth, providerGoogle)
+            .then((result) => {
+                const user = result.user;
+                const userFinal: any = {
+                    name: user.displayName,
+                    email: user.email,
+                    photo: user.photoURL,
+                    id: user.uid,
+                };
+                setCookieIdUser(userFinal);
+                setEmail(userFinal.email);
+                setPhoto(userFinal.photo);
+                route.push('/register');
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                console.log('errou' + errorMessage);
+            });
+    }
+
+    async function loginGitHub() {
+        await signInWithPopup(auth, providerGithub)
             .then((result) => {
                 const user = result.user;
                 const userFinal: any = {
@@ -131,7 +154,7 @@ export function AuthProvider(props: any) {
     }, [user]);
 
     return (
-        <AuthContext.Provider value={{ loginGoogle, email, photo, user, users, logout, repos }}>
+        <AuthContext.Provider value={{ loginGoogle, loginGitHub, email, photo, user, users, logout, repos }}>
             {props.children}
         </AuthContext.Provider>
     );
