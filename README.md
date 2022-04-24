@@ -24,6 +24,12 @@
     <img alt="FIREBASE" width="135" src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
     <img alt="MONGO" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"> 
   </div>
+  <h2>:rocket: Link para a api usada no projeto:</h2>
+  <div>
+    <a href="https://github.com/davi-souza2001/apiMyRocket">
+        Api
+    </a>
+  </div>
 </html>
 
 ##
