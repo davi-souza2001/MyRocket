@@ -22,6 +22,7 @@
     <img alt="REACT" width="120" src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
     <img alt="NEXT" width="105" src="https://img.shields.io/badge/next-000?style=for-the-badge&logo=next.js&logoColor=white"/>
     <img alt="FIREBASE" width="135" src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
+    <img alt="MONGO" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"> 
   </div>
 </html>
 
