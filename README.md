@@ -6,7 +6,7 @@
    <div align="left">
      <h3>Equipe MyRocket</h3>
       <a href="https://github.com/davi-souza2001/MyRocketdev/graphs/contributors">
-      <img src="https://contrib.rocks/image?repo=davi-souza2001/MyRocketdev" />
+      <img src="https://contrib.rocks/image?repo=davi-souza2001/MyRocket" />
       </a>
   </div>
     
