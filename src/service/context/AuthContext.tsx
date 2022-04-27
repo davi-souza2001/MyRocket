@@ -14,6 +14,7 @@ interface AuthContextProps {
     repos?: Array<any>,
     loginGoogle?: () => Promise<void>,
     loginGitHub?: () => Promise<void>,
+    getUserLogged: () => Promise<void>,
     logout?: MouseEventHandler<HTMLParagraphElement>
 };
 
@@ -35,7 +36,7 @@ interface User {
     gas?: Number
 }
 
-const AuthContext = createContext<AuthContextProps>({});
+const AuthContext = createContext<AuthContextProps>({getUserLogged: () => Promise.resolve()});
 
 const providerGoogle = new GoogleAuthProvider();
 const providerGithub = new GithubAuthProvider();
@@ -154,7 +155,7 @@ export function AuthProvider(props: any) {
     }, [user]);
 
     return (
-        <AuthContext.Provider value={{ loginGoogle, loginGitHub, email, photo, user, users, logout, repos }}>
+        <AuthContext.Provider value={{ loginGoogle, loginGitHub, email, photo, user, users, logout, repos, getUserLogged }}>
             {props.children}
         </AuthContext.Provider>
     );
