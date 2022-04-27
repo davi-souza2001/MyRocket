@@ -7,7 +7,7 @@ import axios from "axios";
 // });
 
 const api = axios.create({
-    baseURL: "apimyrocket-production.up.railway.app/"
+    baseURL: "https://apimyrocket-production.up.railway.app/"
 });
 
 export default api;
