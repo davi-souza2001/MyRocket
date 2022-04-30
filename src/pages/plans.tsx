@@ -8,18 +8,18 @@ import styles from '../styles/Plans.module.css';
 export default function Plans() {
     const { email, users } = UseAuth();
 
-    // useEffect(() => {
-    //     if (email === '') {
-    //         route.replace('/login');
-    //     }
+    useEffect(() => {
+        if (email === '') {
+            route.replace('/login');
+        }
 
-    //     const checkIfUserExists = users?.map((user) => {
-    //         if (user.email === email) {
-    //             route.replace('/');
-    //         }
-    //     })
+        const checkIfUserExists = users?.map((user) => {
+            if (user.email === email) {
+                route.replace('/');
+            }
+        })
 
-    // }, [])
+    }, [])
 
     return (
         <>
@@ -28,19 +28,18 @@ export default function Plans() {
                     <div className={styles.titleBody}>
                         <h1>Plans</h1>
                     </div>
-
                     <div className={styles.plansDiv}>
                         <BoxPlans title={'FREE'} price={'$0.00 monthly'}>
-                            <p>- Postagens limitadas (15 postagens)</p>
-                            <p>- Propagandas de outras marcas (ADS)</p>
-                            <p>- Não tem acesso ao chat de texto e voz exclusivo</p>
-                            <p>- Pode participar apenas de 1 comunidade</p>
+                            <p>- Limited posts (15 posts)</p>
+                            <p>- ADS for other brands</p>
+                            <p>- Does not have access to exclusive text and voice chat</p>
+                            <p>- You can only join 1 community</p>
                         </BoxPlans>
                         <BoxPlans title={'PREMIUM'} price={'$1.99 monthly'}>
-                            <p>- Posts ilimitados</p>
-                            <p>- Sem propagandas</p>
-                            <p>- Tem acesso ao chat de voz e de texto exclusivo</p>
-                            <p>- Pode participar de até 3 comunidades</p>
+                            <p>- Unlimited posts</p>
+                            <p>- No ADS</p>
+                            <p>- Has access to exclusive voice and text chat</p>
+                            <p>- Can join up to 3 communities</p>
                         </BoxPlans>
                     </div>
                 </div>
