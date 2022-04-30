@@ -101,7 +101,7 @@ export default function Register() {
             <div className={styles.contentPhrase} />
             <div className={styles.contentRegister}>
                 <form className={styles.formsContent} onSubmit={sendUser}>
-                    <h2>Register</h2>
+                    <h2>Edition</h2>
                     <input placeholder='Your Name' type="text" value={name} onChange={(e) => setName(e.target.value)} />
                     <input placeholder='Nickname' type="text" value={nickname} onChange={(e) => setNickName(e.target.value)} />
                     <select required value={seniority} onChange={(e) => setSeniority(e.target.value)}>
