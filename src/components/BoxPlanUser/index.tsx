@@ -5,8 +5,8 @@ import styles from '../BoxPlanUser/BoxPlanUser.module.css';
 type BoxPlans = {
     title: String,
     price: String,
-    benefit: String
-  };
+    children: any
+};
 
 export default function BoxPlanUser(props: BoxPlans) {
     return (
@@ -21,11 +21,7 @@ export default function BoxPlanUser(props: BoxPlans) {
                     <h3>Benefits</h3>
 
                     <div className={styles.benefitsDiv}>
-                        <p>{props.benefit}</p>
-                        <p>{props.benefit}</p>
-                        <p>{props.benefit}</p>
-                        <p>{props.benefit}</p>
-                        <p>{props.benefit}</p>
+                        {props.children}
                     </div>
                 </div>
 
