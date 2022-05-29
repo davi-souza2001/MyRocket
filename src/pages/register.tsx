@@ -64,6 +64,11 @@ export default function Register() {
             setErrorSendMensage('Aceite nossos termos!');
             return
         }
+
+        if(useComplete.github.startsWith('https://github.com/')){
+            useComplete.github = useComplete.github.substr(19, 999)
+        }
+
         try {
             const data = await Client.post('/users/register', useComplete).then((res) => {
                 return res.data
