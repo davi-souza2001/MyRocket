@@ -37,12 +37,6 @@ export default function Commun() {
   const [membersEnable, setMembersEnable] = useState(false);
   const [postsMoreLiked, setPostsMoreLiked] = useState(false);
 
-  // const { data, isFetching } = useQuery('posts', async () => {
-  //   const response = await axios.get('http://localhost:5000/posts/getAllPosts');
-
-  //   return response.data;
-  // });
-
   async function handleGiveLike(test: PostsProps) {
     const sendLike = {
       idPost: test._id,
