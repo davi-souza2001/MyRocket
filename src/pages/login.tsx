@@ -16,7 +16,7 @@ export default function Login() {
             <div className={styles.msgIntroduction}>
                 <div className={styles.msgTitle}>
                     <h3>
-                        WELCOME ABOARD!
+                        WELCOME ABOARD!!!!!!
                     </h3>
                 </div>
                 <div className={styles.msgDescription}>
