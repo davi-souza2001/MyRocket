@@ -10,9 +10,13 @@ import Front from '../../public/areas/FrontIcon.svg';
 import Back from '../../public/areas/BackIcon.svg';
 import Mobile from '../../public/areas/MobileIcon.svg';
 import UseComum from "../service/hook/useComum";
+import UseAuth from "../service/hook/useAuth";
 
 export default function index() {
 	const { comumUnic, setComumUnic } = UseComum();
+	const {user} = UseAuth()
+
+	console.log(user)
 
 	return (
 		<div className={styles.homeGeral}>

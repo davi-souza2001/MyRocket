@@ -9,7 +9,7 @@ import Rocket from '../../public/rocketRegister.svg';
 import styles from '../styles/Register.module.css';
 
 export default function Register() {
-	const { email, avatar, user, getUserLogged } = UseAuth();
+	const { email, avatar, user, setCookieIdUser } = UseAuth();
 	const [name, setName] = useState('');
 	const [nickname, setNickName] = useState('');
 	const [seniority, setSeniority] = useState('');
@@ -35,7 +35,6 @@ export default function Register() {
 		if (user) {
 			route.replace('/')
 		}
-
 	}, [])
 
 	const useComplete = {
@@ -68,10 +67,11 @@ export default function Register() {
 		}
 
 		try {
-			const data = await Client.post('/users/register', useComplete).then((res) => {
-				return res.data
-			}).then(() => route.push('/plans'))
-			getUserLogged()
+			const data = await Client.post('/user/create', useComplete).then((res) => {
+				console.log(res.data)
+				setCookieIdUser(res.data)
+				route.replace('/')
+			})
 		} catch (error: any) {
 			console.log(error.response.data.message)
 			setErrorSend(true)

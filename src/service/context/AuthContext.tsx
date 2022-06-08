@@ -14,6 +14,7 @@ interface AuthContextProps {
 	loginGoogle?: () => Promise<void>,
 	loginGitHub?: () => Promise<void>,
 	getUserLogged: () => Promise<void>,
+	setCookieIdUser: (user: User) => void,
 	logout?: MouseEventHandler<HTMLParagraphElement>
 };
 
@@ -35,13 +36,16 @@ interface User {
 	gas?: Number
 }
 
-const AuthContext = createContext<AuthContextProps>({ getUserLogged: () => Promise.resolve() });
+const AuthContext = createContext<AuthContextProps>({
+	getUserLogged: () => Promise.resolve(),
+	setCookieIdUser: () => {}
+});
 
 const providerGoogle = new GoogleAuthProvider();
 const providerGithub = new GithubAuthProvider();
 
 function setCookieIdUser(user: any) {
-	Cookie.set('Admin-cookie-MyRocket', user.email, {
+	Cookie.set('Admin-cookie-MyRocket', user.id, {
 		expires: 7,
 	});
 }
@@ -63,7 +67,6 @@ export function AuthProvider(props: any) {
 					photo: user.photoURL,
 					id: user.uid,
 				};
-				setCookieIdUser(userFinal);
 				setEmail(userFinal.email);
 				setAvatar(userFinal.photo);
 				route.push('/register');
@@ -84,7 +87,6 @@ export function AuthProvider(props: any) {
 					photo: user.photoURL,
 					id: user.uid,
 				};
-				setCookieIdUser(userFinal);
 				setEmail(userFinal.email);
 				setAvatar(userFinal.photo);
 				route.push('/register');
@@ -114,10 +116,10 @@ export function AuthProvider(props: any) {
 
 	async function getUserLogged() {
 		const sendUser = {
-			emailuser: token
+			id: token
 		};
 		try {
-			const data = await Client.post('/users/checkuser', sendUser).then((res) => {
+			const data = await Client.post('/user/login', sendUser).then((res) => {
 				setUser(res.data);
 				return res.data
 			})
@@ -140,13 +142,13 @@ export function AuthProvider(props: any) {
 		}
 	}
 
-	// useEffect(() => {
-	// 	if (token) {
-	// 		getUserLogged();
-	// 	} else {
-	// 		route.push('/login');
-	// 	}
-	// }, [token]);
+	useEffect(() => {
+		if (token) {
+			getUserLogged();
+		} else {
+			route.push('/login');
+		}
+	}, [token]);
 
 	useEffect(() => {
 		getUserByEmail();
@@ -154,7 +156,7 @@ export function AuthProvider(props: any) {
 	}, [email]);
 
 	return (
-		<AuthContext.Provider value={{ loginGoogle, loginGitHub, email, avatar, user, logout, repos, getUserLogged }}>
+		<AuthContext.Provider value={{ loginGoogle, loginGitHub, email, avatar, user, logout, repos, getUserLogged, setCookieIdUser }}>
 			{props.children}
 		</AuthContext.Provider>
 	);
