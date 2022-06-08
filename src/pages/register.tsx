@@ -9,7 +9,7 @@ import Rocket from '../../public/rocketRegister.svg';
 import styles from '../styles/Register.module.css';
 
 export default function Register() {
-	const { email, photo, users, getUserLogged } = UseAuth();
+	const { email, avatar, user, getUserLogged } = UseAuth();
 	const [name, setName] = useState('');
 	const [nickname, setNickName] = useState('');
 	const [seniority, setSeniority] = useState('');
@@ -29,20 +29,18 @@ export default function Register() {
 
 	useEffect(() => {
 		if (email === '') {
-			route.replace('/login');
+			route.replace('/login')
 		}
 
-		const checkIfUserExists = users?.map((user) => {
-			if (user.email === email) {
-				route.replace('/');
-			}
-		})
+		if (user) {
+			route.replace('/')
+		}
 
 	}, [])
 
 	const useComplete = {
 		area,
-		photo,
+		avatar,
 		name,
 		email,
 		github,

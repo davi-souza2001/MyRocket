@@ -33,10 +33,10 @@ export default function Login() {
 
                     <p>Login with</p>
                     <div className={styles.btnField}>
-                        <button onClick={loginGitHub}>
+                        {/* <button onClick={loginGitHub}>
                             <Image src={GitHub} width={40} height={40} alt='githubLogo'/>
                         </button>
-                        <p>or</p>
+                        <p>or</p> */}
                         <button onClick={loginGoogle}>
                             <Image src={Gmail} width={40} height={40} alt='gmailLogo'/>
                         </button>
