@@ -89,6 +89,7 @@ export function AuthProvider(props: any) {
 				};
 				setEmail(userFinal.email);
 				setAvatar(userFinal.photo);
+				getUserByEmail()
 				route.push('/register');
 			})
 			.catch((error) => {
@@ -107,6 +108,7 @@ export function AuthProvider(props: any) {
 		try {
 			const data = await Client.post('/user/getUserByEmail', dataSend).then((res) => {
 				setUser(res.data);
+				setCookieIdUser(res.data);
 				return res.data
 			})
 		} catch (error: any) {
