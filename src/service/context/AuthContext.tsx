@@ -5,6 +5,7 @@ import { GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from 'firebas
 import Client from '../../data/client';
 import { auth } from '../../firebase/connect';
 import Cookie from 'js-cookie';
+import axios from 'axios';
 
 interface AuthContextProps {
 	email?: string,
@@ -15,6 +16,7 @@ interface AuthContextProps {
 	loginGitHub?: () => Promise<void>,
 	getUserLogged: () => Promise<void>,
 	setCookieIdUser: (user: User) => void,
+	getReposUserGitHub: () => Promise<void>,
 	logout?: MouseEventHandler<HTMLParagraphElement>
 };
 
@@ -38,7 +40,8 @@ interface User {
 
 const AuthContext = createContext<AuthContextProps>({
 	getUserLogged: () => Promise.resolve(),
-	setCookieIdUser: () => {}
+	setCookieIdUser: () => { },
+	getReposUserGitHub: () => Promise.resolve(),
 });
 
 const providerGoogle = new GoogleAuthProvider();
@@ -131,11 +134,8 @@ export function AuthProvider(props: any) {
 	}
 
 	async function getReposUserGitHub() {
-		const sendUser = {
-			emailuser: token
-		};
 		try {
-			const data = await Client.post('/users/getGitHubUser', sendUser).then((res) => {
+			const data = await axios.get(`https://api.github.com/users/${user.github}/repos`).then((res) => {
 				setRepos(res.data);
 				return res.data
 			})
@@ -154,11 +154,21 @@ export function AuthProvider(props: any) {
 
 	useEffect(() => {
 		getUserByEmail();
-		// getReposUserGitHub();
 	}, [email]);
 
 	return (
-		<AuthContext.Provider value={{ loginGoogle, loginGitHub, email, avatar, user, logout, repos, getUserLogged, setCookieIdUser }}>
+		<AuthContext.Provider value={{
+			loginGoogle,
+			loginGitHub,
+			email,
+			avatar,
+			user,
+			logout,
+			repos,
+			getUserLogged,
+			setCookieIdUser,
+			getReposUserGitHub
+		}}>
 			{props.children}
 		</AuthContext.Provider>
 	);

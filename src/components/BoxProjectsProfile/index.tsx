@@ -3,20 +3,25 @@ import route from "next/router";
 
 import UseAuth from '../../service/hook/useAuth'
 import styles from './BoxProjectsProfile.module.css'
+import { useEffect } from 'react';
 
 export function BoxProjectsProfile() {
-    const { repos } = UseAuth()
+	const { user, repos, getReposUserGitHub } = UseAuth()
 
-    return (
-        <div className={styles.contentGeral}>
-            {repos && repos?.map((repo: any) => {
-                return (
-                    <div className={styles.contentBoxProject} key={repo.id}>
-                        <AiFillGithub />
-                        <p onClick={() => route.push(repo.html_url)}>{repo.name}</p>
-                    </div>
-                )
-            })}
-        </div>
-    )
+	useEffect(() => {
+		getReposUserGitHub()
+	}, [user])
+
+	return (
+		<div className={styles.contentGeral}>
+			{repos && repos?.map((repo: any) => {
+				return (
+					<div className={styles.contentBoxProject} key={repo.id}>
+						<AiFillGithub />
+						<p onClick={() => route.push(repo.html_url)}>{repo.name}</p>
+					</div>
+				)
+			})}
+		</div>
+	)
 }

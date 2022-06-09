@@ -16,8 +16,6 @@ export default function index() {
 	const { comumUnic, setComumUnic } = UseComum();
 	const {user} = UseAuth()
 
-	console.log(user)
-
 	return (
 		<div className={styles.homeGeral}>
 			<Header />
