@@ -14,6 +14,7 @@ import styles from '../../styles/Profile.module.css';
 import Test from '../../../public/img/social_medias/gmail.svg';
 
 interface User {
+	id?: string
 	name?: String,
 	nickname?: String,
 	seniority?: String,
@@ -26,7 +27,7 @@ interface User {
 	github?: String,
 	youtube?: String,
 	instagram?: String,
-	photo?: String,
+	avatar?: String,
 	email?: String,
 	gas?: Number
 }
@@ -88,10 +89,10 @@ export default function Profile() {
 					<div className={styles.contentImageBackGround} />
 					<div className={styles.contentImageUser}>
 						<div className={styles.imageUser}>
-							<Image src={user?.photo || Test} width={60} height={60} alt="logo" />
+							<Image src={user?.avatar || Test} width={60} height={60} alt="logo" />
 						</div>
 						<div className={styles.imageUserDesktop}>
-							<Image src={user?.photo || Test} width={100} height={100} alt="logo" />
+							<Image src={user?.avatar || Test} width={100} height={100} alt="logo" />
 						</div>
 					</div>
 					<div className={styles.contentUserInfo}>
