@@ -21,21 +21,22 @@ interface AuthContextProps {
 };
 
 interface User {
-	name?: String,
-	nickname?: String,
-	seniority?: String,
-	area?: String,
-	comumone?: String,
-	comumtwo?: String,
-	comumthree?: String,
-	description?: String,
-	linkedin?: String,
-	github?: String,
-	youtube?: String,
-	instagram?: String,
-	avatar?: String,
-	email?: String,
-	gas?: Number
+	id?: string,
+	name?: string,
+	nickname?: string,
+	seniority?: string,
+	area?: string,
+	comumone?: string,
+	comumtwo?: string,
+	comumthree?: string,
+	description?: string,
+	linkedin?: string,
+	github?: string,
+	youtube?: string,
+	instagram?: string,
+	avatar?: string,
+	email?: string,
+	gas?: number
 }
 
 const AuthContext = createContext<AuthContextProps>({

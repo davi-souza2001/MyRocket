@@ -1,85 +1,58 @@
-import { useEffect, useState } from 'react';
-import route from 'next/router';
-import Cookie from 'js-cookie';
+import { useEffect, useState } from 'react'
+import route from 'next/router'
+import Cookie from 'js-cookie'
 
 import Client from '../data/client'
 
-import styles from '../styles/Register.module.css';
+import styles from '../styles/Register.module.css'
+import UseAuth from '../service/hook/useAuth'
 
 export default function Register() {
-	const [id, setId] = useState('');
-	const [gas, setGas] = useState(0);
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	const [avatar, setAvatar] = useState('');
-	const [nickname, setNickName] = useState('');
-	const [seniority, setSeniority] = useState('');
-	const [area, setArea] = useState('');
-	const [comumone, setComumOne] = useState('');
-	const [comumtwo, setComumTwo] = useState('');
-	const [comumthree, setComumThree] = useState('');
-	const [description, setDescription] = useState('');
-	const [linkedin, setLinkedin] = useState('');
-	const [github, setGithub] = useState('');
-	const [instagram, setInstagram] = useState('');
-	const [youtube, setYoutube] = useState('');
+	const [id, setId] = useState<string | undefined>('')
+	const [gas, setGas] = useState<number | undefined>(0)
+	const [name, setName] = useState<string | undefined>('')
+	const [email, setEmail] = useState<string | undefined>('')
+	const [avatar, setAvatar] = useState<string | undefined>('')
+	const [nickname, setNickName] = useState<string | undefined>('')
+	const [seniority, setSeniority] = useState<string | undefined>('')
+	const [area, setArea] = useState<string | undefined>('')
+	const [comumone, setComumOne] = useState<string | undefined>('')
+	const [comumtwo, setComumTwo] = useState<string | undefined>('')
+	const [comumthree, setComumThree] = useState<string | undefined>('')
+	const [description, setDescription] = useState<string | undefined>('')
+	const [linkedin, setLinkedin] = useState<string | undefined>('')
+	const [github, setGithub] = useState<string | undefined>('')
+	const [instagram, setInstagram] = useState<string | undefined>('')
+	const [youtube, setYoutube] = useState<string | undefined>('')
 
-	const [errorSend, setErrorSend] = useState(false);
-	const [errorSendMensage, setErrorSendMensage] = useState('');
+	const [errorSend, setErrorSend] = useState(false)
+	const [errorSendMensage, setErrorSendMensage] = useState('')
 
-	const token = Cookie.get('Admin-cookie-MyRocket');
-
-	async function getUserLogged() {
-		const sendUser = {
-			id: token
-		};
-		try {
-			const data = await Client.post('/user/login', sendUser).then((res) => {
-				setId(res.data.id)
-				setGas(res.data.gas)
-				setName(res.data.name)
-				setEmail(res.data.email)
-				setAvatar(res.data.avatar)
-				setNickName(res.data.nickname)
-				setSeniority(res.data.seniority)
-				setArea(res.data.area)
-				setComumOne(res.data.comumone)
-				setComumTwo(res.data.comumtwo)
-				setComumThree(res.data.comumthree)
-				setDescription(res.data.description)
-				setLinkedin(res.data.linkedin)
-				setGithub(res.data.github)
-				setInstagram(res.data.instagram)
-				setYoutube(res.data.youtube)
-				return res.data
-			})
-		} catch (error: any) {
-			console.log(error.response)
-		}
-	}
-
-	const userComplete = {
-		id,
-		name,
-		nickname,
-		seniority,
-		area,
-		comumone,
-		comumtwo,
-		comumthree,
-		description,
-		email,
-		github,
-		linkedin,
-		youtube,
-		instagram,
-		gas,
-		avatar
-	}
+	const { user } = UseAuth()
 
 	async function sendUser(e: any) {
 		e.preventDefault()
 		setErrorSend(false)
+
+		const userComplete = {
+			id,
+			name,
+			nickname,
+			seniority,
+			area,
+			comumone,
+			comumtwo,
+			comumthree,
+			description,
+			email,
+			github,
+			linkedin,
+			youtube,
+			instagram,
+			gas,
+			avatar
+		}
+
 		try {
 			const data = await Client.post('/user/update', userComplete).then((res) => {
 				return res.data
@@ -94,8 +67,23 @@ export default function Register() {
 	}
 
 	useEffect(() => {
-		getUserLogged();
-	}, [])
+		setId(user?.id)
+		setGas(user?.gas)
+		setName(user?.name)
+		setEmail(user?.email)
+		setAvatar(user?.avatar)
+		setNickName(user?.nickname)
+		setSeniority(user?.seniority)
+		setArea(user?.area)
+		setComumOne(user?.comumone)
+		setComumTwo(user?.comumtwo)
+		setComumThree(user?.comumthree)
+		setDescription(user?.description)
+		setLinkedin(user?.linkedin)
+		setGithub(user?.github)
+		setInstagram(user?.instagram)
+		setYoutube(user?.youtube)
+	}, [user])
 
 	return (
 		<div className={styles.contentGeral}>
