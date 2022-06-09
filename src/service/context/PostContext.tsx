@@ -25,7 +25,6 @@ export function PostProvider(props: any) {
 	async function getPostsByComum(tech: string | string[]) {
 		try {
 			const data = await Client.post('/post/getByComum', { tech }).then((res) => {
-				console.log(res.data)
 				setPosts(res.data);
 			})
 		} catch (error: any) {
