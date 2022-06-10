@@ -12,7 +12,10 @@ export function BoxError(props: BoxErrorPros) {
 		<>
 			{
 				props.visible && (
-					<div className={styles.errorBox}>
+					<div
+					className={styles.errorBox}
+					style={{height: props.height, width: props.width}}
+					>
 						<p>{props.mensageError}</p>
 					</div>
 				)

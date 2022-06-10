@@ -190,12 +190,6 @@ export default function Register() {
 						<p>Do you agree with the <strong>Terms and Conditions</strong>?</p>
 					</div>
 
-					{/* {errorSend && (
-						<div className={styles.errorBox}>
-							<p>{errorSendMensage}</p>
-						</div>
-					)} */}
-
 					<BoxError
 					mensageError={errorSendMensage}
 					visible={errorSend}
