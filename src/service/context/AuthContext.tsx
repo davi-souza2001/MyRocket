@@ -57,7 +57,24 @@ function setCookieIdUser(user: any) {
 export function AuthProvider(props: any) {
 	const [email, setEmail] = useState('');
 	const [avatar, setAvatar] = useState('');
-	const [user, setUser] = useState<User>({});
+	const [user, setUser] = useState<User>({
+		id: '',
+		name: '',
+		nickname: '',
+		seniority: '',
+		area: '',
+		comumone: '',
+		comumtwo: '',
+		comumthree: '',
+		description: '',
+		linkedin: '',
+		github: '',
+		youtube: '',
+		instagram: '',
+		avatar: '',
+		email: '',
+		gas: 0
+	});
 	const [repos, setRepos] = useState([]);
 	const token = Cookie.get('Admin-cookie-MyRocket');
 
@@ -116,7 +133,7 @@ export function AuthProvider(props: any) {
 				return res.data
 			})
 		} catch (error: any) {
-			console.log(error.response);
+			console.log(error?.response?.data);
 		}
 	}
 

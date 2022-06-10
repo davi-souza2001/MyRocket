@@ -7,6 +7,7 @@ import Client from '../data/client';
 
 import Rocket from '../../public/rocketRegister.svg';
 import styles from '../styles/Register.module.css';
+import { BoxError } from '../components/BoxError';
 
 export default function Register() {
 	const { email, avatar, user, setCookieIdUser } = UseAuth();
@@ -32,7 +33,7 @@ export default function Register() {
 			route.replace('/login')
 		}
 
-		if (user) {
+		if (user?.id) {
 			route.replace('/')
 		}
 	}, [])
@@ -189,11 +190,16 @@ export default function Register() {
 						<p>Do you agree with the <strong>Terms and Conditions</strong>?</p>
 					</div>
 
-					{errorSend && (
+					{/* {errorSend && (
 						<div className={styles.errorBox}>
 							<p>{errorSendMensage}</p>
 						</div>
-					)}
+					)} */}
+
+					<BoxError
+					mensageError={errorSendMensage}
+					visible={errorSend}
+					/>
 					<button type='submit'>Submit</button>
 				</form>
 			</div>

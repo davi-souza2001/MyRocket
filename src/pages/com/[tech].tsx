@@ -1,6 +1,5 @@
 import { Key, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useQuery } from "react-query";
 
 import UsePosts from "../../service/hook/usePosts";
 import Client from '../../data/client'
