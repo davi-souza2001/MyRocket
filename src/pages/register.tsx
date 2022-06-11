@@ -10,7 +10,7 @@ import styles from '../styles/Register.module.css';
 import { BoxError } from '../components/BoxError';
 
 export default function Register() {
-	const { email, avatar, user, setCookieIdUser } = UseAuth();
+	const { email, avatar, user, setCookieIdUser, setLoading } = UseAuth();
 	const [name, setName] = useState('');
 	const [nickname, setNickName] = useState('');
 	const [seniority, setSeniority] = useState('');
@@ -29,6 +29,7 @@ export default function Register() {
 	const [errorSendMensage, setErrorSendMensage] = useState('');
 
 	useEffect(() => {
+		setLoading(true)
 		if (email === '') {
 			route.replace('/login')
 		}
@@ -36,6 +37,7 @@ export default function Register() {
 		if (user?.id) {
 			route.replace('/')
 		}
+		setLoading(false)
 	}, [])
 
 	const useComplete = {

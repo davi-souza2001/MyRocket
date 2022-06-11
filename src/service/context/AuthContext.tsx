@@ -18,6 +18,8 @@ interface AuthContextProps {
 	setCookieIdUser: (user: User) => void,
 	getReposUserGitHub: () => Promise<void>,
 	logout?: MouseEventHandler<HTMLParagraphElement>
+	loading?: boolean
+	setLoading: (loading: boolean) => void
 };
 
 interface User {
@@ -43,6 +45,7 @@ const AuthContext = createContext<AuthContextProps>({
 	getUserLogged: () => Promise.resolve(),
 	setCookieIdUser: () => { },
 	getReposUserGitHub: () => Promise.resolve(),
+	setLoading: () => { }
 });
 
 const providerGoogle = new GoogleAuthProvider();
@@ -55,6 +58,7 @@ function setCookieIdUser(user: any) {
 }
 
 export function AuthProvider(props: any) {
+	const [loading, setLoading] = useState(false)
 	const [email, setEmail] = useState('');
 	const [avatar, setAvatar] = useState('');
 	const [user, setUser] = useState<User>({
@@ -79,6 +83,7 @@ export function AuthProvider(props: any) {
 	const token = Cookie.get('Admin-cookie-MyRocket');
 
 	async function loginGoogle() {
+		setLoading(true)
 		await signInWithPopup(auth, providerGoogle)
 			.then((result) => {
 				const user = result.user;
@@ -96,9 +101,11 @@ export function AuthProvider(props: any) {
 				const errorMessage = error.message;
 				console.log('errou' + errorMessage);
 			});
+		setLoading(false)
 	}
 
 	async function loginGitHub() {
+		setLoading(true)
 		await signInWithPopup(auth, providerGithub)
 			.then((result) => {
 				const user = result.user;
@@ -117,11 +124,14 @@ export function AuthProvider(props: any) {
 				const errorMessage = error.message;
 				console.log('errou' + errorMessage);
 			});
+		setLoading(false)
 	}
 
 	async function logout() {
+		setLoading(true)
 		Cookie.remove('Admin-cookie-MyRocket');
 		route.replace('/login');
+		setLoading(false)
 	}
 
 	async function getUserByEmail() {
@@ -163,15 +173,22 @@ export function AuthProvider(props: any) {
 	}
 
 	useEffect(() => {
+		setLoading(true)
 		if (token) {
 			getUserLogged();
 		} else {
 			route.push('/login');
 		}
+		setLoading(false)
 	}, [token]);
 
 	useEffect(() => {
+		setLoading(true)
+
 		getUserByEmail();
+
+		setLoading(false)
+
 	}, [email]);
 
 	return (
@@ -185,7 +202,9 @@ export function AuthProvider(props: any) {
 			repos,
 			getUserLogged,
 			setCookieIdUser,
-			getReposUserGitHub
+			getReposUserGitHub,
+			loading,
+			setLoading
 		}}>
 			{props.children}
 		</AuthContext.Provider>

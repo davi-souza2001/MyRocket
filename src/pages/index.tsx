@@ -10,9 +10,16 @@ import Front from '../../public/areas/FrontIcon.svg';
 import Back from '../../public/areas/BackIcon.svg';
 import Mobile from '../../public/areas/MobileIcon.svg';
 import UseComum from "../service/hook/useComum";
+import UseAuth from "../service/hook/useAuth";
+import { useEffect } from "react";
 
 export default function index() {
 	const { setComumUnic } = UseComum();
+	const { setLoading, user } = UseAuth()
+
+	useEffect(() => {
+		setLoading(true)
+	}, [user])
 
 	return (
 		<div className={styles.homeGeral}>

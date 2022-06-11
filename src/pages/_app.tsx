@@ -6,6 +6,7 @@ import { AuthProvider } from '../service/context/AuthContext';
 import { PostProvider } from '../service/context/PostContext';
 
 import '../styles/globals.css';
+import { BoxLoading } from '../components/BoxLoading';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
@@ -13,13 +14,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<Head>
 				<title>MyRocket</title>
 			</Head>
-				<AuthProvider>
+			<AuthProvider>
+				<BoxLoading>
 					<ComumProvider>
 						<PostProvider>
 							<Component {...pageProps} />
 						</PostProvider>
 					</ComumProvider>
-				</AuthProvider>
+				</BoxLoading>
+			</AuthProvider>
 		</>
 	)
 }
