@@ -10,6 +10,7 @@ import Image from 'next/image';
 import searchingImage from '../../public/img/search_image.svg';
 
 import styles from '../styles/Search.module.css';
+import { BoxError } from "../components/BoxError";
 
 interface UserBox {
 	area: string,
@@ -24,9 +25,11 @@ export default function Search() {
 	const [search, setSearch] = useState('');
 	const [foundUsers, setFoundUsers] = useState([]);
 	const [error, setError] = useState('');
+	const [errorVisibile, setErrorVisibile] = useState(false);
 
 	async function handleFoundUsersByComum(e: any) {
 		e.preventDefault();
+		setErrorVisibile(false)
 		setError('');
 		setFoundUsers([]);
 		const sendData = {
@@ -35,10 +38,16 @@ export default function Search() {
 		try {
 			const data = await Client.post('/user/searchbycomum', sendData).then((res) => {
 				setFoundUsers(res.data);
+				console.log(res.data)
+				if (res.data.length === 0) {
+					setError('No users found!');
+					setErrorVisibile(true)
+				}
 				return res.data
 			})
 		} catch (error: any) {
 			setError('Look for someone!');
+			setErrorVisibile(true)
 		}
 	}
 
@@ -53,11 +62,10 @@ export default function Search() {
 					<input type="text" onChange={(e) => setSearch(e.target.value)} value={search} />
 					<button type="submit">Search</button>
 				</form>
-				{error != '' && (
-					<div className={styles.contentTitleError}>
-						<h2>{error}</h2>
-					</div>
-				)}
+				<BoxError
+					mensageError={error}
+					visible={errorVisibile}
+				/>
 				{foundUsers.length === 0 && (
 					<div className={styles.searchingImage}>
 						<Image width={200} height={200} src={searchingImage} alt='Searching Image' />

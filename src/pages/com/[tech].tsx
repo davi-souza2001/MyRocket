@@ -2,7 +2,6 @@ import { Key, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import UsePosts from "../../service/hook/usePosts";
-import Client from '../../data/client'
 
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
 
@@ -11,9 +10,9 @@ import { Header } from "../../components/Header";
 import { MembersComum } from "../../components/MembersComum";
 import { PostsMoreLiked } from "../../components/PostsMoreLiked";
 import { SendPost } from "../../components/SendPost";
+import useAuth from "../../service/hook/useAuth";
 
 import styles from '../../styles/Com.module.css'
-import useAuth from "../../service/hook/useAuth";
 
 interface PostsProps {
 	email?: String,

@@ -6,6 +6,7 @@ import Client from '../data/client'
 
 import styles from '../styles/Register.module.css'
 import UseAuth from '../service/hook/useAuth'
+import { BoxError } from '../components/BoxError'
 
 export default function Register() {
 	const [id, setId] = useState<string | undefined>('')
@@ -184,11 +185,10 @@ export default function Register() {
 					<input value={instagram} placeholder='Instagram @' type="text" onChange={(e) => setInstagram(e.target.value)} />
 					<input value={youtube} placeholder='Youtube @' type="text" onChange={(e) => setYoutube(e.target.value)} />
 
-					{errorSend && (
-						<div className={styles.errorBox}>
-							<p>{errorSendMensage}</p>
-						</div>
-					)}
+					<BoxError
+						mensageError={errorSendMensage}
+						visible={errorSend}
+					/>
 					<button type='submit'>Submit</button>
 				</form>
 			</div>

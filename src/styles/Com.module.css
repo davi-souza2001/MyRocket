@@ -150,7 +150,7 @@
 
   .formComment {
     display: flex;
-    width: 630px;
+    width: 400px;
     flex-direction: column;
     align-items: center;
     justify-content: center;

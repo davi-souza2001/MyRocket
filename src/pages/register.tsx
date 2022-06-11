@@ -95,7 +95,7 @@ export default function Register() {
 					<input placeholder='Your Name' type="text" onChange={(e) => setName(e.target.value)} />
 					<input placeholder='Nickname' type="text" onChange={(e) => setNickName(e.target.value)} />
 					<select required onChange={(e) => setSeniority(e.target.value)}>
-						<option defaultValue="seniority" >--Seniority--</option>
+						<option defaultValue="" >--Seniority--</option>
 						<option value="student">Student</option>
 						<option value="junior">Junior</option>
 						<option value="pleno">Pleno</option>
@@ -105,7 +105,7 @@ export default function Register() {
 					<p>Choose your area</p>
 
 					<select required onChange={(e) => setArea(e.target.value)}>
-						<option defaultValue="ocupation_area" >--Area--</option>
+						<option defaultValue="" >--Area--</option>
 						<option value="Frontend">Front-End</option>
 						<option value="Backend">Back-End</option>
 						<option value="Fullstack">Full-Stack</option>
