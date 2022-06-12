@@ -61,6 +61,7 @@ export default function Profile() {
 
 	useEffect(() => {
 		handleFoundUsersByNickName()
+
 	}, [userSearch])
 
 	function handleComum() {
