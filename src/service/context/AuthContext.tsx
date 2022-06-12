@@ -22,7 +22,7 @@ interface AuthContextProps {
 	setLoading: (loading: boolean) => void
 };
 
-interface User {
+export interface User {
 	id?: string,
 	name?: string,
 	nickname?: string,

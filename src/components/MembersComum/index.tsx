@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import route from 'next/router';
 
 import Client from '../../data/client';
 
@@ -47,7 +48,12 @@ export function MembersComum(props: MembersComum) {
 					return (
 						<div key={user.id} className={styles.contentMemberUnic}>
 							<Image src={user.avatar} width={35} height={35} />
-							<p>{user.name}</p>
+							<div className={styles.contentIntoContentUser}
+							onClick={() => route.push(`/profile/${user.nickname}`)}
+							>
+								<p>{user.name}</p>
+								<p>{user.nickname}</p>
+							</div>
 						</div>
 					)
 				})}

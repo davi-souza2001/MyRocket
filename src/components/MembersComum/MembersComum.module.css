@@ -38,11 +38,12 @@
 }
 
 .contentMemberUnic{
-    height: 25vh;
+    height: 15vh;
     width: 90%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+		margin: 8px 0;
 }
 
 .contentMemberUnic img{
@@ -51,6 +52,13 @@
 
 .contentMemberUnic p {
     margin-left: 15px;
+}
+
+.contentIntoContentUser{
+	cursor: pointer;
+}
+.contentIntoContentUser p{
+	margin: -3px 8px;
 }
 
 @media (min-width: 750px){
