@@ -37,7 +37,7 @@ export default function Commun() {
 
 	useEffect(() => {
 		getPostsByComum(comumSearch)
-	}, [comumSearch]);
+	}, [ ]);
 
 	return (
 		<>
