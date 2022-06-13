@@ -16,11 +16,9 @@ interface PostsProps {
 	email?: string,
 	content?: string,
 	tech?: string,
-	likes?: string[],
 	userName?: string,
 	userNick?: string,
 	avatar?: string,
-	idUnic?: Key | null | undefined,
 	id?: string
 }
 
