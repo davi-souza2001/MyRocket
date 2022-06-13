@@ -1,122 +1,127 @@
-.contentGeral{
-    background-color: var(--purpleGlobal);
-    height: 50px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.contentGeral {
+	background-color: var(--purpleGlobal);
+	height: 50px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .contentLogo {
-    width: 120px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: var(--white);
-    cursor: pointer;
+	width: 120px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	color: var(--white);
+	cursor: pointer;
 }
 
-.contentLogo:hover p{
-    color: var(--purple);
+.contentLogo:hover p {
+	color: var(--purple);
 }
 
-.gasDiv{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: var(--white);
-    margin-left: 50px;
+.gasDiv {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	color: var(--white);
+	margin-left: 50px;
 }
 
-.gasIcon{
-    width: 25px;
-    height: 25px;
+.gasIcon {
+	width: 25px;
+	height: 25px;
 }
 
-.contentOptions{
-    color: var(--white);
-    width: 150px;
-    height: 50px;
-    font-size: 200%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+.contentOptions {
+	color: var(--white);
+	width: 150px;
+	height: 50px;
+	font-size: 200%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 }
 
-.contentToggleMenu{
-    height: 50px;
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
+.contentToggleMenu {
+	height: 50px;
+	width: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
 }
 
-.contentToggleMenuClosed{
-    height: 50px;
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--purple);
-    border-radius: 10px;
+.contentToggleMenu button{
+	height: 100%;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 40px;
+	color: #fff;
+	background-color: #272733;
+	border: none;
+	outline: none;
 }
 
-.contentToggleInitial{
-    display: none;
+
+.contentToggleInitial {
+	display: none;
 }
 
 .contentToggle {
-    animation: fade 200ms;
-    position: absolute;
-    width: 80vw;
-    top: 10vh;
-    right: 30px;
-    background-color: var(--purpleGlobal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 50%;
-    border-radius: 10px;
-    z-index: 999;
+	animation: fade 200ms;
+	position: absolute;
+	width: 80vw;
+	top: 10vh;
+	right: 30px;
+	background-color: var(--purpleGlobal);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	font-size: 50%;
+	border-radius: 10px;
+	z-index: 999;
 }
 
-@media (min-width: 750px){
-    .contentToggleMenu{
-        display: none;
-    }
+@media (min-width: 750px) {
+	.contentToggleMenu {
+		display: none;
+	}
 
-    .contentLogo p{
-        transition: 0.5s;
-    }
+	.contentLogo p {
+		transition: 0.5s;
+	}
 
-    .contentLogo:hover p{
-        color: var(--purple);
-    }
+	.contentLogo:hover p {
+		color: var(--purple);
+	}
 
-    .contentToggleInitial{
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        font-size: 50%;
-    }
+	.contentToggleInitial {
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		font-size: 50%;
+	}
 
-    .contentToggleInitial p {
-        margin: 0 10px;
-        cursor: pointer;
-    }
+	.contentToggleInitial p {
+		margin: 0 10px;
+		cursor: pointer;
+	}
 }
 
-@keyframes fade{
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to{
-        opacity: 1;
-        transform: scale(1);
-    }
+@keyframes fade {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
 }

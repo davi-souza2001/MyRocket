@@ -8,21 +8,38 @@ import { PostProvider } from '../service/context/PostContext';
 import '../styles/globals.css';
 import { BoxLoading } from '../components/BoxLoading';
 
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useMemo } from 'react';
+
 function MyApp({ Component, pageProps }: AppProps) {
+
+	const theme = useMemo(
+		() =>
+			createTheme({
+				palette: {
+					mode: 'dark',
+				},
+			}),
+		[],
+	);
+
 	return (
 		<>
 			<Head>
 				<title>MyRocket</title>
 			</Head>
-			<AuthProvider>
-				<BoxLoading>
-					<ComumProvider>
-						<PostProvider>
-							<Component {...pageProps} />
-						</PostProvider>
-					</ComumProvider>
-				</BoxLoading>
-			</AuthProvider>
+			<ThemeProvider theme={theme}>
+				<AuthProvider>
+					<BoxLoading>
+						<ComumProvider>
+							<PostProvider>
+								<Component {...pageProps} />
+							</PostProvider>
+						</ComumProvider>
+					</BoxLoading>
+				</AuthProvider>
+			</ThemeProvider>
 		</>
 	)
 }
