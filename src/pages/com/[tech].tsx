@@ -1,29 +1,27 @@
 import { Key, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
 
 import UsePosts from "../../service/hook/usePosts";
-
-import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
 
 import { BoxPostComum } from "../../components/BoxPostComum";
 import { Header } from "../../components/Header";
 import { MembersComum } from "../../components/MembersComum";
 import { PostsMoreLiked } from "../../components/PostsMoreLiked";
 import { SendPost } from "../../components/SendPost";
-import useAuth from "../../service/hook/useAuth";
 
 import styles from '../../styles/Com.module.css'
 
 interface PostsProps {
-	email?: String,
-	post?: String,
-	tech?: String,
-	likes?: String[],
-	userName?: String,
-	userNick?: String,
-	userPhoto?: String,
+	email?: string,
+	content?: string,
+	tech?: string,
+	likes?: string[],
+	userName?: string,
+	userNick?: string,
+	avatar?: string,
 	idUnic?: Key | null | undefined,
-	_id?: String
+	id?: string
 }
 
 export default function Commun() {
@@ -77,7 +75,7 @@ export default function Commun() {
 							<SendPost tech={comumSearch} />
 						</div>
 						<div className={styles.commentsArea}>
-							{posts?.map((post, index) => {
+							{posts?.map((post: PostsProps , index) => {
 								return (
 									<div key={index}>
 										<BoxPostComum
