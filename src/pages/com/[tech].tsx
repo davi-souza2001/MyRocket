@@ -28,7 +28,6 @@ interface PostsProps {
 
 export default function Commun() {
 	const { posts, getPostsByComum } = UsePosts();
-	const { user } = useAuth();
 	const router = useRouter();
 	const comumSearch: any = router.query.tech;
 
