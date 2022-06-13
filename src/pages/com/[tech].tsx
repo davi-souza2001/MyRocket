@@ -37,7 +37,11 @@ export default function Commun() {
 
 	useEffect(() => {
 		getPostsByComum(comumSearch)
-	}, [ ]);
+
+		window.addEventListener('focus', () => {
+			getPostsByComum(comumSearch)
+		})
+	}, [comumSearch])
 
 	return (
 		<>

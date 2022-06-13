@@ -29,7 +29,6 @@ export function MembersComum(props: MembersComum) {
 
 	useEffect(() => {
 		handleFoundUsersByComum()
-		console.log(foundUsers)
 	}, [props.communities])
 
 	return (
