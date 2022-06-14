@@ -1,46 +1,42 @@
 import { createContext, Key, useEffect, useState } from 'react';
 import Client from '../../data/client';
 
-const PostContext = createContext<PostContext>({ handleFoundPostsByComum: () => { } });
+const PostContext = createContext<PostContext>({ getPostsByComum: () => { } });
 
 interface PostContext {
-  posts?: PostsProps[],
-  handleFoundPostsByComum: () => void
+	posts?: PostsProps[],
+	getPostsByComum: (tech: string | string[]) => void
 }
 
 interface PostsProps {
-  email?: String,
-  post?: String,
-  tech?: String,
-  likes?: String[],
-  userName?: String,
-  userNick?: String,
-  userPhoto?: String,
-  idUnic?: Key | null | undefined
+	id?: string
+	avatar?: string,
+	content?: string,
+	email?: string,
+	tech?: string,
+	likes?: string[],
+	userName?: string,
+	userNick?: string,
 }
 
 export function PostProvider(props: any) {
-  const [posts, setPosts] = useState<PostsProps[]>([]);
+	const [posts, setPosts] = useState<PostsProps[]>([]);
 
-  async function handleFoundPostsByComum() {
-    try {
-      const data = await Client.get('/posts/getAllPosts').then((res) => {
-        setPosts(res.data);
-      })
-    } catch (error: any) {
-      console.log(error.response.data.error)
-    }
-  }
+	async function getPostsByComum(tech: string | string[]) {
+		try {
+			const data = await Client.post('/post/getByComum', { tech }).then((res) => {
+				setPosts(res.data);
+			})
+		} catch (error: any) {
+			console.log(error.response.data.error)
+		}
+	}
 
-  useEffect(() => {
-    handleFoundPostsByComum();
-  }, [])
-
-  return (
-    <PostContext.Provider value={{ posts, handleFoundPostsByComum }}>
-      {props.children}
-    </PostContext.Provider>
-  )
+	return (
+		<PostContext.Provider value={{ posts, getPostsByComum }}>
+			{props.children}
+		</PostContext.Provider>
+	)
 }
 
 export default PostContext;

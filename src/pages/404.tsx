@@ -9,7 +9,7 @@ export default function Page404() {
   return (
     <div className={styles.contentGeral}>
         <h1>Page not found :(</h1>
-        <Image src={ImageError} width={400} height={400}/>
+        <Image src={ImageError} width={400} height={400} alt="Image error"/>
         <h2 onClick={() => Router.push('/')}>Back to home</h2>
     </div>
   )

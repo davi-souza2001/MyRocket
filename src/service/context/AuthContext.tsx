@@ -1,164 +1,215 @@
 import route from 'next/router';
-import { createContext, MouseEventHandler, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from 'firebase/auth';
 
 import Client from '../../data/client';
 import { auth } from '../../firebase/connect';
 import Cookie from 'js-cookie';
+import axios from 'axios';
 
 interface AuthContextProps {
-    email?: string,
-    photo?: string,
-    user?: User,
-    users?: Array<any>,
-    repos?: Array<any>,
-    loginGoogle?: () => Promise<void>,
-    loginGitHub?: () => Promise<void>,
-    getUserLogged: () => Promise<void>,
-    logout?: MouseEventHandler<HTMLParagraphElement>
+	email?: string,
+	avatar?: string,
+	user?: User,
+	repos?: Array<any>,
+	loginGoogle?: () => Promise<void>,
+	loginGitHub?: () => Promise<void>,
+	getUserLogged: () => Promise<void>,
+	setCookieIdUser: (user: User) => void,
+	getReposUserGitHub: () => Promise<void>,
+	logout: () => void,
+	loading?: boolean
+	setLoading: (loading: boolean) => void
 };
 
-interface User {
-    name?: String,
-    nickname?: String,
-    seniority?: String,
-    area?: String,
-    comumone?: String,
-    comumtwo?: String,
-    comumthree?: String,
-    description?: String,
-    linkedin?: String,
-    github?: String,
-    youtube?: String,
-    instagram?: String,
-    photo?: String,
-    email?: String,
-    gas?: Number
+export interface User {
+	id?: string,
+	name?: string,
+	nickname?: string,
+	seniority?: string,
+	area?: string,
+	comumone?: string,
+	comumtwo?: string,
+	comumthree?: string,
+	description?: string,
+	linkedin?: string,
+	github?: string,
+	youtube?: string,
+	instagram?: string,
+	avatar?: string,
+	email?: string,
+	gas?: number
 }
 
-const AuthContext = createContext<AuthContextProps>({getUserLogged: () => Promise.resolve()});
+const AuthContext = createContext<AuthContextProps>({
+	getUserLogged: () => Promise.resolve(),
+	setCookieIdUser: () => { },
+	getReposUserGitHub: () => Promise.resolve(),
+	setLoading: () => { },
+	logout: () => { }
+});
 
 const providerGoogle = new GoogleAuthProvider();
 const providerGithub = new GithubAuthProvider();
 
 function setCookieIdUser(user: any) {
-    Cookie.set('Admin-cookie-MyRocket', user.email, {
-        expires: 7,
-    });
+	Cookie.set('Admin-cookie-MyRocket', user.id, {
+		expires: 7,
+	});
 }
 
 export function AuthProvider(props: any) {
-    const [email, setEmail] = useState('');
-    const [photo, setPhoto] = useState('');
-    const [user, setUser] = useState<User>({});
-    const [users, setUsers] = useState([]);
-    const [repos, setRepos] = useState([]);
-    const token = Cookie.get('Admin-cookie-MyRocket');
+	const [loading, setLoading] = useState(false)
+	const [email, setEmail] = useState('');
+	const [avatar, setAvatar] = useState('');
+	const [user, setUser] = useState<User>({
+		id: '',
+		name: '',
+		nickname: '',
+		seniority: '',
+		area: '',
+		comumone: '',
+		comumtwo: '',
+		comumthree: '',
+		description: '',
+		linkedin: '',
+		github: '',
+		youtube: '',
+		instagram: '',
+		avatar: '',
+		email: '',
+		gas: 0
+	});
+	const [repos, setRepos] = useState([]);
+	const token = Cookie.get('Admin-cookie-MyRocket');
 
-    async function loginGoogle() {
-        await signInWithPopup(auth, providerGoogle)
-            .then((result) => {
-                const user = result.user;
-                const userFinal: any = {
-                    name: user.displayName,
-                    email: user.email,
-                    photo: user.photoURL,
-                    id: user.uid,
-                };
-                setCookieIdUser(userFinal);
-                setEmail(userFinal.email);
-                setPhoto(userFinal.photo);
-                route.push('/register');
-            })
-            .catch((error) => {
-                const errorMessage = error.message;
-                console.log('errou' + errorMessage);
-            });
-    }
+	async function loginGoogle() {
+		setLoading(true)
+		await signInWithPopup(auth, providerGoogle)
+			.then((result) => {
+				const user = result.user;
+				const userFinal: any = {
+					name: user.displayName,
+					email: user.email,
+					photo: user.photoURL,
+					id: user.uid,
+				};
+				setEmail(userFinal.email);
+				setAvatar(userFinal.photo);
+				route.push('/register');
+			})
+			.catch((error) => {
+				const errorMessage = error.message;
+				console.log('errou' + errorMessage);
+			});
+		setLoading(false)
+	}
 
-    async function loginGitHub() {
-        await signInWithPopup(auth, providerGithub)
-            .then((result) => {
-                const user = result.user;
-                const userFinal: any = {
-                    name: user.displayName,
-                    email: user.email,
-                    photo: user.photoURL,
-                    id: user.uid,
-                };
-                setCookieIdUser(userFinal);
-                setEmail(userFinal.email);
-                setPhoto(userFinal.photo);
-                route.push('/register');
-            })
-            .catch((error) => {
-                const errorMessage = error.message;
-                console.log('errou' + errorMessage);
-            });
-    }
+	async function loginGitHub() {
+		setLoading(true)
+		await signInWithPopup(auth, providerGithub)
+			.then((result) => {
+				const user = result.user;
+				const userFinal: any = {
+					name: user.displayName,
+					email: user.email,
+					photo: user.photoURL,
+					id: user.uid,
+				};
+				setEmail(userFinal.email);
+				setAvatar(userFinal.photo);
+				getUserByEmail()
+				route.push('/register');
+			})
+			.catch((error) => {
+				const errorMessage = error.message;
+				console.log('errou' + errorMessage);
+			});
+		setLoading(false)
+	}
 
-    async function logout() {
-        Cookie.remove('Admin-cookie-MyRocket');
-        route.replace('/login');
-    }
+	async function logout() {
+		setLoading(true)
+		Cookie.remove('Admin-cookie-MyRocket');
+		route.replace('/login');
+		setLoading(false)
+	}
 
-    async function getAllUsers() {
-        try {
-            const data = await Client.get('/users/getAllUsers').then((res) => {
-                setUsers(res.data);
-                return res.data
-            })
-        } catch (error: any) {
-            console.log(error.response);
-        }
-    }
+	async function getUserByEmail() {
+		const dataSend = { email }
+		try {
+			const data = await Client.post('/user/getUserByEmail', dataSend).then((res) => {
+				setUser(res.data);
+				setCookieIdUser(res.data);
+				return res.data
+			})
+		} catch (error: any) {
+			console.log(error?.response?.data);
+		}
+	}
 
-    async function getUserLogged() {
-        const sendUser = {
-            emailuser: token
-        };
-        try {
-            const data = await Client.post('/users/checkuser', sendUser).then((res) => {
-                setUser(res.data);
-                return res.data
-            })
-        } catch (error: any) {
-            console.log(error.response);
-        }
-    }
+	async function getUserLogged() {
+		const sendUser = {
+			id: token
+		};
+		try {
+			const data = await Client.post('/user/login', sendUser).then((res) => {
+				setUser(res.data);
+				return res.data
+			})
+		} catch (error: any) {
+			console.log(error.response);
+		}
+	}
 
-    async function getReposUserGitHub() {
-        const sendUser = {
-            emailuser: token
-        };
-        try {
-            const data = await Client.post('/users/getGitHubUser', sendUser).then((res) => {
-                setRepos(res.data);
-                return res.data
-            })
-        } catch (error: any) {
-            console.log(error.response)
-        }
-    }
+	async function getReposUserGitHub() {
+		try {
+			const data = await axios.get(`https://api.github.com/users/${user.github}/repos`).then((res) => {
+				setRepos(res.data);
+				return res.data
+			})
+		} catch (error: any) {
+			console.log(error.response)
+		}
+	}
 
-    useEffect(() => {
-        if (token) {
-            getUserLogged();
-        } else {
-            route.push('/login');
-        }
-    }, [token]);
+	useEffect(() => {
+		setLoading(true)
+		if (token) {
+			getUserLogged();
+		} else {
+			route.push('/login');
+		}
+		setLoading(false)
+	}, [token]);
 
-    useEffect(() => {
-        getAllUsers();
-        getReposUserGitHub();
-    }, [user]);
+	useEffect(() => {
+		setLoading(true)
 
-    return (
-        <AuthContext.Provider value={{ loginGoogle, loginGitHub, email, photo, user, users, logout, repos, getUserLogged }}>
-            {props.children}
-        </AuthContext.Provider>
-    );
+		getUserByEmail();
+
+		setLoading(false)
+
+	}, [email]);
+
+	return (
+		<AuthContext.Provider value={{
+			loginGoogle,
+			loginGitHub,
+			email,
+			avatar,
+			user,
+			logout,
+			repos,
+			getUserLogged,
+			setCookieIdUser,
+			getReposUserGitHub,
+			loading,
+			setLoading
+		}}>
+			{props.children}
+		</AuthContext.Provider>
+	);
 
 }
 

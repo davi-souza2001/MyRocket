@@ -99,7 +99,7 @@
     .contentImageUserDesktop img{
         border-radius: 9999px;
     }
-    
+
     .contentImageUserDesktop p {
         margin-left: 10px;
     }
@@ -111,7 +111,6 @@
 
 @media (min-width: 1200px){
     .contentGeral{
-        width: 600px;
-        /* max-width: 29vw; */
+        width: 500px;
     }
 }
