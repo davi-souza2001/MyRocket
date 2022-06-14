@@ -1,5 +1,5 @@
 import route from 'next/router';
-import { createContext, MouseEventHandler, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from 'firebase/auth';
 
 import Client from '../../data/client';
@@ -17,7 +17,7 @@ interface AuthContextProps {
 	getUserLogged: () => Promise<void>,
 	setCookieIdUser: (user: User) => void,
 	getReposUserGitHub: () => Promise<void>,
-	logout?: MouseEventHandler<HTMLParagraphElement>
+	logout: () => void,
 	loading?: boolean
 	setLoading: (loading: boolean) => void
 };
@@ -45,7 +45,8 @@ const AuthContext = createContext<AuthContextProps>({
 	getUserLogged: () => Promise.resolve(),
 	setCookieIdUser: () => { },
 	getReposUserGitHub: () => Promise.resolve(),
-	setLoading: () => { }
+	setLoading: () => { },
+	logout: () => { }
 });
 
 const providerGoogle = new GoogleAuthProvider();

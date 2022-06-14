@@ -45,7 +45,7 @@ export function Header(props: Header) {
 				{props.children}
 				<div className={styles.contentToggleMenu}>
 					<button onClick={handleClick}>
-						<HiMenu/>
+						<HiMenu />
 					</button>
 					<Menu
 						anchorEl={anchorEl}
@@ -53,28 +53,43 @@ export function Header(props: Header) {
 						onClose={handleClose}
 					>
 						<MenuItem
+							style={{
+								fontFamily: 'Poppins'
+							}}
 							onClick={() => {
 								handleClose()
 								Router.push('/')
 							}}>
 							Home
 						</MenuItem>
-						<MenuItem onClick={() => {
-							handleClose()
-							Router.push('/feed')
-						}}>
+						<MenuItem
+							style={{
+								fontFamily: 'Poppins'
+							}}
+							onClick={() => {
+								handleClose()
+								Router.push('/feed')
+							}}>
 							Feed
 						</MenuItem>
-						<MenuItem onClick={() => {
-							handleClose()
-							Router.push('/search')
-						}}>
+						<MenuItem
+							style={{
+								fontFamily: 'Poppins'
+							}}
+							onClick={() => {
+								handleClose()
+								Router.push('/search')
+							}}>
 							Search
 						</MenuItem>
-						<MenuItem onClick={() => {
-							handleClose()
-							Router.push('/mainprofile')
-						}}>
+						<MenuItem
+							style={{
+								fontFamily: 'Poppins'
+							}}
+							onClick={() => {
+								handleClose()
+								Router.push('/mainprofile')
+							}}>
 							Profile
 						</MenuItem>
 					</Menu>

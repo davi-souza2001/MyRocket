@@ -14,12 +14,24 @@ import styles from '../styles/Profile.module.css';
 
 import Test from '../../public/img/social_medias/gmail.svg';
 
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
 export default function Profile() {
 	const { user, logout, getReposUserGitHub } = UseAuth();
 
 	const [communities, setCommunities] = useState(true);
 	const [projects, setProjects] = useState(false);
 	const [socialMedia, setSocialMedia] = useState(false);
+
+	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+	const openMenu = Boolean(anchorEl);
+	const handleClick = (event: any) => {
+		setAnchorEl(event.currentTarget);
+	};
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
 
 	function handleComum() {
 		setCommunities(true);
@@ -48,15 +60,49 @@ export default function Profile() {
 			<Header />
 			<div className={styles.contentImageBackGround} />
 			<div className={styles.contentImageUser}>
-				<div className={styles.imageUser} onClick={logout}>
+				<div className={styles.imageUser}>
 					<Image src={user?.avatar || Test} width={60} height={60} alt="logo" />
 				</div>
-				<div className={styles.imageUserDesktop} onClick={logout}>
+				<div className={styles.imageUserDesktop}>
 					<Image src={user?.avatar || Test} width={100} height={100} alt="logo" />
 				</div>
 			</div>
 			<div className={styles.contentUserInfo}>
-				<h2>{user?.name} <HiCog style={{ 'cursor': 'pointer' }} onClick={() => route.push('/editProfile')} /></h2>
+				<h2>
+					{user?.name}
+					<HiCog
+						style={{ 'cursor': 'pointer' }}
+						onClick={handleClick}
+					/>
+					<Menu
+						anchorEl={anchorEl}
+						open={openMenu}
+						onClose={handleClose}
+					>
+						<MenuItem
+						style={{
+							fontFamily: 'Poppins'
+						}}
+							onClick={() => {
+								handleClose()
+								route.push('/editProfile')
+							}}>
+							Edit Profile
+						</MenuItem>
+						<MenuItem
+							style={{
+								backgroundColor: '#ec3333',
+								fontWeight: 'bolder',
+								fontFamily: 'Poppins'
+							}}
+							onClick={() => {
+								handleClose()
+								logout()
+							}}>
+							Logout
+						</MenuItem>
+					</Menu>
+				</h2>
 				<p>@{user?.nickname}</p>
 			</div>
 			<div className={styles.contentUserDescription}>
