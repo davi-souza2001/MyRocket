@@ -73,14 +73,17 @@ export default function Commun() {
 							<SendPost tech={comumSearch} />
 						</div>
 						<div className={styles.commentsArea}>
-							{posts?.map((post: PostsProps , index) => {
+							{posts?.map((post: PostsProps, index) => {
 								return (
 									<div key={index}>
 										<BoxPostComum
+											id={post.id}
 											post={post.content}
 											userName={post.userName}
 											userNick={post.userNick}
 											userPhoto={post.avatar}
+											emailUser={post.email}
+											tech={post.tech}
 										/>
 									</div>
 								)
