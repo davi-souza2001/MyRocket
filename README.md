@@ -32,9 +32,6 @@
   </div>
 </html>
 
-##
-
-
 ## Regras de negocio
 
 - A principal missão do MyRockteDev é disponibilizar comunidades de tecnologias especificas que estimulam as pessoas a interagir sobre o assunto. Lá você pode encontrar pessoas que estão procurando entender uma feature nova ou até pessoas com experiência na tecnologia explicando como ela está no mercado ou tirando dúvidas, ou seja todo tipo de interação.
@@ -48,4 +45,4 @@
 - No final da semana, cada comunidade vai listar os top 10 posts mais bem avaliados pelos membros, o assunto destes estaria listado ao lado da comunidade
 - Na aba pesquisa, a pessoa pode filtrar os devs da plataforma por: senioridade, nome da pessoa, por comunidade ou nick
 - O perfil do usuário terá: Nome, foto, descrição, email do usuário, nick, e estado do usuário. Na aba de projetos serão listados os links e o nome do projeto do Github. Na aba sociais vão conter as principais rede sociais do usuário
-<!-- k -->
+
