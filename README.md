@@ -32,9 +32,6 @@
   </div>
 </html>
 
-##
-
-
 ## Regras de negocio
 
 - A principal missão do MyRockteDev é disponibilizar comunidades de tecnologias especificas que estimulam as pessoas a interagir sobre o assunto. Lá você pode encontrar pessoas que estão procurando entender uma feature nova ou até pessoas com experiência na tecnologia explicando como ela está no mercado ou tirando dúvidas, ou seja todo tipo de interação.
