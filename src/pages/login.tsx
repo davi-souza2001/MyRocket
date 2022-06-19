@@ -45,7 +45,7 @@ export default function Login() {
 
                 <div className={styles.readMore}>
                     <p>The social network for Devs</p>
-                    <a href=""><strong>Read More</strong></a>
+                    <a href="https://github.com/davi-souza2001/MyRocket" target="_blank"><strong>Read More</strong></a>
                 </div>
             </div>
         </div>
