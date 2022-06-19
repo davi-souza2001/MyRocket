@@ -9,45 +9,51 @@ import Logo from '../../public/img/logo.svg';
 import styles from '../styles/Login.module.css';
 
 export default function Login() {
-    const { loginGoogle, loginGitHub } = UseAuth()
+	const { loginGoogle, loginGitHub } = UseAuth()
 
-    return (
-        <div className={styles.contentGeral}>
-            <div className={styles.msgIntroduction}>
-                <div className={styles.msgTitle}>
-                    <h3>
-                        WELCOME ABOARD!
-                    </h3>
-                </div>
-                <div className={styles.msgDescription}>
-                    <p>Here we guarantee that you take off with the best experience.</p>
-                </div>
-            </div>
-            <div className={styles.loginArea}>
-                <div className={styles.loginFields}>
-                    <div className={styles.logoArea}>
-                        <Image src={Logo} width={350} height={350} alt='astronautLogo'/>
-                    </div>
+	return (
+		<div className={styles.contentGeral}>
+			<div className={styles.msgIntroduction}>
+				<div className={styles.msgTitle}>
+					<h3>
+						WELCOME ABOARD!
+					</h3>
+				</div>
+				<div className={styles.msgDescription}>
+					<p>Here we guarantee that you take off with the best experience.</p>
+				</div>
+			</div>
+			<div className={styles.loginArea}>
+				<div className={styles.loginFields}>
+					<div className={styles.logoArea}>
+						<Image src={Logo} width={350} height={350} alt='astronautLogo' />
+					</div>
 
-                    <div className={styles.line}></div>
+					<div className={styles.line}></div>
 
-                    <p>Login with</p>
-                    <div className={styles.btnField}>
-                        {/* <button onClick={loginGitHub}>
+					<p>Login with</p>
+					<div className={styles.btnField}>
+						{/* <button onClick={loginGitHub}>
                             <Image src={GitHub} width={40} height={40} alt='githubLogo'/>
                         </button>
                         <p>or</p> */}
-                        <button onClick={loginGoogle}>
-                            <Image src={Gmail} width={40} height={40} alt='gmailLogo'/>
-                        </button>
-                    </div>
-                </div>
+						<button onClick={loginGoogle}>
+							<Image src={Gmail} width={40} height={40} alt='gmailLogo' />
+						</button>
+					</div>
+				</div>
 
-                <div className={styles.readMore}>
-                    <p>The social network for Devs</p>
-                    <a href="https://github.com/davi-souza2001/MyRocket" target="_blank"><strong>Read More</strong></a>
-                </div>
-            </div>
-        </div>
-    )
+				<div className={styles.readMore}>
+					<p>The social network for Devs</p>
+					<a
+						href="https://github.com/davi-souza2001/MyRocket"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<strong>Read More</strong>
+					</a>
+				</div>
+			</div>
+		</div>
+	)
 }
