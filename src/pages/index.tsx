@@ -11,6 +11,8 @@ import Back from '../../public/areas/BackIcon.svg';
 import Mobile from '../../public/areas/MobileIcon.svg';
 import UseComum from "../service/hook/useComum";
 
+import Client from '../data/client';
+
 export default function index() {
 	const { setComumUnic } = UseComum();
 

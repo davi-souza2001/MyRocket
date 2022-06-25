@@ -65,16 +65,18 @@ export default function Register() {
 			return
 		}
 
-		if (useComplete.github.startsWith('https://github.com/')) {
-			useComplete.github = useComplete.github.substr(19, 999)
+		if (useComplete.github.startsWith('https://github.com/') || useComplete.github.startsWith('github.com/')) {
+			setErrorSend(true);
+			setErrorSendMensage('Coloque apenas seu nick do github!');
 		}
 
 		try {
-			const data = await Client.post('/user/create', useComplete).then((res) => {
-				console.log(res.data)
+			const data = await Client.post('/user/create', useComplete).then(async (res) => {
 				setCookieIdUser(res.data)
+				await Client.post('/email/sendEmailForCreateNewAccount', { toEmail: email })
 				route.replace('/')
 			})
+
 		} catch (error: any) {
 			console.log(error.response.data.message)
 			setErrorSend(true)
@@ -193,8 +195,8 @@ export default function Register() {
 					</div>
 
 					<BoxError
-					mensageError={errorSendMensage}
-					visible={errorSend}
+						mensageError={errorSendMensage}
+						visible={errorSend}
 					/>
 					<button type='submit'>Submit</button>
 				</form>
