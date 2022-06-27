@@ -27,8 +27,7 @@ export function SendPost(props: SendPostProps) {
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
 
-	async function sendPost(e: any) {
-		e.preventDefault();
+	async function sendPost() {
 		const postUserAll = {
 			avatar: user?.avatar,
 			email: user?.email,
@@ -86,7 +85,10 @@ export function SendPost(props: SendPostProps) {
 					</div>
 					<button
 						className={styles.boxModalContentButton}
-						onClick={sendPost}
+						onClick={() => {
+							sendPost()
+							handleClose()
+						}}
 					>
 						Submit
 					</button>
