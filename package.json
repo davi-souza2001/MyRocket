@@ -11,6 +11,9 @@
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@mantine/core": "^4.2.11",
+    "@mantine/hooks": "^4.2.11",
+    "@mantine/rte": "^4.2.11",
     "@mui/material": "^5.8.3",
     "axios": "^0.26.1",
     "firebase": "^9.6.9",

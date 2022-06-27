@@ -4,6 +4,7 @@ import Image from "next/image";
 import Client from '../../data/client';
 import UseAuth from "../../service/hook/useAuth";
 import UsePosts from "../../service/hook/usePosts";
+import EditorPost from "../EditorPost";
 
 import { HiCamera, HiDocument, HiPencil } from "react-icons/hi";
 
@@ -14,6 +15,8 @@ import styles from './SendPost.module.css';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import RichTextEditor from "@mantine/rte";
+import { MantineProvider } from "@mantine/core";
 
 const style = {
 };
@@ -67,8 +70,18 @@ export function SendPost(props: SendPostProps) {
 			>
 				<div className={styles.boxModalContentGeral}>
 					<strong>Discovery as text</strong>
-					<div>
-						<p>input</p>
+					<div className={styles.boxModalContentInput}>
+						<MantineProvider theme={{ colorScheme: 'dark' }}>
+							<EditorPost
+								value={post}
+								onChange={setPost}
+								controls={[
+									['bold', 'underline', 'link', 'image', 'video'],
+									['unorderedList', 'h1'],
+									['alignLeft', 'alignCenter'],
+								]}
+							/>
+						</MantineProvider>
 					</div>
 				</div>
 			</Modal>
