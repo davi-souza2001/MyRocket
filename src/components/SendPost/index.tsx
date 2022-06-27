@@ -77,6 +77,10 @@ export function SendPost(props: SendPostProps) {
 									['unorderedList', 'h1'],
 									['alignLeft', 'alignCenter'],
 								]}
+								style={{
+									fontFamily: 'Poppins, sans-serif',
+									color: '#fff'
+								}}
 							/>
 						</MantineProvider>
 					</div>
