@@ -37,6 +37,7 @@
 
 .boxModalContentInput {
 	width: 90%;
+	max-height: 270px;
 	overflow: scroll;
 }
 

@@ -73,7 +73,7 @@ export function SendPost(props: SendPostProps) {
 								value={post}
 								onChange={setPost}
 								controls={[
-									['bold', 'underline', 'link', 'image', 'video'],
+									['bold', 'underline', 'link', 'image'],
 									['unorderedList', 'h1'],
 									['alignLeft', 'alignCenter'],
 								]}
