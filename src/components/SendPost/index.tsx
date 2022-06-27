@@ -36,7 +36,13 @@ export function SendPost(props: SendPostProps) {
 			tech: props.tech,
 			userName: user?.name,
 			userNick: user?.nickname,
-		};
+		}
+
+		if (post === '<p><br></p>') {
+			setErrorSend(true)
+			return
+		}
+
 		try {
 			const data = await Client.post('/post/create', postUserAll).then((res) => {
 				setPost('')

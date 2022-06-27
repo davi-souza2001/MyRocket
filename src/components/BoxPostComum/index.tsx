@@ -7,7 +7,6 @@ import Client from '../../data/client';
 
 import Test from '../../../public/img/social_medias/gmail.svg';
 
-
 import styles from './BoxPostComum.module.css';
 import UsePosts from '../../service/hook/usePosts';
 
