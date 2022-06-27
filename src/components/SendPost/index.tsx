@@ -1,25 +1,16 @@
 import { useState } from "react";
 import Image from "next/image";
+import Modal from '@mui/material/Modal';
+import { MantineProvider } from "@mantine/core";
+import { HiCamera, HiDocument, HiPencil } from "react-icons/hi";
 
 import Client from '../../data/client';
 import UseAuth from "../../service/hook/useAuth";
 import UsePosts from "../../service/hook/usePosts";
 import EditorPost from "../EditorPost";
 
-import { HiCamera, HiDocument, HiPencil } from "react-icons/hi";
-
 import Test from '../../../public/img/social_medias/gmail.svg';
-
 import styles from './SendPost.module.css';
-
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import RichTextEditor from "@mantine/rte";
-import { MantineProvider } from "@mantine/core";
-
-const style = {
-};
 
 interface SendPostProps {
 	tech?: string | string[]
@@ -83,6 +74,12 @@ export function SendPost(props: SendPostProps) {
 							/>
 						</MantineProvider>
 					</div>
+					<button
+						className={styles.boxModalContentButton}
+						onClick={sendPost}
+					>
+						Submit
+					</button>
 				</div>
 			</Modal>
 			<div className={styles.contentImagemAndDescription}>

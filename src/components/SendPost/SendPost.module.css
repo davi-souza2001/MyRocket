@@ -40,6 +40,25 @@
 	overflow: scroll;
 }
 
+.boxModalContentGeral .boxModalContentButton {
+	height: 40px;
+	width: 140px;
+	font-size: 20px;
+	font-weight: 600;
+	color: #fff;
+	background-color: #292932;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	cursor: pointer;
+	font-family: 'Poppins', sans-serif;
+}
+
+.boxModalContentGeral .boxModalContentButton:hover{
+	transition: 0.2s;
+	background-color: #282829;
+}
+
 .contentImagemAndDescription {
 	height: 50%;
 	width: 100%;
@@ -83,10 +102,12 @@
 .boxModalContentInput::-webkit-scrollbar-track {
 	background-color: none;
 }
+
 .boxModalContentInput::-webkit-scrollbar {
 	width: 0px;
 	background: none;
 }
+
 .boxModalContentInput::-webkit-scrollbar-thumb {
 	background: none;
 }
@@ -100,7 +121,6 @@
 	.boxModalContentGeral {
 		width: 500px;
 	}
-
 }
 
 @media (min-width: 1200px) {
@@ -112,5 +132,4 @@
 		width: 90%;
 		overflow-x: scroll;
 	}
-
 }
