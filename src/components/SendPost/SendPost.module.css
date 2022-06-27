@@ -11,12 +11,40 @@
 	margin-bottom: 20px;
 }
 
+.boxModalContentGeral{
+	width: 350px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	transform: translate(-50%, -50%);
+	outline: none;
+	border-radius: 10px;
+	box-shadow: 24;
+	padding: 4;
+	color: #fff;
+	background-color: #272733;
+	font-family: 'Poppins', sans-serif;
+}
+
+.boxModalContentGeral strong{
+	margin-top: 10px;
+	font-size: 25px;
+}
+
 .contentImagemAndDescription {
 	height: 50%;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.contentImagemAndDescription span{
+	margin-left: 5px;
 }
 
 .contentImageUser {
@@ -53,6 +81,9 @@
 		justify-content: center;
 	}
 
+	.boxModalContentGeral{
+		width: 500px;
+	}
 }
 
 @media (min-width: 1200px) {
