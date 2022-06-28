@@ -11,8 +11,6 @@ import EditorPost from "../EditorPost";
 
 import Test from '../../../public/img/social_medias/gmail.svg';
 import styles from './SendPost.module.css';
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { storage } from "../../firebase/connect";
 
 interface SendPostProps {
 	tech?: string | string[]
@@ -51,28 +49,11 @@ export function SendPost(props: SendPostProps) {
 				return res.data
 			})
 		} catch (error: any) {
-			console.log(error.response.data.message)
+			console.log(error)
 			setErrorSend(true)
-			setErrorSendMensage(error.response.data.message)
+			setErrorSendMensage(error)
 			setPost('')
 		}
-	}
-
-	function sendImageToFirestore(file: File): Promise<string> {
-		return new Promise((resolve, rejects) => {
-			const formData = new FormData()
-			formData.append('image', file)
-			const storageRef = ref(storage, `forCommum${file.name}`)
-
-			uploadBytes(storageRef, file).then((snap) => {
-				getDownloadURL(ref(storage, `${file.name}forCommum`)).then((url) => {
-					console.log(url)
-					resolve('https://firebasestorage.googleapis.com/v0/b/myrocketoficial.appspot.com/o/Screenshot_1.pngforCommum?alt=media&token=f07cbdf6-8afc-423f-83d7-7da4379d3640')
-				}).catch((error) => {
-					rejects(error)
-				})
-			})
-		})
 	}
 
 	return (
@@ -90,9 +71,8 @@ export function SendPost(props: SendPostProps) {
 							<EditorPost
 								value={post}
 								onChange={setPost}
-								onImageUpload={sendImageToFirestore}
 								controls={[
-									['bold', 'underline', 'link', 'image'],
+									['bold', 'underline', 'link'],
 									['unorderedList', 'h1'],
 									['alignLeft', 'alignCenter'],
 								]}
