@@ -1,16 +1,17 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { initializeApp } from 'firebase/app'
+import { getAuth } from 'firebase/auth'
+import { getStorage } from "firebase/storage"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA8sMJQZDlyHd6b0WtlZ00BMSv6ShtFJeU",
-  authDomain: "myrocketoficial.firebaseapp.com",
-  projectId: "myrocketoficial",
-  storageBucket: "myrocketoficial.appspot.com",
-  messagingSenderId: "857729673139",
-  appId: "1:857729673139:web:22ab8869471c49f2854dc6"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APPID
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+const app = initializeApp(firebaseConfig)
+const auth = getAuth()
+const storage = getStorage(app, "gs://myrocketoficial.appspot.com");
 
-export { auth };
+export { auth, storage }
