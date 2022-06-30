@@ -92,7 +92,7 @@ export function BoxPostComum(props: BoxPostComumProps) {
 					{user?.email === props.emailUser && (
 						<HiTrash
 							onClick={sendPost}
-							style={{cursor: 'pointe'}}
+							style={{cursor: 'pointer'}}
 						/>
 					)}
 				</div>
