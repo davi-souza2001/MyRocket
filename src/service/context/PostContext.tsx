@@ -1,10 +1,12 @@
-import { createContext, Key, useEffect, useState } from 'react';
+import { createContext, Dispatch, Key, SetStateAction, useEffect, useState } from 'react';
 import Client from '../../data/client';
 
-const PostContext = createContext<PostContext>({ getPostsByComum: () => { } });
+const PostContext = createContext<PostContext>({ getPostsByComum: () => { }, setLike: () => { } });
 
 interface PostContext {
 	posts?: PostsProps[],
+	like?: number | null,
+	setLike: Dispatch<SetStateAction<number | null>>
 	getPostsByComum: (tech: string | string[]) => void
 }
 
@@ -21,6 +23,7 @@ interface PostsProps {
 
 export function PostProvider(props: any) {
 	const [posts, setPosts] = useState<PostsProps[]>([]);
+	const [like, setLike] = useState<number | null>(0)
 
 	async function getPostsByComum(tech: string | string[]) {
 		try {
@@ -33,7 +36,7 @@ export function PostProvider(props: any) {
 	}
 
 	return (
-		<PostContext.Provider value={{ posts, getPostsByComum }}>
+		<PostContext.Provider value={{ posts, getPostsByComum, like, setLike }}>
 			{props.children}
 		</PostContext.Provider>
 	)

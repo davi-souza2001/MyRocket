@@ -11,9 +11,7 @@ import EditorPost from '../EditorPost';
 
 import Test from '../../../public/img/social_medias/gmail.svg';
 import styles from './BoxPostComum.module.css';
-import { color } from '@mui/system';
 import { AiFillRocket, AiOutlineRocket } from 'react-icons/ai';
-import { useEffect, useState } from 'react';
 
 interface BoxPostComumProps {
 	id?: string,
@@ -22,13 +20,14 @@ interface BoxPostComumProps {
 	userNick?: string,
 	userPhoto?: string,
 	emailUser?: string,
-	tech?: string
+	tech?: string,
+	likes?: number | null
+	givelike?: () => void
 }
 
 export function BoxPostComum(props: BoxPostComumProps) {
 	const { user } = UseAuth()
-	const { getPostsByComum } = UsePosts();
-	const [like, setLike] = useState<number | null>(0)
+	const { getPostsByComum, like, setLike } = UsePosts();
 
 	async function sendPost() {
 		const dataSend = { id: props.id }
@@ -87,8 +86,9 @@ export function BoxPostComum(props: BoxPostComumProps) {
 						style={{ color: '#fff' }}
 						icon={<AiFillRocket />}
 						emptyIcon={<AiOutlineRocket />}
-						value={like}
+						value={props.likes}
 						onChange={(e, newValue) => setLike(newValue)}
+						onClick={props.givelike}
 					/>
 					{user?.email === props.emailUser && (
 						<HiTrash

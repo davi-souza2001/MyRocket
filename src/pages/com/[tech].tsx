@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
 
 import UsePosts from "../../service/hook/usePosts";
+import Client from '../../data/client';
 
 import { BoxPostComum } from "../../components/BoxPostComum";
 import { Header } from "../../components/Header";
@@ -19,16 +20,45 @@ interface PostsProps {
 	userName?: string,
 	userNick?: string,
 	avatar?: string,
-	id?: string
+	likes?: any,
+	id?: string,
 }
 
 export default function Commun() {
-	const { posts, getPostsByComum } = UsePosts();
+	const { posts, getPostsByComum, like } = UsePosts();
 	const router = useRouter();
 	const comumSearch: any = router.query.tech;
 
 	const [membersEnable, setMembersEnable] = useState(false);
 	const [postsMoreLiked, setPostsMoreLiked] = useState(false);
+	const [postForLike, setPostForLike] = useState<PostsProps>({});
+
+	async function giveLike(id: string, post: PostsProps, like: number) {
+		const dataSend = {
+			id,
+			like,
+			avatar: post.avatar,
+			content: post.content,
+			email: post.email,
+			tech: post.tech,
+			userName: post.userName,
+			userNick: post.userNick,
+			likes: post.likes
+		}
+
+		try {
+			const data = await Client.post('/post/giveLike', dataSend).then((res) => {
+				return res.data
+			})
+		} catch (error: any) {
+			console.log(error.response.data.message)
+		}
+	}
+
+	useEffect(() => {
+		giveLike(postForLike.id ?? '', postForLike, like ?? 0)
+
+	}, [like])
 
 	useEffect(() => {
 		getPostsByComum(comumSearch)
@@ -84,6 +114,8 @@ export default function Commun() {
 											userPhoto={post.avatar}
 											emailUser={post.email}
 											tech={post.tech}
+											likes={post.likes}
+											givelike={() => setPostForLike(post)}
 										/>
 									</div>
 								)
