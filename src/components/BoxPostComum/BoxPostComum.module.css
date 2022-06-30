@@ -50,11 +50,6 @@
     cursor: pointer;
 }
 
-.contentLikePost p{
-    margin-left: 10px;
-    cursor: pointer;
-}
-
 .contentImageUserDesktop{
     display: none;
 }

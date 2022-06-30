@@ -66,7 +66,6 @@ export function BoxPostComum(props: BoxPostComumProps) {
 						/>
 					</MantineProvider>
 				)}
-				{/* {props.post} */}
 			</div>
 			<div className={styles.contentInfoUser}>
 				<div className={styles.contentImageUser}>
@@ -83,7 +82,7 @@ export function BoxPostComum(props: BoxPostComumProps) {
 				</div>
 				<div className={styles.contentLikePost} >
 					<Rating
-						style={{ color: '#fff' }}
+						style={{ color: '#fff', marginRight: '15px' }}
 						icon={<AiFillRocket />}
 						emptyIcon={<AiOutlineRocket />}
 						value={props.likes}
@@ -93,6 +92,7 @@ export function BoxPostComum(props: BoxPostComumProps) {
 					{user?.email === props.emailUser && (
 						<HiTrash
 							onClick={sendPost}
+							style={{cursor: 'pointe'}}
 						/>
 					)}
 				</div>
