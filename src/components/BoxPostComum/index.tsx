@@ -1,16 +1,19 @@
 import Image from 'next/image';
 import Router from 'next/router';
 import { HiTrash } from "react-icons/hi";
+import { MantineProvider } from '@mantine/core';
+import Rating from '@mui/material/Rating';
 
 import UseAuth from '../../service/hook/useAuth';
 import Client from '../../data/client';
+import UsePosts from '../../service/hook/usePosts';
+import EditorPost from '../EditorPost';
 
 import Test from '../../../public/img/social_medias/gmail.svg';
-
 import styles from './BoxPostComum.module.css';
-import UsePosts from '../../service/hook/usePosts';
-import { MantineProvider } from '@mantine/core';
-import EditorPost from '../EditorPost';
+import { color } from '@mui/system';
+import { AiFillRocket, AiOutlineRocket } from 'react-icons/ai';
+import { useEffect, useState } from 'react';
 
 interface BoxPostComumProps {
 	id?: string,
@@ -25,6 +28,7 @@ interface BoxPostComumProps {
 export function BoxPostComum(props: BoxPostComumProps) {
 	const { user } = UseAuth()
 	const { getPostsByComum } = UsePosts();
+	const [like, setLike] = useState<number | null>(0)
 
 	async function sendPost() {
 		const dataSend = { id: props.id }
@@ -79,6 +83,13 @@ export function BoxPostComum(props: BoxPostComumProps) {
 					</div>
 				</div>
 				<div className={styles.contentLikePost} >
+					<Rating
+						style={{ color: '#fff' }}
+						icon={<AiFillRocket />}
+						emptyIcon={<AiOutlineRocket />}
+						value={like}
+						onChange={(e, newValue) => setLike(newValue)}
+					/>
 					{user?.email === props.emailUser && (
 						<HiTrash
 							onClick={sendPost}
