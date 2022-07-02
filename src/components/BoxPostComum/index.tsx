@@ -12,6 +12,7 @@ import EditorPost from '../EditorPost';
 import Test from '../../../public/img/social_medias/gmail.svg';
 import styles from './BoxPostComum.module.css';
 import { AiFillRocket, AiOutlineRocket } from 'react-icons/ai';
+import { useState } from 'react';
 
 interface BoxPostComumProps {
 	id?: string,
@@ -28,6 +29,7 @@ interface BoxPostComumProps {
 export function BoxPostComum(props: BoxPostComumProps) {
 	const { user } = UseAuth()
 	const { getPostsByComum, like, setLike } = UsePosts();
+	const [likeTemporary, setLikeTemporary] = useState<number | null>(0);
 
 	async function sendPost() {
 		const dataSend = { id: props.id }
@@ -85,8 +87,11 @@ export function BoxPostComum(props: BoxPostComumProps) {
 						style={{ color: '#fff', marginRight: '15px' }}
 						icon={<AiFillRocket />}
 						emptyIcon={<AiOutlineRocket />}
-						value={props.likes}
-						onChange={(e, newValue) => setLike(newValue)}
+						value={likeTemporary === 0 ? props.likes : likeTemporary }
+						onChange={(e, newValue) => {
+							setLike(newValue)
+							setLikeTemporary(newValue)
+						}}
 						onClick={props.givelike}
 					/>
 					{user?.email === props.emailUser && (
