@@ -55,7 +55,7 @@
 	font-family: 'Poppins', sans-serif;
 }
 
-.boxModalContentGeral .boxModalContentButton:hover{
+.boxModalContentGeral .boxModalContentButton:hover {
 	transition: 0.2s;
 	background-color: #282829;
 }
@@ -130,7 +130,7 @@
 	}
 
 	.boxModalContentInput {
-		width: 90%;
+		width: 95%;
 		overflow-x: scroll;
 	}
 }

@@ -11,6 +11,8 @@ import EditorPost from "../EditorPost";
 
 import Test from '../../../public/img/social_medias/gmail.svg';
 import styles from './SendPost.module.css';
+import { storage } from "../../firebase/connect";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 interface SendPostProps {
 	tech?: string | string[]
@@ -56,6 +58,25 @@ export function SendPost(props: SendPostProps) {
 		}
 	}
 
+	const handleImageUpload = (file: File): Promise<string> =>
+		new Promise((resolve, reject) => {
+			const formData = new FormData();
+			formData.append('image', file);
+
+			const storageRef = ref(storage, `forComum${file.name}`);
+
+			uploadBytes(storageRef, file).then(() => {
+				getDownloadURL(storageRef)
+					.then((url) => {
+						resolve(url)
+					})
+					.catch((error) => {
+						reject(error)
+					});
+			})
+
+		});
+
 	return (
 		<div className={styles.contentGeral}>
 			<Modal
@@ -72,9 +93,9 @@ export function SendPost(props: SendPostProps) {
 								value={post}
 								onChange={setPost}
 								controls={[
-									['bold', 'underline', 'link'],
-									['unorderedList', 'h1'],
-									['alignLeft', 'alignCenter'],
+									['bold', 'underline', 'video',
+										'link', 'h1', 'unorderedList',
+										'alignLeft', 'alignCenter']
 								]}
 								style={{
 									fontFamily: 'Poppins, sans-serif',
