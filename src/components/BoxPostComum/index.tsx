@@ -54,11 +54,6 @@ export function BoxPostComum(props: BoxPostComumProps) {
 							readOnly
 							value={props.post}
 							onChange={() => 0}
-							controls={[
-								['bold', 'underline', 'link', 'image'],
-								['unorderedList', 'h1'],
-								['alignLeft', 'alignCenter'],
-							]}
 							style={{
 								backgroundColor: '#272733',
 								border: 'none',

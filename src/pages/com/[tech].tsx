@@ -25,7 +25,7 @@ interface PostsProps {
 }
 
 export default function Commun() {
-	const { posts, getPostsByComum, like } = UsePosts();
+	const { posts, getPostsByComum, like, getPostsMoreLiked } = UsePosts();
 	const router = useRouter();
 	const comumSearch: any = router.query.tech;
 
