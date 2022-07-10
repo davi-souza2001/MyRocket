@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { AiFillRocket } from 'react-icons/ai';
 import Image from 'next/image';
 import route from 'next/router';
 
@@ -34,13 +35,8 @@ export function MembersComum(props: MembersComum) {
 	return (
 		<div className={styles.contentGeral}>
 			<div className={styles.contentTitle}>
-				<p>Commander</p>
-			</div>
-			<div className={styles.contentCommander}>
-				<p>Davi Souza</p>
-			</div>
-			<div className={styles.contentTitle}>
-				<p>Crew Members</p>
+				<AiFillRocket style={{'fontSize': '18px'}}/>
+				<p>Explorers</p>
 			</div>
 			<div className={styles.contentMembers}>
 				{foundUsers?.map((user: any) => {
@@ -48,7 +44,7 @@ export function MembersComum(props: MembersComum) {
 						<div key={user.id} className={styles.contentMemberUnic}>
 							<Image src={user.avatar} width={35} height={35} />
 							<div className={styles.contentIntoContentUser}
-							onClick={() => route.push(`/profile/${user.nickname}`)}
+								onClick={() => route.push(`/profile/${user.nickname}`)}
 							>
 								<p>{user.name}</p>
 								<p>{user.nickname}</p>
