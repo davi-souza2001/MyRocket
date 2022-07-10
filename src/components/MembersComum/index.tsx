@@ -47,7 +47,7 @@ export function MembersComum(props: MembersComum) {
 								onClick={() => route.push(`/profile/${user.nickname}`)}
 							>
 								<p>{user.name}</p>
-								<p>{user.nickname}</p>
+								<p>@{user.nickname}</p>
 							</div>
 						</div>
 					)
