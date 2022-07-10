@@ -1,16 +1,14 @@
-import { useState } from 'react';
-import Router from 'next/router';
+import { useState } from 'react'
+import Router from 'next/router'
+import { HiMenu } from 'react-icons/hi'
+import { AiFillRocket } from 'react-icons/ai'
+import { BiGasPump } from "react-icons/bi"
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
 
-import UseAuth from '../../service/hook/useAuth';
+import UseAuth from '../../service/hook/useAuth'
 
-import { HiMenu } from 'react-icons/hi';
-import { AiFillRocket } from 'react-icons/ai';
-import { BiGasPump } from "react-icons/bi";
-
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-
-import styles from './Header.module.css';
+import styles from './Header.module.css'
 
 interface Header {
 	children?: any
@@ -20,13 +18,13 @@ export function Header(props: Header) {
 	const [open, setOpen] = useState(false)
 	const { user } = UseAuth()
 
-	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-	const openMenu = Boolean(anchorEl);
+	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+	const openMenu = Boolean(anchorEl)
 	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-		setAnchorEl(event.currentTarget);
+		setAnchorEl(event.currentTarget)
 	};
 	const handleClose = () => {
-		setAnchorEl(null);
+		setAnchorEl(null)
 	};
 
 	return (

@@ -1,20 +1,18 @@
-import route from "next/router";
-import { HiOutlineGlobe } from "react-icons/hi";
+import route from "next/router"
+import { HiOutlineGlobe } from "react-icons/hi"
 
-import { Header } from "../components/Header";
-import { BoxStacks } from "../components/BoxStacks";
+import { Header } from "../components/Header"
+import { BoxStacks } from "../components/BoxStacks"
 
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.css'
 
-import Front from '../../public/areas/FrontIcon.svg';
-import Back from '../../public/areas/BackIcon.svg';
-import Mobile from '../../public/areas/MobileIcon.svg';
-import UseComum from "../service/hook/useComum";
-
-import Client from '../data/client';
+import Front from '../../public/areas/FrontIcon.svg'
+import Back from '../../public/areas/BackIcon.svg'
+import Mobile from '../../public/areas/MobileIcon.svg'
+import UseComum from "../service/hook/useComum"
 
 export default function index() {
-	const { setComumUnic } = UseComum();
+	const { setComumUnic } = UseComum()
 
 	return (
 		<div className={styles.homeGeral}>

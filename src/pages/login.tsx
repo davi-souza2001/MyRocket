@@ -1,15 +1,15 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-import UseAuth from '../service/hook/useAuth';
+import UseAuth from '../service/hook/useAuth'
 
-import Gmail from '../../public/img/social_medias/gmail.svg';
-import GitHub from '../../public/img/social_medias/github.svg';
-import Logo from '../../public/img/logo.svg';
+import Gmail from '../../public/img/social_medias/gmail.svg'
+// import GitHub from '../../public/img/social_medias/github.svg'
+import Logo from '../../public/img/logo.svg'
 
-import styles from '../styles/Login.module.css';
+import styles from '../styles/Login.module.css'
 
 export default function Login() {
-	const { loginGoogle, loginGitHub } = UseAuth()
+	const { loginGoogle } = UseAuth()
 
 	return (
 		<div className={styles.contentGeral}>

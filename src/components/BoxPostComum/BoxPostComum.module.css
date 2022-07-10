@@ -1,111 +1,111 @@
-.contentGeral{
-    background-color: var(--purpleGlobal);
-    min-height: 70px;
-    width: 330px;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    color: var(--white);
+.contentGeral {
+	background-color: var(--purpleGlobal);
+	min-height: 70px;
+	width: 330px;
+	padding: 10px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	color: var(--white);
 }
 
-.contentPostUser{
-    height: 70%;
-    width: 100%;
-    margin-bottom: 10px;
+.contentPostUser {
+	height: 70%;
+	width: 100%;
+	margin-bottom: 10px;
 }
 
-.contentInfoUser{
-    height: 30%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 20px;
+.contentInfoUser {
+	height: 30%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: 20px;
 }
 
-.contentImageUser{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+.contentImageUser {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 }
 
-.contentImageUser img{
-    border-radius: 9999px;
+.contentImageUser img {
+	border-radius: 9999px;
 }
 
 .contentImageUser p {
-    margin-left: 10px;
+	margin-left: 10px;
 }
 
-.contentLikePost{
-    width: 200px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 130%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    cursor: pointer;
+.contentLikePost {
+	width: 200px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 130%;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	cursor: pointer;
 }
 
-.contentImageUserDesktop{
-    display: none;
+.contentImageUserDesktop {
+	display: none;
 }
 
-.contentImageUserDesktop p:last-child{
-    font-weight: 200;
+.contentImageUserDesktop p:last-child {
+	font-weight: 200;
 }
 
-.userIdentification p strong{
-    font-size: medium;
+.userIdentification p strong {
+	font-size: medium;
 }
 
-.userIdentification p{
-    font-size: smaller;
+.userIdentification p {
+	font-size: smaller;
 }
 
-@media (min-width: 750px){
-    .contentGeral{
-        width: 400px;
-        /* max-width: 29vw; */
-    }
+@media (min-width: 750px) {
+	.contentGeral {
+		width: 400px;
+		/* max-width: 29vw; */
+	}
 
-    .contentImageUserDesktop{
-        display: inline-flex;
-    }
+	.contentImageUserDesktop {
+		display: inline-flex;
+	}
 
-    .userIdentification{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        cursor: pointer;
-    }
+	.userIdentification {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		cursor: pointer;
+	}
 
-    .contentImageUserDesktop{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
+	.contentImageUserDesktop {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
 
-    .contentImageUserDesktop img{
-        border-radius: 9999px;
-    }
+	.contentImageUserDesktop img {
+		border-radius: 9999px;
+	}
 
-    .contentImageUserDesktop p {
-        margin-left: 10px;
-    }
+	.contentImageUserDesktop p {
+		margin-left: 10px;
+	}
 
-    .contentImageUser{
-        display: none;
-    }
+	.contentImageUser {
+		display: none;
+	}
 }
 
-@media (min-width: 1200px){
-    .contentGeral{
-        width: 500px;
-    }
+@media (min-width: 1200px) {
+	.contentGeral {
+		width: 500px;
+	}
 }

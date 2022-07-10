@@ -1,64 +1,64 @@
-.contentGeral{
-    overflow-x: hidden;
+.contentGeral {
+	overflow-x: hidden;
 }
 
-.contentTitle{
-    width: 100vw;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 12px;
-    margin-top: 20px;
+.contentTitle {
+	width: 100vw;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--white);
+	font-size: 12px;
+	margin-top: 20px;
 }
 
-.contentTechs{
-    width: 100vw;
-    height: 50px;
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.contentTechs {
+	width: 100vw;
+	height: 50px;
+	color: var(--white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.techBox{
-    margin: 0px 15px;
-    width: 70px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: var(--purpleGlobal);
-    cursor: pointer;
+.techBox {
+	margin: 0px 15px;
+	width: 70px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	background-color: var(--purpleGlobal);
+	cursor: pointer;
 }
 
-.contentPosts{
-    width: 100%;
-    min-height: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-direction: column-reverse;
-    margin-top: 30px;
+.contentPosts {
+	width: 100%;
+	min-height: 700px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: column-reverse;
+	margin-top: 30px;
 }
 
-@media(min-width: 750px){
-    .contentTitle{
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
+@media(min-width: 750px) {
+	.contentTitle {
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
 
-    .techBox{
-        margin: 0px 15px;
-        width: 150px;
-        height: 50px;
-        transition: 0.5s;
-    }
+	.techBox {
+		margin: 0px 15px;
+		width: 150px;
+		height: 50px;
+		transition: 0.5s;
+	}
 
-    .techBox:hover{
-        transform: scale(1.05);
-        border: solid 2px var(--purple);
-    }
+	.techBox:hover {
+		transform: scale(1.05);
+		border: solid 2px var(--purple);
+	}
 }

@@ -1,71 +1,71 @@
-.contentGeral{
-    height: 330px;
-    width: 270px;
-    background-color: #272733;
-    border-radius: 10px;
-    margin: 10px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.contentGeral {
+	height: 330px;
+	width: 270px;
+	background-color: #272733;
+	border-radius: 10px;
+	margin: 10px 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-.contentLogo{
-    height: 90px;
-    width: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.contentLogo {
+	height: 90px;
+	width: 270px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.contentTitle{
-    width: 270px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    cursor: pointer;
+.contentTitle {
+	width: 270px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 10px;
+	cursor: pointer;
 }
 
-.contentDescription{
-    height: 160px;
-    width: 80%;
-    text-align: center;
-    /* padding: 10px; */
+.contentDescription {
+	height: 160px;
+	width: 80%;
+	text-align: center;
+	/* padding: 10px; */
 }
 
-.contentDescription p{
-    color: #adadad ;
+.contentDescription p {
+	color: #adadad;
 }
 
-@media (min-width: 1090px){
-    .contentGeral{
-        margin-left: 4vw;
-        width: 300px;
-    }
+@media (min-width: 1090px) {
+	.contentGeral {
+		margin-left: 4vw;
+		width: 300px;
+	}
 
-    .contentGeral{
-        cursor: pointer;
-        transition: 1s;
-    }
-    
-    .contentGeral:hover{
-        transform: scale(1.05);
-    }
+	.contentGeral {
+		cursor: pointer;
+		transition: 1s;
+	}
+
+	.contentGeral:hover {
+		transform: scale(1.05);
+	}
 }
 
-@media (min-width: 1350px){
-    .contentGeral{
-        margin-left: 7vw;
-    }
+@media (min-width: 1350px) {
+	.contentGeral {
+		margin-left: 7vw;
+	}
 
-    .contentGeral{
-        cursor: pointer;
-        transition: 1s;
-    }
-    
-    .contentGeral:hover{
-        transform: scale(1.05);
-    }
+	.contentGeral {
+		cursor: pointer;
+		transition: 1s;
+	}
+
+	.contentGeral:hover {
+		transform: scale(1.05);
+	}
 }

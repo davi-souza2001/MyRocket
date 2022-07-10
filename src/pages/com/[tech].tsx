@@ -1,37 +1,37 @@
-import { Key, useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi";
+import { Key, useEffect, useState } from "react"
+import { useRouter } from "next/router"
+import { HiOutlineGlobe, HiFire, HiUser } from "react-icons/hi"
 
-import UsePosts from "../../service/hook/usePosts";
-import Client from '../../data/client';
+import UsePosts from "../../service/hook/usePosts"
+import Client from '../../data/client'
 
-import { BoxPostComum } from "../../components/BoxPostComum";
-import { Header } from "../../components/Header";
-import { MembersComum } from "../../components/MembersComum";
-import { PostsMoreLiked } from "../../components/PostsMoreLiked";
-import { SendPost } from "../../components/SendPost";
+import { BoxPostComum } from "../../components/BoxPostComum"
+import { Header } from "../../components/Header"
+import { MembersComum } from "../../components/MembersComum"
+import { PostsMoreLiked } from "../../components/PostsMoreLiked"
+import { SendPost } from "../../components/SendPost"
 
 import styles from '../../styles/Com.module.css'
 
 interface PostsProps {
-	email?: string,
-	content?: string,
-	tech?: string,
-	userName?: string,
-	userNick?: string,
-	avatar?: string,
-	likes?: any,
-	id?: string,
+	email?: string
+	content?: string
+	tech?: string
+	userName?: string
+	userNick?: string
+	avatar?: string
+	likes?: any
+	id?: string
 }
 
 export default function Commun() {
-	const { posts, getPostsByComum, like, getPostsMoreLiked } = UsePosts();
-	const router = useRouter();
-	const comumSearch: any = router.query.tech;
+	const { posts, getPostsByComum, like } = UsePosts()
+	const router = useRouter()
+	const comumSearch: any = router.query.tech
 
-	const [membersEnable, setMembersEnable] = useState(false);
-	const [postsMoreLiked, setPostsMoreLiked] = useState(false);
-	const [postForLike, setPostForLike] = useState<PostsProps>({});
+	const [membersEnable, setMembersEnable] = useState(false)
+	const [postsMoreLiked, setPostsMoreLiked] = useState(false)
+	const [postForLike, setPostForLike] = useState<PostsProps>({})
 
 	async function giveLike(id: string, post: PostsProps, like: number) {
 		const dataSend = {

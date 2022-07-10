@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import styles from './BoxTechs.module.css';
+import Image from 'next/image'
+import styles from './BoxTechs.module.css'
 
 type BoxTechs = {
-  img?: any,
-  title: String,
+  img?: any
+  title: String
   onClick: () => void
 };
 

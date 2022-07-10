@@ -1,30 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { AiFillRocket } from 'react-icons/ai';
-import Image from 'next/image';
-import route from 'next/router';
+import React, { useEffect, useState } from 'react'
+import { AiFillRocket } from 'react-icons/ai'
+import Image from 'next/image'
+import route from 'next/router'
 
-import Client from '../../data/client';
+import Client from '../../data/client'
 
-import styles from './MembersComum.module.css';
+import styles from './MembersComum.module.css'
 
 interface MembersComum {
-	communities?: string | string[];
+	communities?: string | string[]
 }
 
 export function MembersComum(props: MembersComum) {
-	const [foundUsers, setFoundUsers] = useState([]);
+	const [foundUsers, setFoundUsers] = useState([])
 
 	async function handleFoundUsersByComum() {
 		setFoundUsers([])
-		const comum = props.communities;
+		const comum = props.communities
 
 		try {
 			const data = await Client.post('/user/searchbycomum', { comum }).then((res) => {
-				setFoundUsers(res.data);
+				setFoundUsers(res.data)
 				return res.data
 			})
 		} catch (error: any) {
-			console.log(error.response.data.error);
+			console.log(error.response.data.error)
 		}
 	}
 
@@ -35,7 +35,7 @@ export function MembersComum(props: MembersComum) {
 	return (
 		<div className={styles.contentGeral}>
 			<div className={styles.contentTitle}>
-				<AiFillRocket style={{'fontSize': '18px'}}/>
+				<AiFillRocket style={{ 'fontSize': '18px' }} />
 				<p>Explorers</p>
 			</div>
 			<div className={styles.contentMembers}>

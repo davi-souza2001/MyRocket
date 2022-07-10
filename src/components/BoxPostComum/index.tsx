@@ -1,35 +1,35 @@
-import Image from 'next/image';
-import Router from 'next/router';
-import { HiTrash } from "react-icons/hi";
-import { MantineProvider } from '@mantine/core';
-import Rating from '@mui/material/Rating';
+import { useState } from 'react'
+import { AiFillRocket, AiOutlineRocket } from 'react-icons/ai'
+import Image from 'next/image'
+import Router from 'next/router'
+import { HiTrash } from "react-icons/hi"
+import { MantineProvider } from '@mantine/core'
+import Rating from '@mui/material/Rating'
 
-import UseAuth from '../../service/hook/useAuth';
-import Client from '../../data/client';
-import UsePosts from '../../service/hook/usePosts';
-import EditorPost from '../EditorPost';
+import UseAuth from '../../service/hook/useAuth'
+import Client from '../../data/client'
+import UsePosts from '../../service/hook/usePosts'
+import EditorPost from '../EditorPost'
 
-import Test from '../../../public/img/social_medias/gmail.svg';
-import styles from './BoxPostComum.module.css';
-import { AiFillRocket, AiOutlineRocket } from 'react-icons/ai';
-import { useState } from 'react';
+import Test from '../../../public/img/social_medias/gmail.svg'
+import styles from './BoxPostComum.module.css'
 
 interface BoxPostComumProps {
-	id?: string,
-	post?: string,
-	userName?: string,
-	userNick?: string,
-	userPhoto?: string,
-	emailUser?: string,
-	tech?: string,
+	id?: string
+	post?: string
+	userName?: string
+	userNick?: string
+	userPhoto?: string
+	emailUser?: string
+	tech?: string
 	likes?: number | null
 	givelike?: () => void
 }
 
 export function BoxPostComum(props: BoxPostComumProps) {
 	const { user } = UseAuth()
-	const { getPostsByComum, like, setLike } = UsePosts();
-	const [likeTemporary, setLikeTemporary] = useState<number | null>(0);
+	const { getPostsByComum, setLike } = UsePosts()
+	const [likeTemporary, setLikeTemporary] = useState<number | null>(0)
 
 	async function sendPost() {
 		const dataSend = { id: props.id }
@@ -82,7 +82,7 @@ export function BoxPostComum(props: BoxPostComumProps) {
 						style={{ color: '#fff', marginRight: '15px' }}
 						icon={<AiFillRocket />}
 						emptyIcon={<AiOutlineRocket />}
-						value={likeTemporary === 0 ? props.likes : likeTemporary }
+						value={likeTemporary === 0 ? props.likes : likeTemporary}
 						onChange={(e, newValue) => {
 							setLike(newValue)
 							setLikeTemporary(newValue)
@@ -92,7 +92,7 @@ export function BoxPostComum(props: BoxPostComumProps) {
 					{user?.email === props.emailUser && (
 						<HiTrash
 							onClick={sendPost}
-							style={{cursor: 'pointer'}}
+							style={{ cursor: 'pointer' }}
 						/>
 					)}
 				</div>

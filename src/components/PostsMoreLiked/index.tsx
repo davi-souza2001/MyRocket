@@ -1,20 +1,19 @@
-import { MantineProvider } from '@mantine/core';
-import Image from 'next/image';
-import { useEffect } from 'react';
+import { MantineProvider } from '@mantine/core'
+import Image from 'next/image'
+import { useEffect } from 'react'
 
-import Teste from '../../../public/img/social_medias/gmail.svg';
-import { PostsProps } from '../../service/context/PostContext';
-import UsePosts from '../../service/hook/usePosts';
-import EditorPost from '../EditorPost';
+import { PostsProps } from '../../service/context/PostContext'
+import UsePosts from '../../service/hook/usePosts'
+import EditorPost from '../EditorPost'
 
-import styles from './PostsMoreLiked.module.css';
+import styles from './PostsMoreLiked.module.css'
 
 interface PostsMoreLikedProps {
-	comum: string | string[];
+	comum: string | string[]
 }
 
 export function PostsMoreLiked(props: PostsMoreLikedProps) {
-	const { postsMoreLiked, getPostsMoreLiked } = UsePosts();
+	const { postsMoreLiked, getPostsMoreLiked } = UsePosts()
 
 	useEffect(() => {
 		getPostsMoreLiked(props.comum)

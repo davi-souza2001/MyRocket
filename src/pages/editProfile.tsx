@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import route from 'next/router'
-import Cookie from 'js-cookie'
 
 import Client from '../data/client'
 
-import styles from '../styles/Register.module.css'
 import UseAuth from '../service/hook/useAuth'
 import { BoxError } from '../components/BoxError'
+
+import styles from '../styles/Register.module.css'
 
 export default function Register() {
 	const [id, setId] = useState<string | undefined>('')

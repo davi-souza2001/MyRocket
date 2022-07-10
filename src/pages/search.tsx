@@ -1,52 +1,51 @@
-import { useState } from "react";
-import Router from 'next/router';
+import { useState } from "react"
+import Router from 'next/router'
+import Image from 'next/image'
 
-import Client from '../data/client';
+import Client from '../data/client'
 
-import { BoxUser } from "../components/BoxUser";
-import { Header } from "../components/Header";
+import { BoxUser } from "../components/BoxUser"
+import { BoxError } from "../components/BoxError"
+import { Header } from "../components/Header"
 
-import Image from 'next/image';
-import searchingImage from '../../public/img/search_image.svg';
+import searchingImage from '../../public/img/search_image.svg'
 
-import styles from '../styles/Search.module.css';
-import { BoxError } from "../components/BoxError";
+import styles from '../styles/Search.module.css'
 
 interface UserBox {
-	area: string,
-	name: string,
-	description: string,
-	avatar?: string,
+	area: string
+	name: string
+	description: string
+	avatar?: string
 	nickname: string
 }
 
 export default function Search() {
-	const [howSearch, setHowSearch] = useState('Community');
-	const [search, setSearch] = useState('');
-	const [foundUsers, setFoundUsers] = useState([]);
-	const [error, setError] = useState('');
-	const [errorVisibile, setErrorVisibile] = useState(false);
+	const [search, setSearch] = useState('')
+	const [foundUsers, setFoundUsers] = useState([])
+	const [error, setError] = useState('')
+	const [errorVisibile, setErrorVisibile] = useState(false)
 
 	async function handleFoundUsersByComum(e: any) {
-		e.preventDefault();
+		e.preventDefault()
 		setErrorVisibile(false)
-		setError('');
-		setFoundUsers([]);
+		setError('')
+		setFoundUsers([])
 		const sendData = {
 			comum: search
 		}
 		try {
 			const data = await Client.post('/user/searchbycomum', sendData).then((res) => {
-				setFoundUsers(res.data);
+				setFoundUsers(res.data)
 				console.log(res.data)
 				if (res.data.length === 0) {
-					setError('No users found!');
+					setError('No users found!')
 					setErrorVisibile(true)
 				}
 				return res.data
 			})
 		} catch (error: any) {
-			setError('Look for someone!');
+			setError('Look for someone!')
 			setErrorVisibile(true)
 		}
 	}

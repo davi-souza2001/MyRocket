@@ -1,33 +1,33 @@
-import { useState } from "react";
-import Image from "next/image";
-import Modal from '@mui/material/Modal';
-import { MantineProvider } from "@mantine/core";
-import { HiCamera, HiDocument, HiPencil } from "react-icons/hi";
+import { useState } from "react"
+import { HiCamera, HiDocument, HiPencil } from "react-icons/hi"
+import Image from "next/image"
+import Modal from '@mui/material/Modal'
+import { MantineProvider } from "@mantine/core"
+import { storage } from "../../firebase/connect"
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage"
 
-import Client from '../../data/client';
-import UseAuth from "../../service/hook/useAuth";
-import UsePosts from "../../service/hook/usePosts";
-import EditorPost from "../EditorPost";
+import Client from '../../data/client'
+import UseAuth from "../../service/hook/useAuth"
+import UsePosts from "../../service/hook/usePosts"
+import EditorPost from "../EditorPost"
 
-import Test from '../../../public/img/social_medias/gmail.svg';
-import styles from './SendPost.module.css';
-import { storage } from "../../firebase/connect";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import Test from '../../../public/img/social_medias/gmail.svg'
+import styles from './SendPost.module.css'
 
 interface SendPostProps {
 	tech?: string | string[]
 }
 
 export function SendPost(props: SendPostProps) {
-	const { user } = UseAuth();
-	const { getPostsByComum } = UsePosts();
-	const [post, setPost] = useState('');
-	const [errorSend, setErrorSend] = useState(false);
-	const [errorSendMensage, setErrorSendMensage] = useState('');
+	const { user } = UseAuth()
+	const { getPostsByComum } = UsePosts()
+	const [post, setPost] = useState('')
+	const [errorSend, setErrorSend] = useState(false)
+	const [errorSendMensage, setErrorSendMensage] = useState('')
 
-	const [open, setOpen] = useState(false);
-	const handleOpen = () => setOpen(true);
-	const handleClose = () => setOpen(false);
+	const [open, setOpen] = useState(false)
+	const handleOpen = () => setOpen(true)
+	const handleClose = () => setOpen(false)
 
 	async function sendPost() {
 		const postUserAll = {
@@ -60,10 +60,10 @@ export function SendPost(props: SendPostProps) {
 
 	const handleImageUpload = (file: File): Promise<string> =>
 		new Promise((resolve, reject) => {
-			const formData = new FormData();
-			formData.append('image', file);
+			const formData = new FormData()
+			formData.append('image', file)
 
-			const storageRef = ref(storage, `forComum${file.name}`);
+			const storageRef = ref(storage, `forComum${file.name}`)
 
 			uploadBytes(storageRef, file).then(() => {
 				getDownloadURL(storageRef)

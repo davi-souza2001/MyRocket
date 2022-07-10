@@ -1,153 +1,155 @@
-.contentImageBackGround{
-    width: 100%;
-    height: 10vh;
-    background-image: url('../../public/backgroundProfileMobile.svg');
-    background-repeat:  no-repeat;
-    background-size: 100%;
-}   
-
-.contentImageUser{
-    width: 100%;
-    height: 7vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+.contentImageBackGround {
+	width: 100%;
+	height: 10vh;
+	background-image: url('../../public/backgroundProfileMobile.svg');
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
-.imageUser{
-    margin: -10px 0px 0px 30px;
+.contentImageUser {
+	width: 100%;
+	height: 7vh;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 }
 
-.imageUser img{
-    border-radius: 999px;
+.imageUser {
+	margin: -10px 0px 0px 30px;
 }
 
-.contentUserInfo{
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    color: #fff;
+.imageUser img {
+	border-radius: 999px;
 }
 
-.contentUserInfo h2, .contentUserInfo p{
-    margin-left: 10px;
+.contentUserInfo {
+	width: 100%;
+	height: 10vh;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	color: #fff;
 }
 
-.contentUserInfo h2{
-    margin-bottom: -20px;
+.contentUserInfo h2,
+.contentUserInfo p {
+	margin-left: 10px;
 }
 
-.contentUserDescription{
-    width: 100%;
-    min-height: 15vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.contentUserInfo h2 {
+	margin-bottom: -20px;
 }
 
-.contentDescBox{
-    padding: 4px;
-    width: 90%;
-    min-height: 90%;
-    border-radius: 10px;
-    background-color: #272733;
-    color: rgb(192, 192, 192);
+.contentUserDescription {
+	width: 100%;
+	min-height: 15vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.contentBarOptions{
-    width: 100%;
-    height: 7vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 15px;
-    color: #fff;
+.contentDescBox {
+	padding: 4px;
+	width: 90%;
+	min-height: 90%;
+	border-radius: 10px;
+	background-color: #272733;
+	color: rgb(192, 192, 192);
 }
 
-.contentBarOptions p{
-    background-color: #272733;
-    padding: 10px;
-    border-radius: 5px;
+.contentBarOptions {
+	width: 100%;
+	height: 7vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-top: 15px;
+	color: #fff;
 }
 
-.contentOptionSelected{
-    margin-top: 15px;
-    width: 100%;
-    min-height: 28vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.contentBarOptions p {
+	background-color: #272733;
+	padding: 10px;
+	border-radius: 5px;
 }
 
-.contentOptionUserDesktop{
-    display: none;
+.contentOptionSelected {
+	margin-top: 15px;
+	width: 100%;
+	min-height: 28vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.imageUserDesktop{
-    display: none;
-    cursor: pointer;
+.contentOptionUserDesktop {
+	display: none;
 }
 
-.imageUserDesktop img{
-    border-radius: 999px;
+.imageUserDesktop {
+	display: none;
+	cursor: pointer;
 }
 
-.contentMenuLogout{
-    font-size: 40%;
+.imageUserDesktop img {
+	border-radius: 999px;
 }
 
-@media (min-width: 750px){
-    .contentImageBackGround{
-        background-image: url('../../public/backgroundProfile.svg');
-        background-repeat:  repeat;
-    }
-
-    .contentBarOptions{
-        display: none;
-    }
-
-    .contentOptionSelected{
-        display: none;
-    }
-
-    .contentUserInfo{
-        margin-bottom: 3vh;
-    }
-
-    .contentOptionUserDesktop{
-        width: 100%;
-        min-height: 40vh;
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-around;
-        margin-top: 10vh;
-    }
-
-    .contentUserInfo h2, .contentUserInfo p{
-        margin-left: 8VW;
-    }
-
-    .imageUser{
-        margin-left: 8VW;
-    }
+.contentMenuLogout {
+	font-size: 40%;
 }
 
-@media (min-width: 1200px){
-    .imageUserDesktop{
-        display: block;
-        margin-left: 8VW;
-        margin-bottom: 4vh;
-    }
+@media (min-width: 750px) {
+	.contentImageBackGround {
+		background-image: url('../../public/backgroundProfile.svg');
+		background-repeat: repeat;
+	}
 
-    .imageUser{
-        display: none;
-    }
+	.contentBarOptions {
+		display: none;
+	}
 
-    .contentUserInfo{
-        font-size: 1.2vw;
-        margin-top: 10px;
-    }
+	.contentOptionSelected {
+		display: none;
+	}
+
+	.contentUserInfo {
+		margin-bottom: 3vh;
+	}
+
+	.contentOptionUserDesktop {
+		width: 100%;
+		min-height: 40vh;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-around;
+		margin-top: 10vh;
+	}
+
+	.contentUserInfo h2,
+	.contentUserInfo p {
+		margin-left: 8VW;
+	}
+
+	.imageUser {
+		margin-left: 8VW;
+	}
+}
+
+@media (min-width: 1200px) {
+	.imageUserDesktop {
+		display: block;
+		margin-left: 8VW;
+		margin-bottom: 4vh;
+	}
+
+	.imageUser {
+		display: none;
+	}
+
+	.contentUserInfo {
+		font-size: 1.2vw;
+		margin-top: 10px;
+	}
 }

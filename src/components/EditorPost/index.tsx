@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic'
 
 export default dynamic(() => import('@mantine/rte'), {
 	ssr: false,

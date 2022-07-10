@@ -1,170 +1,162 @@
-/* Here you will have the login CSS */
-
-/* Remember to use "Mobile First"!!! */
-
-/* 
-   Need more adjustments when smartphone turn sideways
-   I've tested in Motorola G4 -> 360x640
-   When we turn sideways the smartphone, it has a bug with the page responsiveness -> 640x360 
-*/
-
-.contentGeral{
-    height: 100vh;
-    width: 100vw;
-    overflow: none;
+.contentGeral {
+	height: 100vh;
+	width: 100vw;
+	overflow: none;
 }
 
-.msgIntroduction{
-    display: none;
+.msgIntroduction {
+	display: none;
 }
 
-.loginArea{
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
+.loginArea {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	color: var(--white);
 }
 
-.loginArea a{
-    color: var(--white);
+.loginArea a {
+	color: var(--white);
 }
 
-.loginFields{
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    height: 50%;
-    align-items: center;
+.loginFields {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	height: 50%;
+	align-items: center;
 }
 
-.logoArea{
-    height: 8vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+.logoArea {
+	height: 8vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 20px;
 }
 
-.line{
-    width: 100%;
-    height: 5px;
-    background-color: var(--purple);
-    border-radius: 15px;
+.line {
+	width: 100%;
+	height: 5px;
+	background-color: var(--purple);
+	border-radius: 15px;
 }
 
-.btnField{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+.btnField {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
 }
 
-.btnField button{
-    height: 66px;
-    width: 80px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    background-color: var(--white);
+.btnField button {
+	height: 66px;
+	width: 80px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+	background-color: var(--white);
 }
 
-.skipLogin{
-    margin-top: 40px;
+.skipLogin {
+	margin-top: 40px;
 }
 
-.skipLogin a{
-    text-decoration: none;
-    cursor: pointer;
+.skipLogin a {
+	text-decoration: none;
+	cursor: pointer;
 }
 
-.readMore{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+.readMore {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
 }
 
-.readMore a{
-    text-decoration: none;
-    color: var(--purple);
+.readMore a {
+	text-decoration: none;
+	color: var(--purple);
 }
 
-@media (min-width: 860px){
-    .btnField button{
-        height: 66px;
-        width: 80px;
-    }
+@media (min-width: 860px) {
+	.btnField button {
+		height: 66px;
+		width: 80px;
+	}
 }
 
 @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
-@media (min-width: 980px){
-    .btnField button{
-        height: 66px;
-        width: 80px;
-        transition: 0.2s;
-    }
+@media (min-width: 980px) {
+	.btnField button {
+		height: 66px;
+		width: 80px;
+		transition: 0.2s;
+	}
 
-    .btnField button:hover{
-        transform: scale(1.1);
-        border: 5px solid var(--purple);
-    }
+	.btnField button:hover {
+		transform: scale(1.1);
+		border: 5px solid var(--purple);
+	}
 
-    .contentGeral{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        height: 100vh;
-        background-image: url('../../public/backgroundGalaxy.svg');
-        background-repeat: no-repeat;
-        background-size: 100% ;
-    }
+	.contentGeral {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		height: 100vh;
+		background-image: url('../../public/backgroundGalaxy.svg');
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
 
-    .msgIntroduction{
-        height: 100vh;
-        width: 60vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        color: var(--white);
-        background-repeat: no-repeat;
-    }
+	.msgIntroduction {
+		height: 100vh;
+		width: 60vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		color: var(--white);
+		background-repeat: no-repeat;
+	}
 
-    .loginArea{
-        width: 25vw;
-        height: 80vh;
-        background-color: var(--grey);
-        border-radius: 25px;
-    }
+	.loginArea {
+		width: 25vw;
+		height: 80vh;
+		background-color: var(--grey);
+		border-radius: 25px;
+	}
 
 }
 
-@media (min-width: 1200px){
-    .contentGeral{
-        font-size: 120%;
-    }
+@media (min-width: 1200px) {
+	.contentGeral {
+		font-size: 120%;
+	}
 }
 
-@media (max-width: 1036px){
-    .contentGeral{
-        background-size: 100%;
-    }
+@media (max-width: 1036px) {
+	.contentGeral {
+		background-size: 100%;
+	}
 }

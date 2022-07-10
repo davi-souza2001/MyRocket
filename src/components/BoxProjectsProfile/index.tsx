@@ -1,9 +1,9 @@
+import { useEffect } from 'react'
+import route from "next/router"
 import { AiFillGithub } from 'react-icons/ai'
-import route from "next/router";
 
 import UseAuth from '../../service/hook/useAuth'
 import styles from './BoxProjectsProfile.module.css'
-import { useEffect } from 'react';
 
 export function BoxProjectsProfile() {
 	const { user, repos, getReposUserGitHub } = UseAuth()

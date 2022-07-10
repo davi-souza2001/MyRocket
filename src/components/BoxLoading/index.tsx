@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { HiOutlineRefresh } from "react-icons/hi";
+import { HiOutlineRefresh } from "react-icons/hi"
 
 import UseAuth from "../../service/hook/useAuth"
 
@@ -18,7 +18,7 @@ export function BoxLoading(props: BoxLoading) {
 				<div className={styles.contentGeral}>
 					<div className={styles.contentImageLoading}>
 						<Image src={RocketLogo} alt="Image Rocket" />
-						<HiOutlineRefresh className={styles.contentLoadingImage}/>
+						<HiOutlineRefresh className={styles.contentLoadingImage} />
 					</div>
 				</div>
 			) : props.children}

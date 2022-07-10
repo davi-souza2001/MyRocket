@@ -1,19 +1,17 @@
-import Head from 'next/head';
-
-import type { AppProps } from 'next/app';
-import { ComumProvider } from '../service/context/CommunitiesContext';
-import { AuthProvider } from '../service/context/AuthContext';
-import { PostProvider } from '../service/context/PostContext';
-
-import '../styles/globals.css';
-import { BoxLoading } from '../components/BoxLoading';
-
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import { useMemo } from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+
+import { ComumProvider } from '../service/context/CommunitiesContext'
+import { AuthProvider } from '../service/context/AuthContext'
+import { PostProvider } from '../service/context/PostContext'
+
+import '../styles/globals.css'
+import { BoxLoading } from '../components/BoxLoading'
+
 
 function MyApp({ Component, pageProps }: AppProps) {
-
 	const theme = useMemo(
 		() =>
 			createTheme({

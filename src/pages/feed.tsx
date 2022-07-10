@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react"
 
-import UsePosts from "../service/hook/usePosts";
-import UseAuth from "../service/hook/useAuth";
+import UsePosts from "../service/hook/usePosts"
+import UseAuth from "../service/hook/useAuth"
 
-import { BoxPostComum } from "../components/BoxPostComum";
-import { Header } from "../components/Header";
+import { BoxPostComum } from "../components/BoxPostComum"
+import { Header } from "../components/Header"
 
-import styles from '../styles/Feed.module.css';
+import styles from '../styles/Feed.module.css'
 
 export default function Feed() {
-	const { user } = UseAuth();
-	const { posts, getPostsByComum } = UsePosts();
+	const { user } = UseAuth()
+	const { posts, getPostsByComum } = UsePosts()
 
 	useEffect(() => {
 		if (user?.comumone) {

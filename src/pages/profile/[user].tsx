@@ -1,35 +1,34 @@
-import { useEffect, useState } from "react";
-import Router, { useRouter } from "next/router";
-import Image from "next/image";
+import { useEffect, useState } from "react"
+import Router, { useRouter } from "next/router"
+import Image from "next/image"
 
-import Client from '../../data/client';
+import Client from '../../data/client'
 
-import { Header } from "../../components/Header";
-import { BoxUserWanted } from "../../components/BoxCommunitiesProfile/BoxUserWanted";
-import { BoxUserWantedSocialMedias } from "../../components/BoxSocialMediaProfile/BoxUserWantedSocialMedias";
-import { BoxProjectsUserSearch } from "../../components/BoxProjectsProfile/BoxProjectsUserSearch";
+import { Header } from "../../components/Header"
+import { BoxUserWanted } from "../../components/BoxCommunitiesProfile/BoxUserWanted"
+import { BoxUserWantedSocialMedias } from "../../components/BoxSocialMediaProfile/BoxUserWantedSocialMedias"
+import { BoxProjectsUserSearch } from "../../components/BoxProjectsProfile/BoxProjectsUserSearch"
 
-import styles from '../../styles/Profile.module.css';
-
-import Test from '../../../public/img/social_medias/gmail.svg';
+import styles from '../../styles/Profile.module.css'
+import Test from '../../../public/img/social_medias/gmail.svg'
 
 interface User {
 	id?: string
-	name?: String,
-	nickname?: String,
-	seniority?: String,
-	area?: String,
-	comumone?: String,
-	comumtwo?: String,
-	comumthree?: String,
-	description?: String,
-	linkedin?: String,
-	github?: String,
-	youtube?: String,
-	instagram?: String,
-	avatar?: String,
-	email?: String,
-	gas?: Number
+	name?: string
+	nickname?: string
+	seniority?: string
+	area?: string
+	comumone?: string
+	comumtwo?: string
+	comumthree?: string
+	description?: string
+	linkedin?: string
+	github?: string
+	youtube?: string
+	instagram?: string
+	avatar?: string
+	email?: string
+	gas?: number
 }
 
 export default function Profile() {

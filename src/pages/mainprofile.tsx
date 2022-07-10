@@ -1,54 +1,53 @@
-import { useEffect, useState } from "react";
-import route from "next/router";
-import Image from "next/image";
-import { HiCog } from "react-icons/hi";
+import { useEffect, useState } from "react"
+import route from "next/router"
+import Image from "next/image"
+import { HiCog } from "react-icons/hi"
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
 
-import UseAuth from "../service/hook/useAuth";
+import UseAuth from "../service/hook/useAuth"
 
-import { Header } from "../components/Header";
-import { BoxCommunitiesProfile } from "../components/BoxCommunitiesProfile";
-import { BoxProjectsProfile } from "../components/BoxProjectsProfile";
-import { BoxSocialMediaProfile } from "../components/BoxSocialMediaProfile";
+import { Header } from "../components/Header"
+import { BoxCommunitiesProfile } from "../components/BoxCommunitiesProfile"
+import { BoxProjectsProfile } from "../components/BoxProjectsProfile"
+import { BoxSocialMediaProfile } from "../components/BoxSocialMediaProfile"
 
-import styles from '../styles/Profile.module.css';
+import styles from '../styles/Profile.module.css'
 
-import Test from '../../public/img/social_medias/gmail.svg';
-
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import Test from '../../public/img/social_medias/gmail.svg'
 
 export default function Profile() {
-	const { user, logout, getReposUserGitHub } = UseAuth();
+	const { user, logout, getReposUserGitHub } = UseAuth()
 
-	const [communities, setCommunities] = useState(true);
-	const [projects, setProjects] = useState(false);
-	const [socialMedia, setSocialMedia] = useState(false);
+	const [communities, setCommunities] = useState(true)
+	const [projects, setProjects] = useState(false)
+	const [socialMedia, setSocialMedia] = useState(false)
 
-	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-	const openMenu = Boolean(anchorEl);
+	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+	const openMenu = Boolean(anchorEl)
 	const handleClick = (event: any) => {
-		setAnchorEl(event.currentTarget);
+		setAnchorEl(event.currentTarget)
 	};
 	const handleClose = () => {
-		setAnchorEl(null);
+		setAnchorEl(null)
 	};
 
 	function handleComum() {
-		setCommunities(true);
-		setProjects(false);
-		setSocialMedia(false);
+		setCommunities(true)
+		setProjects(false)
+		setSocialMedia(false)
 	}
 
 	function handleProjects() {
-		setCommunities(false);
-		setProjects(true);
-		setSocialMedia(false);
+		setCommunities(false)
+		setProjects(true)
+		setSocialMedia(false)
 	}
 
 	function handleSocialMedia() {
-		setCommunities(false);
-		setProjects(false);
-		setSocialMedia(true);
+		setCommunities(false)
+		setProjects(false)
+		setSocialMedia(true)
 	}
 
 	useEffect(() => {
@@ -80,9 +79,9 @@ export default function Profile() {
 						onClose={handleClose}
 					>
 						<MenuItem
-						style={{
-							fontFamily: 'Poppins'
-						}}
+							style={{
+								fontFamily: 'Poppins'
+							}}
 							onClick={() => {
 								handleClose()
 								route.push('/editProfile')
