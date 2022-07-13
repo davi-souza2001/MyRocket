@@ -15,13 +15,15 @@ export function BoxError(props: BoxErrorPros) {
 	const mensageRegisterError = mensageError.substring(320)
 
 	useEffect(() => {
-		if (mensageRegisterError === 'github`)'){
+		if (mensageRegisterError === 'github`)' || mensageRegisterError === 'the fields: (`github`)') {
 			setMensageFilterVisible(true)
 			setMengageFilter('This github is already used by a user')
-		}
-		if (mensageRegisterError === 'nickname`)'){
+		} else if (mensageRegisterError === 'nickname`)' || mensageRegisterError === 'the fields: (`nickname`)') {
 			setMensageFilterVisible(true)
 			setMengageFilter('This username is already used by a user')
+		} else {
+			setMensageFilterVisible(true)
+			setMengageFilter('Unexpected error')
 		}
 
 		return () => setMensageFilterVisible(false)
