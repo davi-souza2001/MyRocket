@@ -33,5 +33,4 @@ Unit tests were done using Jest. Through it, the application is 100% tested!
 
 ![Screenshot_6](https://user-images.githubusercontent.com/77704994/178743238-a8e0e785-c887-4439-a0e1-27086e1f7838.png)
 
-<!-- l -->
 </html>   
