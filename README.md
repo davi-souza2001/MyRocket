@@ -35,5 +35,3 @@ Unit tests were done using Jest. Through it, the application is 100% tested!
 
 
 </html>   
-
-<!-- asdf -->
