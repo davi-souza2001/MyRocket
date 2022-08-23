@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react'
-import LoginPage from '../pages/login'
+import Login from '../pages/login'
 
-describe('Login section', () => {
+describe('Header section', () => {
     it('first test app component', () => {
-        const { getByText } = render(<LoginPage />)
+        const { getByText } = render(<Login />)
 
         expect(getByText('WELCOME ABOARD!')).toBeTruthy()
     })
