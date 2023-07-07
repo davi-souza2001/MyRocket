@@ -1,5 +1,5 @@
 <html>   
-<h1 align="center">
+<h1>
    <img align="center" src="https://i.imgur.com/MlnoYEA.png" width="60px"/> MyRocket
 </h1>
 
